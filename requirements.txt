@@ -1,0 +1,5 @@
+flask==1.1.1
+google-api-core==1.23.0
+google-auth-httplib2 
+google-api-python-client==1.12.8
+google_auth_oauthlib==0.4.2
