@@ -6,17 +6,20 @@ from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 
+import sqlite3 as sql
+from werkzeug.security import generate_password_hash, check_password_hash
+
+conn = sql.connect("db.sqlite")
+
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 
 # The ID and range of a sample spreadsheet.
-SAMPLE_SPREADSHEET_ID = '1fmdEmKs-h4KD8h02td-2lwki8xsXaq_oSCnx0wB3BU0'
-SAMPLE_RANGE_NAME = 'UNSC'
+SAMPLE_SPREADSHEET_ID = '1I6w3WamoWtfrtYXEr59UDYnfAk7MIrAY6rEUD4sFsQE'
+SAMPLE_RANGE_NAME = 'UNHRC'
 
 def generate_otp(email):
-    m = hashlib.sha256()
-    m.update(bytes(email, 'utf-8'))
-    return(m.hexdigest())
+    return(generate_password_hash(email))
 
 def main():
     """Shows basic usage of the Sheets API.
@@ -54,9 +57,12 @@ def main():
         print('No data found.')
     else:
         for row in values:
-            # Print columns A and E, which correspond to indices 0 and 4.
-            print('%d' % (int(generate_otp(row[1])[-5:], 16)))
-            # generate_otp(row[1])
+            try:
+                # Print columns A and E, which correspond to indices 0 and 4.
+                print('%s %s %d' % (row[1], row[2], int(generate_otp(row[6])[-5:], 16)))
+                # generate_otp(row[1])
+            except:
+                print("", end = "")
 
 if __name__ == '__main__':
     main()

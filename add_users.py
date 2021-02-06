@@ -1,6 +1,7 @@
-import sqlite3
+import sqlite3 as sql
+from werkzeug.security import generate_password_hash, check_password_hash
 
-conn = sqlite3.connect("db.sqlite")
+conn = sql.connect("db.sqlite")
 
 view_all = int(input("View all records 1/0: "))
 if view_all == 1:
@@ -15,8 +16,11 @@ if view_all == 1:
 add_user = int(input("Add user 1/0: "))
 if add_user == 1:
     print("adding user")
-    out = conn.execute(
-        "INSERT INTO USER (ID,NAME,EMAIL) \
-      VALUES ('ADMIN4', 'Pritham', 'pritham123@gmail.com')"
-    )
-    print(out)
+    with sql.connect("db.sqlite") as con:
+            cur = con.cursor()
+            cur.execute("INSERT INTO USER (ID, NAME, EMAIL, PASSWORD) \
+               VALUES (?,?,?,?)",("ADMIN8", "Pritham3", "pritham181112712@cse.ssn.edu.in", generate_password_hash("admin@ssn", method="sha256")) )
+            
+            con.commit()
+            msg = "Record successfully added"
+    # print(out)
