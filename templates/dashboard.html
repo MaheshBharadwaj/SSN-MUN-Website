@@ -4,33 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/dashboard.css')}}">
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
     <script src="https://kit.fontawesome.com/e979b53514.js" crossorigin="anonymous"></script>
 
-
     <title>Document</title>
-
-    <style>
-        .navbar {
-            background-color: #1b262c
-        }
-
-        .fixed-action-btn {
-            right: 70px;
-            bottom: 70px;
-            /*desired value*/
-        }
-
-        .btn-floating {
-            height: 70px;
-            width: 70px;
-        }
-    </style>
 </head>
 
 <body>
@@ -54,31 +39,33 @@
 
         <nav class="nav-extended navbar">
             <div class="nav-wrapper">
-                <h3 class="brand-logo">Welcome, {{current_user.name}}!</h3>
-                <h3 class="brand-logo right">E-Chit App</h3>
+                <h3 style="margin: 1% 0 0" class="brand-logo username">Welcome, {{current_user.name}}!</h3>
+                <div class="brand-logo right">
+                    <span><i class="fa fa-comment-o" aria-hidden="true"></i></span>
+                    E-Chit App
+                </div>
+                
                 <!-- <a href="#" class="brand-logo right hide-on-med-and-down"><img height=80px -->
                 <!-- src="{{url_for('static', filename='images/alt-colourlogo_withdate_cropped.png')}}"></a> -->
             </div>
-            <div class="nav-content">
-                <ul class="tabs tabs-transparent">
-                    <li class="tab"><a href="#test1">SENT</a></li>
-                    <li class="tab"><a href="#test2">RECEIVED</a></li>
-                    <li class="tab"><a href="#test4">TO/FROM EB</a></li>
-                </ul>
-            </div>
         </nav>
+        <ul class="tabs nav-tabs">
+            <li class="tab"><a href="#sent">SENT</a></li>
+            <li class="tab"><a href="#received">RECEIVED</a></li>
+            <li class="tab"><a href="#eb">TO / FROM EB</a></li>
+        </ul>
 
-        <div id="test1" class="col s12">Test 1</div>
-        <div id="test2" class="col s12">Test 2</div>
-        <div id="test4" class="col s12">Test 4</div>
+        <div id="sent" class="col s12">Test 1</div>
+        <div id="received" class="col s12">Test 2</div>
+        <div id="eb" class="col s12">Test 4</div>
 
-        <div class="fixed-action-btn">
+        <div title="Compose" class="fixed-action-btn">
             <a class="btn-floating btn-large red">
                 <i class="fas fa-pen"></i>
             </a>
             <ul>
                 <li style="margin: 0 10px"><a title="Delegate" class="btn-floating btn-large green"><i class="fas fa-user-alt"></i></a></li>
-                <li style="margin: 0 10px"><a title="EB Member" class="btn-floating btn-large blue"><i class="fas fa-gavel"></i></a></li>
+                <li style="margin: 0 10px"><a title="Executive Board" class="btn-floating btn-large blue"><i class="fas fa-gavel"></i></a></li>
             </ul>
         </div>
 
