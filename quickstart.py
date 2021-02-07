@@ -3,6 +3,7 @@ import pickle
 import hashlib
 import os.path
 import random
+import json
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
@@ -22,7 +23,7 @@ SAMPLE_SPREADSHEET_ID = '1I6w3WamoWtfrtYXEr59UDYnfAk7MIrAY6rEUD4sFsQE'
 SAMPLE_RANGE_NAME = 'UNHRC'
 
 def generate_otp(email):
-    return(hashlib.sha224(bytes(email, 'utf-8')).hexdigest()[-5:])
+    return(str(int(hashlib.sha224(bytes(email, 'utf-8')).hexdigest()[-5:], 16)))
 
 def main():
     """Shows basic usage of the Sheets API.
@@ -54,7 +55,9 @@ def main():
     result = sheet.values().get(spreadsheetId=SAMPLE_SPREADSHEET_ID,
                                 range=SAMPLE_RANGE_NAME).execute()
     values = result.get('values', [])
-    values = values[1:5]
+    values = values[1:]
+
+    delegates = {}
 
     if not values:
         print('No data found.')
@@ -62,10 +65,34 @@ def main():
         for row in values:
             try:
                 # Print columns A and E, which correspond to indices 0 and 4.
-                print('%s %s %d' % (row[1], row[2], int(generate_otp(row[6])[-5:], 16)))
+                
+                if(row[6]):
+                    delegate = {"country": row[0].strip(), "name": row[1].strip()}
+                    delegates[row[6]] = delegate
+
+                    with sql.connect("db.sqlite") as con:
+                        cur = con.cursor()
+                        cur.execute("INSERT INTO USER (ID, NAME, EMAIL, PASSWORD, COUNTRY, COMMITTEE) \
+                        VALUES (?,?,?,?,?,?)",(row[6], delegate['name'], row[2].strip(), generate_otp(row[6]), delegate['country'], 'UNHRC'))
+                        
+                        con.commit()
+
+                    
+                    print('%s %s, %s, %s, %s' % (row[6], row[0].strip(), row[1].strip(), row[2].strip(), generate_otp(row[6])))
                 # generate_otp(row[1])
-            except:
-                print("", end = "")
+                
+            except Exception as e:
+                print(e)
+
+    for delegate in delegates:
+        print(delegate)
+
+    json_object = json.dumps(delegates)
+
+    with open("static/delegate_info/unhrc.json", "w") as outfile: 
+        outfile.write(json_object)
+
+
 
 if __name__ == '__main__':
     main()

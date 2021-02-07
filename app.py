@@ -30,21 +30,28 @@ login_manager = LoginManager()
 login_manager.login_view = "login"
 login_manager.init_app(app)
 
+def generate_otp(email):
+    return(str(int(hashlib.sha224(bytes(email, 'utf-8')).hexdigest()[-5:], 16)))
+
+def check_password(user_password, password):
+    return user_password == password
 
 class User(UserMixin, db.Model):
     # primary keys are required by SQLAlchemy
     id = db.Column(db.String(20), primary_key=True)
     email = db.Column(db.String(100), unique=True)
     password = db.Column(db.String(100))
-    name = db.Column(db.String(1000))
+    name = db.Column(db.String(100))
+    country = db.Column(db.String(200))
+    committee = db.Column(db.String(6))
 
 
 db.create_all(app=app)
 
 try:
     new_user = User(
-        id="ADMIN3",
-        email="maheshbharadwaj18199@cse.ssn.edu.in",
+        id="ADMIN432",
+        email="maheshbharadwaj134511819124129@cse.ssn.edu.in",
         name="Pritham",
         password=generate_password_hash("admin@ssn", method="sha256"),
     )
@@ -54,8 +61,8 @@ try:
         db.session.add(new_user)
         db.session.commit()
         print("added user")
-except:
-    pass
+except Exception as e:
+    print(e)
 
 
 @login_manager.user_loader
@@ -79,7 +86,7 @@ def login_post():
 
     # check if user actually exists
     # take the user supplied password, hash it, and compare it to the hashed password in database
-    if not user or not check_password_hash(user.password, password):
+    if not user or not check_password(user.password, password):
         flash("Please check your login details and try again.")
         # if user doesn't exist or password is wrong, reload the page
         return redirect(url_for("login"))
@@ -108,25 +115,25 @@ def dashboard():
     # recv_file.close()
     # sent_file.close()
 
-    # now = datetime.now()
+    now = datetime.now()
 
-    # timestamp = datetime.timestamp(now)
+    timestamp = datetime.timestamp(now)
     
-    # bruh_object = {"message": "Hello there, fellow delegate!"}
+    bruh_object = {"message": "Hello there, fellow delegate!"}
 
-    # # print(bruh_object)
-    # with open('messages/pogchamps/recv.json', 'r') as openfile:
-    #     json_object = json.load(openfile)
+    # print(bruh_object)
+    with open('messages/pogchamps/recv.json', 'r') as openfile:
+        json_object = json.load(openfile)
         
-    # json_object[timestamp] = bruh_object
-    # print(json_object) 
-    # print(type(json_object)) 
+    json_object[timestamp] = bruh_object
+    print(json_object) 
+    print(type(json_object)) 
 
-    # json_object = json.dumps(json_object)
-    # print(json_object)
+    json_object = json.dumps(json_object)
+    print(json_object)
 
-    # with open("messages/pogchamps/recv.json", "w") as outfile: 
-    #     outfile.write(json_object)
+    with open("messages/pogchamps/recv.json", "w") as outfile: 
+        outfile.write(json_object)
 
     return render_template("dashboard.html", name=current_user.name, recv_length = len(recv), sent_length = len(sent))
 
