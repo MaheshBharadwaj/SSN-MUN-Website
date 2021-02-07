@@ -90,6 +90,25 @@ nav .brand-logo i {
     color: black;
 }
 
+.message-form {
+    background-color: #EEE;
+    margin: 20px 100px;
+    padding: 20px;
+}
+
+.btn,
+.btn-large {
+    background-color: var(--primary);
+}
+
+.btn-large:hover.cancel {
+    background-color: red;
+}
+
+.form-label {
+    /* color: whitesmoke !important; */
+}
+
 @media only screen and (max-width: 992px) {
     .header-banner {
         font-size: 24px;
@@ -114,5 +133,9 @@ nav .brand-logo i {
     }
     .brand-sub-title {
         display: none;
+    }
+    .message-form {
+        margin: 50px 20px;
+        padding: 10px;
     }
 }
