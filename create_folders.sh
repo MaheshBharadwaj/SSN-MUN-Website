@@ -15,8 +15,9 @@ do
     mkdir $messages_dir/$committee/EB/recv;
     for number in {000..200}
     do
-        mkdir -p $messages_dir/$committee/$number/sent;
-        mkdir -p $messages_dir/$committee/$number/recv;
+        mkdir $messages_dir/$committee/$number/
+        echo "[]" | cat > $messages_dir/$committee/$number/sent.json;
+        echo "[]" | cat > $messages_dir/$committee/$number/recv.json;
     done
 done
 

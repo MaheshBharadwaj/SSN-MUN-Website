@@ -4,6 +4,9 @@ db.sqlite
 #ENV
 myenv/
 
+#messages folder
+messages/
+
 # Created by https://www.toptal.com/developers/gitignore/api/flask,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=flask,visualstudiocode
 

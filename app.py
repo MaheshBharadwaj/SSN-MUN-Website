@@ -6,7 +6,7 @@ from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
-from flask import Flask, render_template, redirect, url_for, request, flash
+from flask import Flask, render_template, redirect, url_for, request, flash, send_file
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, logout_user, login_required, current_user
@@ -15,6 +15,7 @@ ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 app = Flask(__name__, static_folder=ROOT_DIR + "/static/")
 app.config["SECRET_KEY"] = "9OLWxND4o83j4K4iuopO"
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db.sqlite"
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 # format for JSON message object
 # messageid {
@@ -30,11 +31,46 @@ login_manager = LoginManager()
 login_manager.login_view = "login"
 login_manager.init_app(app)
 
+
 def generate_otp(email):
     return(str(int(hashlib.sha224(bytes(email, 'utf-8')).hexdigest()[-5:], 16)))
 
+
 def check_password(user_password, password):
     return user_password == password
+
+
+def get_committee(id: str):
+    if id[0:2] == 'DI':
+        return 'disec'
+    elif id[0:2] == 'HR':
+        return 'unhrc'
+    elif id[0:2] == 'SC':
+        return 'unsc'
+    elif id[0:2] == 'EF':
+        return 'ecofin'
+    else:
+        return 'eb'
+
+
+committees = ['disec', 'unhrc', 'unsc', 'ecofin']
+country_id = {}
+for committee in committees:
+    try:
+        with open(ROOT_DIR+'/static/delegate_info/'+committee+'.json') as com_file:
+            country_id[committee] = []
+
+            com_json = json.load(com_file)
+            for id in com_json.keys():
+                country_id[committee].append(
+                    {'id': id, 'country': com_json[id]['country']}
+                )
+    except Exception as e:
+        print(e)
+        break
+
+# print(country_id['unhrc'])
+
 
 class User(UserMixin, db.Model):
     # primary keys are required by SQLAlchemy
@@ -48,21 +84,21 @@ class User(UserMixin, db.Model):
 
 db.create_all(app=app)
 
-try:
-    new_user = User(
-        id="ADMIN432",
-        email="maheshbharadwaj134511819124129@cse.ssn.edu.in",
-        name="Pritham",
-        password=generate_password_hash("admin@ssn", method="sha256"),
-    )
+# try:
+#     new_user = User(
+#         id="ADMIN432",
+#         email="maheshbharadwaj134511819124129@cse.ssn.edu.in",
+#         name="Pritham",
+#         password=generate_password_hash("admin@ssn", method="sha256"),
+#     )
 
-    with app.app_context():
-        # add the new user to the database
-        db.session.add(new_user)
-        db.session.commit()
-        print("added user")
-except Exception as e:
-    print(e)
+#     with app.app_context():
+#         # add the new user to the database
+#         db.session.add(new_user)
+#         db.session.commit()
+#         print("added user")
+# except Exception as e:
+#     print(e)
 
 
 @login_manager.user_loader
@@ -102,12 +138,12 @@ def login_post():
 def dashboard():
     # need to read how many sent messages there are.
 
-    recv_json = os.path.join('messages/pogchamps/recv.json')
-    sent_json = os.path.join('messages/pogchamps/sent.json')
-    recv_file = open(recv_json)
-    sent_file = open(sent_json)
-    recv = json.load(recv_file)
-    sent = json.load(sent_file)
+    # recv_json = os.path.join('messages/pogchamps/recv.json')
+    # sent_json = os.path.join('messages/pogchamps/sent.json')
+    # recv_file = open(recv_json)
+    # sent_file = open(sent_json)
+    # recv = json.load(recv_file)
+    # sent = json.load(sent_file)
 
     # print(recv)
     # print(sent)
@@ -118,36 +154,61 @@ def dashboard():
     now = datetime.now()
 
     timestamp = datetime.timestamp(now)
-    
+
     bruh_object = {"message": "Hello there, fellow delegate!"}
 
     # print(bruh_object)
-    with open('messages/pogchamps/recv.json', 'r') as openfile:
-        json_object = json.load(openfile)
-        
-    json_object[timestamp] = bruh_object
-    print(json_object) 
-    print(type(json_object)) 
+    # with open('messages/pogchamps/recv.json', 'r') as openfile:
+    #     json_object = json.load(openfile)
 
-    json_object = json.dumps(json_object)
-    print(json_object)
+    # json_object[timestamp] = bruh_object
+    # print(json_object)
+    # print(type(json_object))
 
-    with open("messages/pogchamps/recv.json", "w") as outfile: 
-        outfile.write(json_object)
+    # json_object = json.dumps(json_object)
+    # print(json_object)
 
-    return render_template("dashboard.html", name=current_user.name, recv_length = len(recv), sent_length = len(sent))
+    # # with open("messages/pogchamps/recv.json", "w") as outfile:
+    # #     outfile.write(json_object)
+
+    return render_template("dashboard.html", name=current_user.name, recv_length=1, sent_length=1)
 
 
 @app.route('/send-delegate', methods=['GET', 'POST'])
 @login_required
 def send_delegate():
     if request.method == 'GET':
-        return render_template("delegate-message.html")
-    elif request.method == 'POST':
-        print(request.form)
-        return render_template("dashboard.html")
+        return render_template("delegate-message.html", mapper=country_id[get_committee(current_user.id)])
 
-    return redirect(url_for('dashboard'))
+    form = request.form
+    recv_delegate_id, recv_delegate_country = tuple(
+        form['recv-selected'].split(';'))
+    send_delegate_id, send_delegate_country = current_user.id, current_user.country
+    message = form['chit-message']
+    to_eb = True if form['to-eb-check'] == 'yes' else False
+    message_obj = {
+        'send-del-id': send_delegate_id,
+        'send-del-country': send_delegate_country,
+        'recv-del-id': recv_delegate_id,
+        'recv-del-country': recv_delegate_country,
+        'message': message,
+        'to-eb': to_eb
+    }
+    send_json_path = ROOT_DIR + \
+        f"/messages/{send_delegate_id[:2]}/{send_delegate_id[2:]}/sent.json"
+    recv_json_path = ROOT_DIR + \
+        f"/messages/{recv_delegate_id[:2]}/{recv_delegate_id[2:]}/recv.json"
+    with open(send_json_path, 'r') as sender_file:
+        data = json.load(sender_file)
+        data.append(message_obj)
+    with open(send_json_path, 'w') as sender_file:
+        json.dump(data, sender_file, indent=2)
+    with open(recv_json_path, 'r') as receiver_file:
+        data = json.load(receiver_file)
+        data.append(message_obj)
+    with open(recv_json_path, 'w') as receiver_file:
+        json.dump(data, receiver_file, indent=2)
+    return redirect("dashboard")
 
 
 @app.route('/send-eb', methods=['GET', 'POST'])
@@ -157,6 +218,26 @@ def send_eb():
         return render_template("eb-message.html")
 
     return redirect(url_for('dashboard'))
+
+
+@app.route('/sent-messages')
+@login_required
+def get_sent_message():
+    regid = current_user.id
+    com = regid[:2]
+    folder = regid[2:]
+
+    return send_file(ROOT_DIR+'/messages/'+com+'/'+folder+'/sent.json')
+
+
+@app.route('/recv-messages')
+@login_required
+def get_recv_message():
+    regid = current_user.id
+    com = regid[:2]
+    folder = regid[2:]
+
+    return send_file(ROOT_DIR+'/messages/'+com+'/'+folder+'/recv.json')
 
 
 if __name__ == "__main__":

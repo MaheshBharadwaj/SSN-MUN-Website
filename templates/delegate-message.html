@@ -52,11 +52,11 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">account_circle</i>
-                        <select>
-                            <option value="" selected>Choose your option</option>
-                            <option value="1">Option 1</option>
-                            <option value="2">Option 2</option>
-                            <option value="3">Option 3</option>
+                        <select name='recv-selected' searchable='List of options' id="xxxx" id="delegate-drop-down">
+                            <option value="null" selected>Choose the delegate</option>
+                            {% for item in mapper %}
+                                <option value="{{item.id}};{{item.country}}">{{item.country}}</option>
+                            {% endfor %}
                          </select>
                         <label class='form-label'>Receiver</label>
                     </div>
@@ -64,7 +64,7 @@
 
                         <div class="input-field col s12">
                             <label>
-                                <input type="checkbox" class="filled-in"  />
+                                <input type="checkbox" class="filled-in" name="to-eb-check" />
                                 <span>Send message via EB</span>
                             </label>
                         </div>
@@ -74,7 +74,7 @@
 
                         <div class="input-field col s12">
                             <i class="material-icons prefix">mode_edit</i>
-                            <textarea id="icon_prefix2" name="chit_message" class="materialize-textarea"></textarea>
+                            <textarea id="icon_prefix2" name="chit-message" class="materialize-textarea"></textarea autocomplete="off">
                             <label for="icon_prefix2">Compose Message</label>
                         </div>
                     </div>
@@ -93,6 +93,7 @@
 
 
     </div>
+    <script src="{{url_for('static', filename='js/search.js')}}"></script>
 </body>
 
 </html>
