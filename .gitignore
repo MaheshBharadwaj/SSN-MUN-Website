@@ -1,6 +1,9 @@
 # Ignore database
 db.sqlite
 
+#ENV
+myenv/
+
 # Created by https://www.toptal.com/developers/gitignore/api/flask,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=flask,visualstudiocode
 

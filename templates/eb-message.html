@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delegate Messaging</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/dashboard.css')}}">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/e979b53514.js" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $('select').formSelect();
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <nav class="nav-extended navbar">
+            <div class="nav-wrapper">
+                <!-- <h3 style="margin: 1% 0 0" class="brand-logo username">Welcome, {{current_user.name}}!</h3> -->
+                <div class="brand-logo center">
+                    <div class="brand-title">SSNMUN2021
+                        <span class="brand-sub-title">E-Chit APP</span>
+                    </div>
+
+                </div>
+                <!-- <i class="fa fa-comment-o" aria-hidden="true"></i> E-Chit App -->
+            </div>
+
+            <!-- <a href="#" class="brand-logo right hide-on-med-and-down"><img height=80px -->
+            <!-- src="{{url_for('static', filename='images/alt-colourlogo_withdate_cropped.png')}}"></a> -->
+        </nav>
+        <header class="header-banner">
+            EXECUTIVE BOARD MESSAGING
+        </header>
+        <div class='message-form'>
+            <form action="/send-delegate" method="POST">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input disabled value="Executive Board" id="disabled" type="text" class="validate">
+                        <label for="disabled">Recepient</label>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">mode_edit</i>
+                        <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                        <label for="icon_prefix2">Compose Message</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <button class="btn-large waves-effect waves-light" type="submit" name="action">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+                    <a class="btn-large waves-effect waves-light cancel" href="/dashboard">Cancel
+                            <i class="material-icons right">cancel</i>
+                        </a>
+                </div>
+        </div>
+        </form>
+    </div>
+
+
+    </div>
+</body>
+
+</html>

@@ -4,12 +4,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/dashboard.css')}}">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/e979b53514.js" crossorigin="anonymous"></script>
+
+    <title>{{ current_user.name}}'s dashboard</title>
 </head>
 
 <body>
-    <h1>Welcome, {{current_user.name}}!</h1>
-    This is your dashboard where you view all your messages
+
+    <script>
+        $(document).ready(function() {
+            $('.tabs').tabs();
+            $('.fixed-action-btn').floatingActionButton();
+            $(document).ready(function() {
+                $('.collapsible').collapsible();
+            });
+            $('.tooltipped').tooltip();
+            $('.tap-target').tapTarget();
+            $('.tap-target').tapTarget('open');
+            setTimeout(
+                function() {
+                    $('.tap-target').tapTarget('close');
+
+                }, 5000);
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.fixed-action-btn');
+            var instances = M.FloatingActionButton.init(elems, {
+                direction: 'left'
+            });
+        });
+    </script>
+
+    <div class="container-fluid">
+
+        <nav class="nav-extended navbar">
+            <div class="nav-wrapper">
+                <!-- <h3 style="margin: 1% 0 0" class="brand-logo username">Welcome, {{current_user.name}}!</h3> -->
+                <div class="brand-logo center">
+                    <div class="brand-title">SSNMUN2021
+                        <span class="brand-sub-title">E-Chit APP</span>
+                    </div>
+
+                </div>
+                <!-- <i class="fa fa-comment-o" aria-hidden="true"></i> E-Chit App -->
+            </div>
+
+            <!-- <a href="#" class="brand-logo right hide-on-med-and-down"><img height=80px -->
+            <!-- src="{{url_for('static', filename='images/alt-colourlogo_withdate_cropped.png')}}"></a> -->
+    </div>
+    </nav>
+    <header class="header-banner">
+        Welcome, {{ current_user.name }}
+    </header>
+    <ul class="tabs nav-tabs">
+        <li class="tab"><a href="#sent">SENT</a></li>
+        <li class="tab"><a href="#received">RECEIVED</a></li>
+        <li class="tab"><a href="#eb">TO / FROM EB</a></li>
+    </ul>
+
+    <div id="sent" class="col s12 chat-container">
+        <ul class="collapsible">
+            <li>
+                <div class="collapsible-header"><i class="material-icons">send</i>First</div>
+                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="material-icons">send</i>Second</div>
+                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="material-icons">send</i>Third</div>
+                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+        </ul>
+    </div>
+    <div id="received" class="col s12 chat-container">
+        <ul class="collapsible">
+            <li>
+                <div class="collapsible-header"><i class="material-icons">mail</i>First</div>
+                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="material-icons">mail</i>Second</div>
+                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="material-icons">mail</i>Third</div>
+                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+        </ul>
+    </div>
+    <div id="eb" class="col s12 chat-container">
+        <ul class="collapsible">
+            <li>
+                <div class="collapsible-header"><i class="material-icons">label_important</i>First</div>
+                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="material-icons">label_important</i>Second</div>
+                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="material-icons">label_important</i>Third</div>
+                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- <div class="tap-target" data-target="compose-menu">
+            <div class="tap-target-content">
+                <h5>Compose message</h5>
+                <p>Click here and select either delegate or EB as option to send the message.</p>
+            </div>
+        </div> -->
+
+    <div title="Compose" id="compose-menu" class="fixed-action-btn">
+        <a class="btn-floating btn-large compose">
+            <i class="fas fa-pen"></i>
+        </a>
+        <ul>
+            <li style="margin: 0 10px"><a href="/send-delegate" title="Delegate" class="btn-floating btn-large sub-compose tooltipped" data-position="top" data-tooltip="To Delegate"><i class="fas fa-user-alt"></i></a></li>
+            <li style="margin: 0 10px">
+                <a href="/send-eb" title="Executive Board" class="btn-floating btn-large sub-compose tooltipped" data-position="top" data-tooltip="To EB"><i class="fas fa-gavel"></i></a>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    </div>
+
+
 </body>
 
 </html>

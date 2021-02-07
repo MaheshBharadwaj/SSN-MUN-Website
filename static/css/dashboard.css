@@ -1,0 +1,141 @@
+:root {
+    --dark: #07090a;
+    --primary-dark: #1b262c;
+    --primary: #225672;
+}
+
+body {
+    background-color: var(--primary-dark);
+}
+
+.navbar {
+    background-color: var(--dark);
+    padding: 0 2% 1%;
+}
+
+nav .brand-logo {
+    letter-spacing: 1px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.nav-tabs {
+    background-color: var(--primary-dark);
+    color: white;
+    padding: 0 120px !important;
+}
+
+.tabs .tab a.active {
+    color: ivory;
+}
+
+.tabs .tab a {
+    color: white;
+}
+
+.tabs .tab a:hover {
+    color: aquamarine;
+}
+
+.fixed-action-btn {
+    right: 70px;
+    bottom: 70px;
+}
+
+nav .brand-logo i {
+    float: initial;
+    margin-right: 0;
+}
+
+.brand-title {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+
+.brand-sub-title {
+    font-size: .8em;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+}
+
+.header-banner {
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 36px;
+    color: #EEE;
+}
+
+.btn-floating.btn-large.compose {
+    background-color: var(--dark);
+}
+
+.btn-floating.btn-large.sub-compose {
+    background-color: var(--dark);
+}
+
+.chat-container {
+    margin: 0 100px;
+    padding: 0 20px;
+}
+
+.collapsible {
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+.collapsible .collapsible-body {
+    background-color: white;
+    color: black;
+}
+
+.message-form {
+    background-color: #EEE;
+    margin: 20px 100px;
+    padding: 20px;
+}
+
+.btn,
+.btn-large {
+    background-color: var(--primary);
+}
+
+.btn-large:hover.cancel {
+    background-color: red;
+}
+
+.form-label {
+    /* color: whitesmoke !important; */
+}
+
+@media only screen and (max-width: 992px) {
+    .header-banner {
+        font-size: 24px;
+    }
+    nav .brand-logo.username {
+        top: 30%;
+        left: 20%;
+        font-size: 1.3em;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+    .fixed-action-btn {
+        bottom: 35px;
+        right: 35px;
+    }
+    .chat-container {
+        margin: 0 10px;
+        padding: 0 10px;
+    }
+    .nav-tabs {
+        padding: 0 20px !important;
+    }
+    .brand-sub-title {
+        display: none;
+    }
+    .message-form {
+        margin: 50px 20px;
+        padding: 10px;
+    }
+}

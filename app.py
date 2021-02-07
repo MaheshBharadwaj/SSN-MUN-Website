@@ -87,5 +87,23 @@ def dashboard():
     return render_template("dashboard.html", name=current_user.name)
 
 
+@app.route('/send-delegate', methods=['GET', 'POST'])
+@login_required
+def send_delegate():
+    if request.method == 'GET':
+        return render_template("delegate-message.html")
+
+    return redirect(url_for('dashboard'))
+
+
+@app.route('/send-eb', methods=['GET', 'POST'])
+@login_required
+def send_eb():
+    if request.method == 'GET':
+        return render_template("eb-message.html")
+
+    return redirect(url_for('dashboard'))
+
+
 if __name__ == "__main__":
     app.run(debug=True)
