@@ -1,5 +1,7 @@
 import hashlib
 import os
+import json
+from datetime import datetime
 
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
@@ -13,6 +15,13 @@ ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 app = Flask(__name__, static_folder=ROOT_DIR + "/static/")
 app.config["SECRET_KEY"] = "9OLWxND4o83j4K4iuopO"
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db.sqlite"
+
+# format for JSON message object
+# messageid {
+#     reciever or sender:
+#     message: content
+# }
+
 
 db = SQLAlchemy()
 db.init_app(app)
@@ -84,7 +93,42 @@ def login_post():
 @app.route("/dashboard")
 @login_required
 def dashboard():
-    return render_template("dashboard.html", name=current_user.name)
+    # need to read how many sent messages there are.
+
+    recv_json = os.path.join('messages/pogchamps/recv.json')
+    sent_json = os.path.join('messages/pogchamps/sent.json')
+    recv_file = open(recv_json)
+    sent_file = open(sent_json)
+    recv = json.load(recv_file)
+    sent = json.load(sent_file)
+
+    # print(recv)
+    # print(sent)
+
+    # recv_file.close()
+    # sent_file.close()
+
+    # now = datetime.now()
+
+    # timestamp = datetime.timestamp(now)
+    
+    # bruh_object = {"message": "Hello there, fellow delegate!"}
+
+    # # print(bruh_object)
+    # with open('messages/pogchamps/recv.json', 'r') as openfile:
+    #     json_object = json.load(openfile)
+        
+    # json_object[timestamp] = bruh_object
+    # print(json_object) 
+    # print(type(json_object)) 
+
+    # json_object = json.dumps(json_object)
+    # print(json_object)
+
+    # with open("messages/pogchamps/recv.json", "w") as outfile: 
+    #     outfile.write(json_object)
+
+    return render_template("dashboard.html", name=current_user.name, recv_length = len(recv), sent_length = len(sent))
 
 
 @app.route('/send-delegate', methods=['GET', 'POST'])
@@ -92,6 +136,9 @@ def dashboard():
 def send_delegate():
     if request.method == 'GET':
         return render_template("delegate-message.html")
+    elif request.method == 'POST':
+        print(request.form)
+        return render_template("dashboard.html")
 
     return redirect(url_for('dashboard'))
 

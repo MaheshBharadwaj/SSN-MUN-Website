@@ -2,6 +2,7 @@ from __future__ import print_function
 import pickle
 import hashlib
 import os.path
+import random
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
@@ -11,6 +12,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 conn = sql.connect("db.sqlite")
 
+random.seed(41)
+
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 
@@ -19,7 +22,7 @@ SAMPLE_SPREADSHEET_ID = '1I6w3WamoWtfrtYXEr59UDYnfAk7MIrAY6rEUD4sFsQE'
 SAMPLE_RANGE_NAME = 'UNHRC'
 
 def generate_otp(email):
-    return(generate_password_hash(email))
+    return(hashlib.sha224(bytes(email, 'utf-8')).hexdigest()[-5:])
 
 def main():
     """Shows basic usage of the Sheets API.
@@ -51,7 +54,7 @@ def main():
     result = sheet.values().get(spreadsheetId=SAMPLE_SPREADSHEET_ID,
                                 range=SAMPLE_RANGE_NAME).execute()
     values = result.get('values', [])
-    values = values[1:]
+    values = values[1:5]
 
     if not values:
         print('No data found.')
