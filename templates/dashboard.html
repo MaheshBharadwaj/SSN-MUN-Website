@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -47,6 +48,8 @@
                 direction: 'left'
             });
         });
+    </script>
+    <script src="{{url_for('static', filename='js/load.js')}}">
     </script>
 
     <div class="container-fluid">
@@ -144,35 +147,17 @@
             </li>
         </ul>
     </div>
-    <div id='test-div'>
-
-    </div>
-
     </div>
     <script>
-        fetch('/sent-messages')
-            .then(function(response) {
-                return response.json()
-            })
-            .then(function(myJson) {
-                console.log("the data is: " + myJson);
-                var ul = document.getElementById("sent-messages-collapsible");
-                myJson.forEach((message) => {
-                    console.log(message)
-                        // message = JSON.parse(message);
-                    console.log("Message is" + message);
-                    var li = document.createElement("li");
-                    var message_header = document.createElement("div");
-                    message_header.className = "collapsible-header"
-                    message_header.innerHTML = '<i class="material-icons" >send</i>' + "To: " + message['recv-del-country'];
-                    li.appendChild(message_header);
-                    var message_content = document.createElement("div");
-                    message_content.className = "collapsible-body"
-                    message_content.textContent = message['message']
-                    li.appendChild(message_content);
-                    ul.appendChild(li);
-                });
-            });
+        $(document).ready(function() {
+            setInterval(function() {
+                cache_clear()
+            }, 30000);
+        });
+
+        function cache_clear() {
+            window.location.reload(true); // window.location.reloa}(); use this if you do not remove cache 
+        }
     </script>
 
 </body>

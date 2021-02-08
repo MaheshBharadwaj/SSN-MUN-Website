@@ -185,7 +185,10 @@ def send_delegate():
         form['recv-selected'].split(';'))
     send_delegate_id, send_delegate_country = current_user.id, current_user.country
     message = form['chit-message']
-    to_eb = True if form['to-eb-check'] == 'yes' else False
+    try:
+        to_eb = True if form['to-eb-check'] == 'on' else False
+    except:
+        to_eb = False
     message_obj = {
         'send-del-id': send_delegate_id,
         'send-del-country': send_delegate_country,
