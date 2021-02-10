@@ -20,7 +20,9 @@ SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 
 # The ID and range of a sample spreadsheet.
 SAMPLE_SPREADSHEET_ID = '1I6w3WamoWtfrtYXEr59UDYnfAk7MIrAY6rEUD4sFsQE'
-SAMPLE_RANGE_NAME = 'UNHRC'
+COMMITTEE_ABBREVIATIONS = {'DISEC': 'DI', 'UNSC': 'SC', 'ECOFIN': 'EF', 'UNHRC': 'HR'}
+ALL_COMMITTEES = ['DISEC', 'UNSC', 'ECOFIN', 'UNHRC']
+SAMPLE_RANGE_NAME = ALL_COMMITTEES[0]
 
 def generate_otp(email):
     return(str(int(hashlib.sha224(bytes(email, 'utf-8')).hexdigest()[-5:], 16)))
@@ -50,48 +52,53 @@ def main():
 
     service = build('sheets', 'v4', credentials=creds)
 
-    # Call the Sheets API
-    sheet = service.spreadsheets()
-    result = sheet.values().get(spreadsheetId=SAMPLE_SPREADSHEET_ID,
-                                range=SAMPLE_RANGE_NAME).execute()
-    values = result.get('values', [])
-    values = values[1:]
+    for SAMPLE_RANGE_NAME in ALL_COMMITTEES:
 
-    delegates = {}
+        # Call the Sheets API
+        sheet = service.spreadsheets()
+        result = sheet.values().get(spreadsheetId=SAMPLE_SPREADSHEET_ID,
+                                    range=SAMPLE_RANGE_NAME).execute()
+        values = result.get('values', [])
+        values = values[1:]
 
-    if not values:
-        print('No data found.')
-    else:
-        for row in values:
-            try:
-                # Print columns A and E, which correspond to indices 0 and 4.
-                
-                if(row[6]):
-                    delegate = {"country": row[0].strip(), "name": row[1].strip()}
-                    delegates[row[6]] = delegate
-
-                    with sql.connect("db.sqlite") as con:
-                        cur = con.cursor()
-                        cur.execute("INSERT INTO USER (ID, NAME, EMAIL, PASSWORD, COUNTRY, COMMITTEE) \
-                        VALUES (?,?,?,?,?,?)",(row[6], delegate['name'], row[2].strip(), generate_otp(row[6]), delegate['country'], 'UNHRC'))
-                        
-                        con.commit()
-
+        if not values:
+            print('No data found.')
+        else:
+            for row in values:
+                try:
+                    # Print columns A and E, which correspond to indices 0 and 4.
                     
-                    print('%s %s, %s, %s, %s' % (row[6], row[0].strip(), row[1].strip(), row[2].strip(), generate_otp(row[6])))
-                # generate_otp(row[1])
+                    if(row[5]):
+                        delegate = {"id": row[5].strip(), "name": row[1].strip(), "email": row[2].strip(), 
+                            "password": generate_otp(row[2].strip()), "country": row[0].strip(), "committee": SAMPLE_RANGE_NAME}
+
+                        with sql.connect("db.sqlite") as con:
+                            cur = con.cursor()
+                            cur.execute("INSERT INTO USER (ID, NAME, EMAIL, PASSWORD, COUNTRY, COMMITTEE) \
+                            VALUES (?,?,?,?,?,?)",(delegate['id'] ,delegate['name'] ,delegate['email'] ,delegate['password'] ,delegate['country'] ,delegate['committee']))
+                            
+                            con.commit()
+
+                        
+                        # print('%s, %s, %s, %s, %s, %s' % (delegate['id'] ,delegate['name'] ,delegate['email'] ,delegate['password'] ,delegate['country'] ,delegate['committee']))
+                    # generate_otp(row[1])
+                    
+                except Exception as e:
+                    print(e)
+
+            delegate = {"id": f"{COMMITTEE_ABBREVIATIONS[SAMPLE_RANGE_NAME]}EB", 
+                "name": "EB", 
+                "email": f"EB{COMMITTEE_ABBREVIATIONS[SAMPLE_RANGE_NAME]}@ssn.edu.in", 
+                "country": "No Country", 
+                "password": generate_otp(f"EB{COMMITTEE_ABBREVIATIONS[SAMPLE_RANGE_NAME]}@ssn.edu.in"),
+                "committee": SAMPLE_RANGE_NAME}
+
+            with sql.connect("db.sqlite") as con:
+                cur = con.cursor()
+                cur.execute("INSERT INTO USER (ID, NAME, EMAIL, PASSWORD, COUNTRY, COMMITTEE) \
+                VALUES (?,?,?,?,?,?)",(delegate['id'] ,delegate['name'] ,delegate['email'] ,delegate['password'] ,delegate['country'] ,delegate['committee']))
                 
-            except Exception as e:
-                print(e)
-
-    for delegate in delegates:
-        print(delegate)
-
-    json_object = json.dumps(delegates)
-
-    with open("static/delegate_info/unhrc.json", "w") as outfile: 
-        outfile.write(json_object)
-
+                con.commit()
 
 
 if __name__ == '__main__':

@@ -11,8 +11,12 @@ for committee in HR DI SC EF
 do
     mkdir $messages_dir/$committee;
     mkdir $messages_dir/$committee/EB;
-    mkdir $messages_dir/$committee/EB/sent;
-    mkdir $messages_dir/$committee/EB/recv;
+    # mkdir $messages_dir/$committee/EB/sent;
+    # mkdir $messages_dir/$committee/EB/recv;
+    # touch $messages_dir/$committee/EB/sent.json
+    # touch $messages_dir/$committee/EB/recv.json
+    echo "[]" | cat > $messages_dir/$committee/EB/sent.json
+    echo "[]" | cat > $messages_dir/$committee/EB/recv.json
     for number in {000..200}
     do
         mkdir $messages_dir/$committee/$number/

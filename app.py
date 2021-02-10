@@ -65,6 +65,9 @@ for committee in committees:
                 country_id[committee].append(
                     {'id': id, 'country': com_json[id]['country']}
                 )
+
+        country_id[committee].sort(key = lambda x: x['country'])
+
     except Exception as e:
         print(e)
         break
@@ -177,9 +180,11 @@ def dashboard():
 @app.route('/send-delegate', methods=['GET', 'POST'])
 @login_required
 def send_delegate():
+    # checking and displaying approriately for GET request
     if request.method == 'GET':
         return render_template("delegate-message.html", mapper=country_id[get_committee(current_user.id)])
 
+    # getting all info from the submitted form
     form = request.form
     recv_delegate_id, recv_delegate_country = tuple(
         form['recv-selected'].split(';'))
@@ -189,6 +194,8 @@ def send_delegate():
         to_eb = True if form['to-eb-check'] == 'on' else False
     except:
         to_eb = False
+
+    # the message object itself
     message_obj = {
         'send-del-id': send_delegate_id,
         'send-del-country': send_delegate_country,
@@ -197,6 +204,20 @@ def send_delegate():
         'message': message,
         'to-eb': to_eb
     }
+
+    # writing to eb file if to-eb is true
+    if message_obj['to-eb']:
+
+        send_eb_json_path = ROOT_DIR + \
+        f"/messages/{send_delegate_id[:2]}/EB/recv.json"
+
+        with open(send_eb_json_path, 'r') as sender_file:
+            data = json.load(sender_file)
+            data.append(message_obj)
+
+        with open(send_eb_json_path, 'w') as sender_file:
+            json.dump(data, sender_file, indent=2)
+
     send_json_path = ROOT_DIR + \
         f"/messages/{send_delegate_id[:2]}/{send_delegate_id[2:]}/sent.json"
     recv_json_path = ROOT_DIR + \

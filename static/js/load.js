@@ -4,7 +4,7 @@ function load_sent_messages(EBCheck, location) {
             return response.json()
         })
         .then(function(myJson) {
-            // console.log("the data is: " + myJson);
+            console.log("the data is: " + myJson);
             var ul = document.getElementById(location);
             myJson.forEach((message) => {
                 if (message['to-eb'] === EBCheck) {
