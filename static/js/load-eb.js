@@ -1,13 +1,11 @@
 function load_sent_messages(location) {
-    fetch('/sent-messages')
+    fetch('/sent-messages/' + Date.now())
         .then(function(response) {
             return response.json()
         })
         .then(function(myJson) {
-            console.log("the datadata is: " + myJson);
             var ul = document.getElementById(location);
             myJson.forEach((message) => {
-                console.log("hello:" + message['send-del-id'].slice(2));
                 if (message['send-del-id'].slice(2) !== 'EB') {
                     return;
                 }
@@ -29,7 +27,7 @@ function load_sent_messages(location) {
 
 
 function load_recv_messages(location) {
-    fetch('/recv-messages')
+    fetch('/recv-messages/' + Date.now())
         .then(function(response) {
             return response.json()
         })
@@ -58,7 +56,7 @@ function load_recv_messages(location) {
 }
 
 function load_eb_messages(location) {
-    fetch('/recv-messages')
+    fetch('/recv-messages/' + Date.now())
         .then(function(response) {
             return response.json()
         })
@@ -75,8 +73,8 @@ function load_eb_messages(location) {
                 var li = document.createElement("li");
                 var message_header = document.createElement("div");
                 message_header.className = "collapsible-header"
-                message_header.innerHTML = '<i class="material-icons" >label_important</i>' 
-                    + "From: " + message['send-del-country'] + "\nTo: " + message['recv-del-country'];
+                message_header.innerHTML = '<i class="material-icons" >label_important</i>' +
+                    "From: " + message['send-del-country'] + "\nTo: " + message['recv-del-country'];
                 li.appendChild(message_header);
                 var message_content = document.createElement("div");
                 message_content.className = "collapsible-body"

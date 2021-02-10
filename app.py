@@ -1,8 +1,7 @@
 import hashlib
 import os
 import json
-from datetime import datetime
-
+import time
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
@@ -66,7 +65,7 @@ for committee in committees:
                     {'id': id, 'country': com_json[id]['country']}
                 )
 
-        country_id[committee].sort(key = lambda x: x['country'])
+        country_id[committee].sort(key=lambda x: x['country'])
 
     except Exception as e:
         print(e)
@@ -154,9 +153,9 @@ def dashboard():
     # recv_file.close()
     # sent_file.close()
 
-    now = datetime.now()
+    # now = datetime.now()
 
-    timestamp = datetime.timestamp(now)
+    # timestamp = datetime.timestamp(now)
 
     bruh_object = {"message": "Hello there, fellow delegate!"}
 
@@ -184,7 +183,7 @@ def dashboard():
 def send_delegate():
     # checking and displaying approriately for GET request
     if request.method == 'GET':
-        return render_template("delegate-message.html", mapper=country_id[get_committee(current_user.id)], eb_flag = (current_user.id[2:] == 'EB'))
+        return render_template("delegate-message.html", mapper=country_id[get_committee(current_user.id)], eb_flag=(current_user.id[2:] == 'EB'))
 
     # getting all info from the submitted form
     form = request.form
@@ -204,6 +203,7 @@ def send_delegate():
         'recv-del-id': recv_delegate_id,
         'recv-del-country': recv_delegate_country,
         'message': message,
+        'timestamp': time.time(),
         'to-eb': to_eb
     }
 
@@ -211,7 +211,7 @@ def send_delegate():
     if message_obj['to-eb']:
 
         send_eb_json_path = ROOT_DIR + \
-        f"/messages/{send_delegate_id[:2]}/EB/recv.json"
+            f"/messages/{send_delegate_id[:2]}/EB/recv.json"
 
         with open(send_eb_json_path, 'r') as sender_file:
             data = json.load(sender_file)
@@ -248,7 +248,7 @@ def send_eb():
     recv_delegate_id, recv_delegate_country = f'{current_user.id[:2]}EB', "Executive Board"
     send_delegate_id, send_delegate_country = current_user.id, current_user.country
     message = form['chit-message']
-    to_eb = False 
+    to_eb = False
 
     # the message object itself
     message_obj = {
@@ -256,6 +256,7 @@ def send_eb():
         'send-del-country': send_delegate_country,
         'recv-del-id': recv_delegate_id,
         'recv-del-country': recv_delegate_country,
+        'timestamp': time.time(),
         'message': message,
         'to-eb': to_eb
     }
@@ -280,9 +281,9 @@ def send_eb():
     return redirect(url_for('dashboard'))
 
 
-@app.route('/sent-messages')
+@app.route('/sent-messages/<garbage>')
 @login_required
-def get_sent_message():
+def get_sent_message(garbage):
     regid = current_user.id
     com = regid[:2]
     folder = regid[2:]
@@ -290,9 +291,9 @@ def get_sent_message():
     return send_file(ROOT_DIR+'/messages/'+com+'/'+folder+'/sent.json')
 
 
-@app.route('/recv-messages')
+@app.route('/recv-messages/<garbage>')
 @login_required
-def get_recv_message():
+def get_recv_message(garbage):
     regid = current_user.id
     com = regid[:2]
     folder = regid[2:]

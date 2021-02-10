@@ -1,11 +1,14 @@
 function load_sent_messages(EBCheck, location) {
-    fetch('/sent-messages')
+    fetch('/sent-messages/' + Date.now())
         .then(function(response) {
             return response.json()
         })
         .then(function(myJson) {
             console.log("the data is: " + myJson);
             var ul = document.getElementById(location);
+            myJson.sort(function(a, b) {
+                return b['timestamp'] - a['timestamp'];
+            });
             myJson.forEach((message) => {
                 if (message['to-eb'] === EBCheck) {
                     return;
@@ -16,7 +19,11 @@ function load_sent_messages(EBCheck, location) {
                 var li = document.createElement("li");
                 var message_header = document.createElement("div");
                 message_header.className = "collapsible-header"
-                message_header.innerHTML = '<i class="material-icons" >send</i>' + "To: " + message['recv-del-country'];
+                if (message['recv-del-id'].slice(2) == 'EB') {
+                    message_header.innerHTML = '<i class="material-icons" >mail</i>' + "To: EB" + '<span class="new badge red" data-badge-caption="">EB</span>';
+                } else {
+                    message_header.innerHTML = '<i class="material-icons" >mail</i>' + "To: " + message['recv-del-country'];
+                }
                 li.appendChild(message_header);
                 var message_content = document.createElement("div");
                 message_content.className = "collapsible-body"
@@ -29,13 +36,16 @@ function load_sent_messages(EBCheck, location) {
 
 
 function load_recv_messages(EBCheck, location) {
-    fetch('/recv-messages')
+    fetch('/recv-messages/' + Date.now())
         .then(function(response) {
             return response.json()
         })
         .then(function(myJson) {
             // console.log("the data is: " + myJson);
             var ul = document.getElementById(location);
+            myJson.sort(function(a, b) {
+                return b['timestamp'] - a['timestamp'];
+            });
             myJson.forEach((message) => {
                 if (message['to-eb'] === EBCheck) {
                     return;
@@ -46,9 +56,9 @@ function load_recv_messages(EBCheck, location) {
                 var li = document.createElement("li");
                 var message_header = document.createElement("div");
                 message_header.className = "collapsible-header"
-                
-                if (message['send-del-id'].slice(2) == 'EB') {
 
+                if (message['send-del-id'].slice(2) == 'EB') {
+                    message_header.innerHTML = '<i class="material-icons" >mail</i>' + "From: EB" + '<span class="new badge red" data-badge-caption="">EB</span>';
                 } else {
                     message_header.innerHTML = '<i class="material-icons" >mail</i>' + "From: " + message['send-del-country'];
                 }
