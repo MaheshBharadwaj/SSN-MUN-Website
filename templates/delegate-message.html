@@ -60,6 +60,9 @@
                          </select>
                         <label class='form-label'>Receiver</label>
                     </div>
+
+                    {% if not eb_flag %}
+
                     <div class="row">
 
                         <div class="input-field col s12">
@@ -70,6 +73,9 @@
                         </div>
                     </div>
                     <br>
+
+                    {% endif %}
+
                     <div class="row">
 
                         <div class="input-field col s12">

@@ -49,7 +49,7 @@
             });
         });
     </script>
-    <script src="{{url_for('static', filename='js/load.js')}}">
+    <script src="{{url_for('static', filename='js/load-eb.js')}}">
     </script>
 
     <div class="container-fluid">
@@ -70,20 +70,20 @@
     </div>
     </nav>
     <header class="header-banner">
-        Welcome, {{ current_user.name }}<br> Delegate of {{ current_user.country }}, {{ current_user.committee }}<br>
+        Welcome, {{ current_user.name }}<br>{{ current_user.committee }}<br>
 
     </header>
     <ul class="tabs nav-tabs">
-        <li class="tab"><a href="#sent">SENT ({{ sent_length }})</a></li>
-        <li class="tab"><a href="#received">RECEIVED ({{ recv_length }})</a></li>
-        <li class="tab"><a href="#eb">THRU EB</a></li>
+        <li class="tab"><a href="#sent">SENT</a></li>
+        <li class="tab"><a href="#received">RECEIVED</a></li>
+        <li class="tab"><a href="#eb">THROUGH EB</a></li>
     </ul>
 
     <div id="sent" class="col s12 chat-container">
         <ul class="collapsible" id='sent-messages-collapsible'>
             <li>
                 <div class="collapsible-header"><i class="material-icons">info</i>From SSNMUN</div>
-                <div class="collapsible-body"><span>Click on the compose button and choose delegate or eb to send a message</span></div>
+                <div class="collapsible-body"><span>Click on the compose button and choose delegate to send a message</span></div>
             </li>
             <!-- <li>
                 <div class="collapsible-header"><i class="material-icons">send</i>Second</div>
@@ -98,8 +98,8 @@
     <div id="received" class="col s12 chat-container">
         <ul class="collapsible" id="received-messages-collapsible">
             <li>
-                <div class=" collapsible-header"><i class="material-icons ">info</i>SSNMUN<span class="new badge">EB</span></div>
-                <div class="collapsible-body"><span>All the messages that you receive from other delegates will be located here</span></div>
+                <div class=" collapsible-header "><i class="material-icons ">info</i>SSNMUN</div>
+                <div class="collapsible-body "><span>All the messages that you receive from other delegates will be located here.</span></div>
             </li>
             <!-- <li>
                 <div class="collapsible-header "><i class="material-icons ">mail</i>Second</div>
@@ -112,10 +112,10 @@
         </ul>
     </div>
     <div id="eb" class="col s12 chat-container ">
-        <ul class="collapsible" id="eb-messages-collapsible">
+        <ul class="collapsible" id="thru-messages-collapsible">
             <li>
                 <div class="collapsible-header "><i class="material-icons ">info</i>SSNMUN</div>
-                <div class="collapsible-body "><span>Messages sent to EB and from EB to you will be located here.</span></div>
+                <div class="collapsible-body "><span>Messages sent via EB will be stored here.</span></div>
             </li>
             <!-- <li>
                 <div class="collapsible-header "><i class="material-icons ">label_important</i>Second</div>
@@ -141,10 +141,10 @@
         </a>
         <ul>
             <li style="margin: 0 10px "><a href="/send-delegate " title="Delegate " class="btn-floating btn-large sub-compose tooltipped " data-position="top " data-tooltip="To Delegate "><i class="fas fa-user-alt "></i></a></li>
-            <li style="margin: 0 10px ">
+            <!-- <li style="margin: 0 10px ">
                 <a href="/send-eb " title="Executive Board " class="btn-floating btn-large sub-compose tooltipped " data-position="top " data-tooltip="To EB "><i class="fas fa-gavel "></i></a>
                 </a>
-            </li>
+            </li> -->
         </ul>
     </div>
     </div>

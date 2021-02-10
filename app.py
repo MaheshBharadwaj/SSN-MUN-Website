@@ -174,6 +174,8 @@ def dashboard():
     # # with open("messages/pogchamps/recv.json", "w") as outfile:
     # #     outfile.write(json_object)
 
+    if current_user.id[2:] == 'EB':
+        return render_template("eb-dashboard.html", name=current_user.name)
     return render_template("dashboard.html", name=current_user.name, recv_length=1, sent_length=1)
 
 
@@ -182,7 +184,7 @@ def dashboard():
 def send_delegate():
     # checking and displaying approriately for GET request
     if request.method == 'GET':
-        return render_template("delegate-message.html", mapper=country_id[get_committee(current_user.id)])
+        return render_template("delegate-message.html", mapper=country_id[get_committee(current_user.id)], eb_flag = (current_user.id[2:] == 'EB'))
 
     # getting all info from the submitted form
     form = request.form
@@ -240,6 +242,40 @@ def send_delegate():
 def send_eb():
     if request.method == 'GET':
         return render_template("eb-message.html")
+
+    # getting all info from the submitted form
+    form = request.form
+    recv_delegate_id, recv_delegate_country = f'{current_user.id[:2]}EB', "Executive Board"
+    send_delegate_id, send_delegate_country = current_user.id, current_user.country
+    message = form['chit-message']
+    to_eb = False 
+
+    # the message object itself
+    message_obj = {
+        'send-del-id': send_delegate_id,
+        'send-del-country': send_delegate_country,
+        'recv-del-id': recv_delegate_id,
+        'recv-del-country': recv_delegate_country,
+        'message': message,
+        'to-eb': to_eb
+    }
+
+    # writing to eb file if to-eb is true
+
+    send_json_path = ROOT_DIR + \
+        f"/messages/{send_delegate_id[:2]}/{send_delegate_id[2:]}/sent.json"
+    recv_json_path = ROOT_DIR + \
+        f"/messages/{recv_delegate_id[:2]}/{recv_delegate_id[2:]}/recv.json"
+    with open(send_json_path, 'r') as sender_file:
+        data = json.load(sender_file)
+        data.append(message_obj)
+    with open(send_json_path, 'w') as sender_file:
+        json.dump(data, sender_file, indent=2)
+    with open(recv_json_path, 'r') as receiver_file:
+        data = json.load(receiver_file)
+        data.append(message_obj)
+    with open(recv_json_path, 'w') as receiver_file:
+        json.dump(data, receiver_file, indent=2)
 
     return redirect(url_for('dashboard'))
 
