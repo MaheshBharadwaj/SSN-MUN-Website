@@ -175,7 +175,7 @@ def dashboard():
 
     if current_user.id[2:] == 'EB':
         return render_template("eb-dashboard.html", name=current_user.name)
-    return render_template("dashboard.html", name=current_user.name, recv_length=1, sent_length=1)
+    return render_template("dashboard.html", name=current_user.name)
 
 
 @app.route('/send-delegate', methods=['GET', 'POST'])

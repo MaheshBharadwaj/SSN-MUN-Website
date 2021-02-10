@@ -61,6 +61,8 @@ def main():
         values = result.get('values', [])
         values = values[1:]
 
+        delegates = {}
+
         if not values:
             print('No data found.')
         else:
@@ -72,13 +74,16 @@ def main():
                         delegate = {"id": row[5].strip(), "name": row[1].strip(), "email": row[2].strip(), 
                             "password": generate_otp(row[2].strip()), "country": row[0].strip(), "committee": SAMPLE_RANGE_NAME}
 
+                        delegate_info = {'country': delegate['country'], 'name': delegate['name']}
+
+                        delegates[delegate['id']] = delegate_info
+
                         with sql.connect("db.sqlite") as con:
                             cur = con.cursor()
                             cur.execute("INSERT INTO USER (ID, NAME, EMAIL, PASSWORD, COUNTRY, COMMITTEE) \
                             VALUES (?,?,?,?,?,?)",(delegate['id'] ,delegate['name'] ,delegate['email'] ,delegate['password'] ,delegate['country'] ,delegate['committee']))
                             
                             con.commit()
-
                         
                         # print('%s, %s, %s, %s, %s, %s' % (delegate['id'] ,delegate['name'] ,delegate['email'] ,delegate['password'] ,delegate['country'] ,delegate['committee']))
                     # generate_otp(row[1])
@@ -93,12 +98,21 @@ def main():
                 "password": generate_otp(f"EB{COMMITTEE_ABBREVIATIONS[SAMPLE_RANGE_NAME]}@ssn.edu.in"),
                 "committee": SAMPLE_RANGE_NAME}
 
-            with sql.connect("db.sqlite") as con:
-                cur = con.cursor()
-                cur.execute("INSERT INTO USER (ID, NAME, EMAIL, PASSWORD, COUNTRY, COMMITTEE) \
-                VALUES (?,?,?,?,?,?)",(delegate['id'] ,delegate['name'] ,delegate['email'] ,delegate['password'] ,delegate['country'] ,delegate['committee']))
-                
-                con.commit()
+            try:
+                with sql.connect("db.sqlite") as con:
+                    cur = con.cursor()
+                    cur.execute("INSERT INTO USER (ID, NAME, EMAIL, PASSWORD, COUNTRY, COMMITTEE) \
+                    VALUES (?,?,?,?,?,?)",(delegate['id'] ,delegate['name'] ,delegate['email'] ,delegate['password'] ,delegate['country'] ,delegate['committee']))
+                    
+                    con.commit()
+
+            except Exception as e:
+                print(e)
+
+            recv_json_path = "static/delegate_info/" + SAMPLE_RANGE_NAME.lower() + ".json" 
+
+            with open(recv_json_path, 'w') as receiver_file:
+                json.dump(delegates, receiver_file, indent=2)
 
 
 if __name__ == '__main__':

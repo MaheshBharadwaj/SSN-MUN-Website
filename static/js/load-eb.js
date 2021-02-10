@@ -5,6 +5,9 @@ function load_sent_messages(location) {
         })
         .then(function(myJson) {
             var ul = document.getElementById(location);
+            myJson.sort(function(a, b) {
+                return b['timestamp'] - a['timestamp'];
+            });
             myJson.forEach((message) => {
                 if (message['send-del-id'].slice(2) !== 'EB') {
                     return;
@@ -14,7 +17,11 @@ function load_sent_messages(location) {
                 var li = document.createElement("li");
                 var message_header = document.createElement("div");
                 message_header.className = "collapsible-header"
-                message_header.innerHTML = '<i class="material-icons" >send</i>' + "To: " + message['recv-del-country'];
+                var d = new Date(message['timestamp'] * 1000);
+                dateString = d.getHours() + ":" + d.getMinutes();
+                message_header.innerHTML = '<i class="material-icons" >sent</i>' + "To: " 
+                    + message['recv-del-country']
+                    + '<span class="badge" data-badge-caption="">' + dateString + '</span>';
                 li.appendChild(message_header);
                 var message_content = document.createElement("div");
                 message_content.className = "collapsible-body"
@@ -34,6 +41,9 @@ function load_recv_messages(location) {
         .then(function(myJson) {
             // console.log("the data is: " + myJson);
             var ul = document.getElementById(location);
+            myJson.sort(function(a, b) {
+                return b['timestamp'] - a['timestamp'];
+            });
             myJson.forEach((message) => {
                 if (message['recv-del-id'].slice(2) !== 'EB') {
                     return;
@@ -44,7 +54,11 @@ function load_recv_messages(location) {
                 var li = document.createElement("li");
                 var message_header = document.createElement("div");
                 message_header.className = "collapsible-header"
-                message_header.innerHTML = '<i class="material-icons" >mail</i>' + "From: " + message['send-del-country'];
+                var d = new Date(message['timestamp'] * 1000);
+                dateString = d.getHours() + ":" + d.getMinutes();
+                message_header.innerHTML = '<i class="material-icons" >mail</i>' + "From: " 
+                    + message['send-del-country']
+                    + '<span class="badge" data-badge-caption="">' + dateString + '</span>';
                 li.appendChild(message_header);
                 var message_content = document.createElement("div");
                 message_content.className = "collapsible-body"
@@ -63,6 +77,9 @@ function load_eb_messages(location) {
         .then(function(myJson) {
             // console.log("the data is: " + myJson);
             var ul = document.getElementById(location);
+            myJson.sort(function(a, b) {
+                return b['timestamp'] - a['timestamp'];
+            });
             myJson.forEach((message) => {
                 if (!message['to-eb']) {
                     return;
