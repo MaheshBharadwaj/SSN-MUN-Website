@@ -1,0 +1,57 @@
+{% extends "base.html" %}{% block page_css %}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/payments.css')}}"> {% endblock %} {%
+block content %}
+<div class="payment-container">
+    <div class="top text-center">
+        <h1>Pay to confirm your allotment</h1>
+    </div>
+    <div class="suffix-text">
+        <h2>
+            The payment portal for allotments is now open. All allotted delegates and reporters
+            are expected to make their payment soon or risk losing their allotment.
+            The delegate fees to be paid is <strong>500 INR.</strong>
+        </h2>
+    </div>
+    <div class="bottom">
+        <div class="left">
+            <h3 class="text-center">Instructions</h3>
+            <p>
+            <ol>
+                <li> Click the payment link and you will be redirected to the PayTM portal for payment. Alternatively,
+                    you can also scan the QR code. </li>
+                <li> Fill in your full name that you would like on your certificate, your email ID as well as your phone
+                    number. </li>
+                <li> Under MUN Registration Number - Fill in the unique number that has been allocated to you. </li>
+                <li> Under Name of Allotment - Fill in your committee followed by country ( e.g. DISEC USA, HRC Russia
+                    etc). Country is a MUST.</li>
+                <li> The amount of Rs. 500 should already be entered in its field. </li>
+                <li> Press proceed to complete your payment.</li>
+                <li> Once the payment is complete, Please do send a screenshot of the payment receipt to
+                    ssnmun.contact@gmail.com. If you have trouble finding the payment receipt on PayTM, you can find it
+                    in the My Orders section under the registration fee transaction. Submission of the payment receipt
+                    is mandatory as it will enable us to confirm your payment with our received list and is the final
+                    step in sealing your allotment. </li>
+                <li> In case of any queries, do feel free to contact ashwinballal00@gmail.com. </li>
+            </ol>
+            </p>
+        </div>
+        <div class="right">
+            <div class="right-top">
+                <h3>Scan the QR code to pay</h3>
+                <img src="{{url_for('static', filename='images/paytm.jpeg') }}" alt="QR Code for payment">
+            </div>
+            <hr class="hr-text" data-content="OR">
+            <div class="right-bottom">
+                <a href="https://paytm.com/education/Tamil%20Nadu/Chennai/SSN%20College%20of%20Engineering/SSN%20MUN?utm_source=web&utm_medium=smarturl&utm_campaign=feeweb&utm_term=fees"
+                    class="btn-hover-effect btn-hover-effect--effect-5">Pay on PayTM</a>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}{% block nav_active %}
+<script>
+    document.getElementById("payment-page").classList.add("active");
+</script>
+{% endblock %}

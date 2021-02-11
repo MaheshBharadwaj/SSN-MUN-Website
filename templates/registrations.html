@@ -1,0 +1,42 @@
+{% extends "base.html" %} {% block page_css %}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/registration.css')}}"> {% endblock %} {% block content %}
+
+<div class="reg-container container-fluid">
+    <div class="reg-heading container">
+        <h1>Delegate and International Press Registration</h1>
+        <h2>Round 3 Delegate Applications and International Press applications are closed. International Press and Round 3 applicants can refer the Allotments page for their allocations.</h2>
+        <!-- <div style="margin-top: 1rem;" class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Pay Now!</strong> Click <a href="/payments" style="text-decoration: underline;">Here</a> to pay now
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div> -->
+    </div>
+
+    <div class="reg-row row d-flex flex-row justify-content-around no-gutters">
+        <div class="reg-card col-lg-6">
+            <!-- <a href="/registrations/delegate"> -->
+            <div class="apply-type" style="background-image: url({{ url_for('static', filename = 'images/apply/Delegate.png') }});">
+            </div>
+            <!-- </a> -->
+        </div>
+        <!-- <div class="reg-card col-lg-4">
+            <a href="/registrations/eb">
+                <div class="apply-type"
+                    style="background-image: url({{ url_for('static', filename = 'images/apply/EB.png') }});"> </div>
+            </a>
+        </div> -->
+        <!-- <div class="reg-card col-lg-6">
+            <a href="/registrations/ip">
+                <div class="apply-type" style="background-image: url({{ url_for('static', filename = 'images/apply/Press.png') }});"> </div>
+            </a>
+        </div> -->
+    </div>
+</div>
+
+
+{% endblock %} {% block nav_active %}
+<script>
+    document.getElementById("nav-registration").classList.add("active");
+</script>
+{% endblock %}

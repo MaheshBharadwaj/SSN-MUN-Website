@@ -1,0 +1,329 @@
+.committee-heading {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding: 2% 5%;
+    margin-left: 4%;
+    margin-right: 4%;
+    color: var(--secondary);
+}
+
+.committee-bg {
+    background-color: var(--primary-dark);
+}
+
+.committee-heading p {
+    color: var(--text-color);
+}
+
+
+/* .bg-img {
+    background-image: url;
+} */
+
+.committee-heading>h1 {
+    font-size: 7em;
+    text-align: center;
+    font-weight: 600;
+    color: var(--secondary);
+}
+
+.committee-heading>h2 {
+    padding: 0 5rem;
+    font-size: 4.5em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--secondary);
+    /* background-image: url(../images/committees/sc_logo.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; */
+}
+
+.committee-heading>h3 {
+    margin: 3rem 0;
+    font-size: 32px;
+    /* text-transform: uppercase; */
+    text-align: center;
+    color: var(--loader-border);
+}
+
+.eb-member-div {
+    padding: 2%;
+    /* TO FIX FOOTER IN COMMITTEE PAGES */
+    /* margin-bottom: 5rem; */
+    background-color: var(--primary-dark);
+}
+
+.eb-member-row {
+    padding: 0 10vw;
+    justify-content: center;
+}
+
+.eb-member-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+body {
+    background: #eee;
+}
+
+
+/* FLIP CARD */
+
+.flip-card {
+    font-family: 'Poppins', sans-serif;
+    height: 30vw;
+    width: 25vw;
+    max-height: 380px;
+    max-width: 300px;
+    perspective: 500px;
+    border-radius: 10px;
+}
+
+.content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+
+/* .flip-card:hover .content {
+    transform: rotateY( 180deg);
+    transition: transform 1s;
+} */
+
+.front,
+.back {
+    position: absolute;
+    height: 100%;
+    /* width: 100%; */
+    width: 300px;
+    background: #fff;
+    color: #333333;
+    text-align: center;
+    backface-visibility: hidden;
+    /* padding: 5% 5% 15% 5%; */
+    border-radius: 10px;
+}
+
+.front .eb-image {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 300px;
+    width: 300px;
+}
+
+.eb-image>img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 100%;
+    width: 100%;
+}
+
+.front .eb-info {
+    background-color: var(--navbar-color);
+    color: var(--text-color);
+    padding: 15px 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.front .eb-info>h2 {
+    font-weight: 600;
+    font-size: 1.5em;
+}
+
+.front .eb-info>h3 {
+    text-transform: uppercase;
+    letter-spacing: 1.1;
+    font-weight: 600;
+    font-size: 1em;
+    color: var(--primary-light);
+}
+
+.back {
+    background: var(--primary);
+    color: white;
+    transform: rotateY( 180deg);
+}
+
+.back .eb-about {
+    padding: 7%;
+    text-align: left;
+    font-size: 1em;
+}
+
+
+/* Download Button */
+
+.btn-hover-effect {
+    position: absolute;
+    top: 50%;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-transition-timing-function: linear;
+    transition-timing-function: linear;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 22px 36px;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    text-decoration: none;
+    overflow: hidden;
+    margin-top: 2rem;
+}
+
+
+/* effect #5 */
+
+.btn-hover-effect--effect-5 {
+    background-color: var(--secondary);
+    color: var(--main);
+}
+
+.btn-hover-effect--effect-5:before {
+    position: absolute;
+    top: 50%;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform, -webkit-transform;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-transition-timing-function: linear;
+    transition-timing-function: linear;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+    display: block;
+    width: 300px;
+    height: 300px;
+    content: '';
+    -webkit-transform: translate(-50%, -50%) scale(0);
+    transform: translate(-50%, -50%) scale(0);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.btn-hover-effect--effect-5:after {
+    position: absolute;
+    top: 50%;
+    -webkit-transition: opacity .2s linear .2s, -webkit-transform .2s linear .2s;
+    transition: opacity .2s linear .2s, -webkit-transform .2s linear .2s;
+    transition: transform .2s linear .2s, opacity .2s linear .2s;
+    transition: transform .2s linear .2s, opacity .2s linear .2s, -webkit-transform .2s linear .2s;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 300px;
+    height: 300px;
+    content: '\f019';
+    font-family: "Font Awesome 5 Free";
+    font-size: 30px;
+    font-weight: 900;
+    line-height: inherit;
+    color: transparent;
+    -webkit-transform: translate(-50%, -50%) scale(0);
+    transform: translate(-50%, -50%) scale(0);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    opacity: 0;
+    z-index: -1;
+}
+
+.btn-hover-effect--effect-5:hover {
+    color: transparent;
+}
+
+.btn-hover-effect--effect-5:hover:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transition-duration: .15s;
+    transition-duration: .15s;
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.btn-hover-effect--effect-5:hover:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transition-duration: .15s;
+    transition-duration: .15s;
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    color: #fff;
+}
+
+.btn-hover-effect .btn-hover-effect--effect-5 .download-icon {
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 400px) {
+    .btn-hover-effect {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .back .eb-about {
+        font-size: 0.75em;
+    }
+    .committee-heading>h1 {
+        font-size: 4em;
+    }
+    .committee-heading>h3 {
+        font-size: 1.3em;
+    }
+    .committee-heading>h2 {
+        padding: 0;
+        font-size: 2.3em;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .eb-member-row {
+        padding: 5vw;
+    }
+    .flip-card {
+        height: 80vw;
+        width: 75vw;
+    }
+    .eb-member-col {
+        margin: 30px;
+        padding: 5vw 15vw;
+    }
+    .front>hr {
+        margin-bottom: 3%;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1500px) {
+    .eb-member-row {
+        padding: 5vw;
+    }
+}

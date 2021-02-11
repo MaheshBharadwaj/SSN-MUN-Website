@@ -1,0 +1,56 @@
+[{
+        "url": "unsc",
+        "name": "UNSC",
+        "fullName": "United Nations Security Council",
+        "cardName": "SC",
+        "cardFullName": "Security Council",
+        "img": "images/committees/sc_logo.png",
+        "agenda": "The situation in the Nagorno-Karabakh region",
+        "quote": "\"Extending social and economic development throughout the world and eliminating nuclear weapons from military arsenals are the two fundamental prerequisites to replacing the culture of war with a culture of peace and building true security for all the world's people.\" - Douglas Roche",
+        "description": " Introducing the first council to be simulated at the online edition of SSNMUN 2021, the United Nations Security Council. Entrusted with the responsibility of maintaining international peace and security, the UN Security Council is the only organ that has the power to make decisions that all member states are then obligated to implement under the Charter. It requires a delegate from each of its member states to be present at the UN Headquarters at all times so that the Security Council can meet if and when the need arises. The council convenes regularly to assess threats to international security and is empowered to impose binding obligations on all 193 member states of the United Nations. Of course, making peace is harder than waging war. If diplomacy and resolving crises is your strong suit, come and join us at UNSC."
+    },
+    {
+        "url": "disec",
+        "name": "UNGA DISEC",
+        "fullName": "United Nations General Assembly Disarmament and International Security Committee",
+        "cardName": "DISEC",
+        "cardFullName": "Disarmament and International Security Committee",
+        "img": "images/committees/disec_logo.png",
+        "agenda": "Discussing the nature of Protracted conflicts in the GUAM (Georgia, Ukraine, Azerbaijan and Moldova) area and its impact on international peace and security.",
+        "quote": "\"The burden of achieving disarmament cannot be borne by peace groups alone. Everybody, regardless of age, income, profession, gender or nationality has a stake in this quest\". - Ban Ki-Moon",
+        "description": "The Disarmament and International Security Committee (DISEC) is the First Committee of the United Nations General Assembly. This committee addresses and deals with issues pertinent to disarmament challenges to global security as well as threats to international peace. Through supporting debates and drafting resolutions, DISEC seeks to maintain countries' stability, promote transparency in armament and prevent an arms race in outer space. The need to control arms and military aggression never ceases. If conflict resolution and disarmament interests you, you know where to come!"
+    },
+    {
+        "url": "ecofin",
+        "name": "UNGA ECOFIN",
+        "fullName": "United Nations General Assembly Economic and Financial Committee",
+        "cardName": "ECOFIN",
+        "cardFullName": "Economic and Financial Committee",
+        "img": "images/committees/ecofin_logo.png",
+        "agenda": "Reviewing economic policy response and charting a roadmap for sustainable development in a post pandemic world",
+        "description": "The Economic and Financial Committee is the second of the six committees of the United Nations General Assembly. The committee concerns itself with questions of international importance regarding the economic and financial outlook of various countries and regions. Its primary roles include addressing issues related to economic growth and development with specific regard to macroeconomic policies on international trade. It secures financing for sustainable development, helps in the eradication of poverty and promotes globalisation and interdependence. This committee is open to all 193 members nations of the United Nations, each having equal representation and voting rights. The GA also has the power to convene an emergency special session in case it's needed. "
+    },
+    {
+        "url": "hrc",
+        "name": "UNHRC",
+        "fullName": "United Nations Human Rights Council",
+        "cardName": "HRC",
+        "cardFullName": "Human Rights Council",
+        "img": "images/committees/hrc_logo.png",
+        "agenda": "Discussing the impact of unilateral coercive measures on the enjoyment of human rights",
+        "quote": "\"All human beings are born free and equal in dignity and rights. They are endowed with reason and conscience and should act towards one another in a spirit of brotherhood.\" - The Universal Declaration of Human Rights - Article 1",
+        "description": "The UN Human Rights Council is the principal intergovernmental body within the United Nations system responsible for strengthening the promotion and protection of human rights around the globe, and for addressing and taking action on human rights violations around the globe. The Council can discuss all thematic human rights issues and country-specific situations that require its attention. There is no enjoyment of security without development, there is no enjoyment of development without security, and most of all, there is no enjoyment of either without respect for human rights. The UNHRC is one of the five councils being simulated at SSN MUN this year. To all those warriors for human rights out there, welcome aboard!"
+    },
+
+    {
+        "url": "ip",
+        "name": "IP",
+        "fullName": "International Press",
+        "cardName": "IP",
+        "cardFullName": "International Press",
+        "img": "images/committees/ip_logo.png",
+        "agenda": "",
+        "quote": "\"Journalism can never be silent: that is its greatest virtue and its greatest fault. It must speak, and speak immediately, while the echoes of wonder clams of triumph and the signs of horror are still in the air.\" - Henry Grunwald",
+        "description": "The International Press (IP) is given the role of documenting conference proceedings in an interesting and catchy manner and yet has the responsibility to convey the details in a simple, direct and thought-provoking way. Apart from this, there are IP Photographers who capture the moments of intense debate and deliberation. Their photographs are an integral part of the conference reports and provide a wonderful visual experience. The IP does not represent a certain viewpoint or personal opinion. Instead, the job of the international press journalists is to act as unbiased journalists and present the happenings of the UN to the world. As journalist, they are expected to be quirky, sharp and sly. The IP is ideally meant for those who love writing and have an opinion on the affairs that truly matter. A keen eye for details and a curious personality will take you a long way in this committee."
+    }
+]

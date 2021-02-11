@@ -1,0 +1,16 @@
+{%extends "base.html"%}{% block page_css %}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/sponsor.css')}}"> {% endblock %} {% block content %}
+<div class="container sponsor-container">
+    <h1 class="sponsor-heading">TITLE SPONSOR</h1>
+    <img class="title-sponsor-img" src="https://img.pngio.com/hcl-technologies-hcl-enterprise-information-technology-hcl-poland-hcl-png-900_300.jpg" />
+    <p class="sponsor-details">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quae adipisci modi totam rerum cumque, doloremque atque quisquam quos tenetur vitae laborum consectetur similique! Recusandae enim assumenda possimus quae. Suscipit repellat fugiat
+        vitae atque corporis quo esse alias blanditiis autem magni commodi quisquam illo, provident maxime pariatur obcaecati neque necessitatibus doloremque error enim, sequi quidem. Qui iusto magni a architecto odio animi consectetur. Ad architecto
+        ex repellat obcaecati quasi, libero laudantium repellendus fugit doloremque perferendis tempora dicta. Quo unde, ad a quod nostrum sequi explicabo reiciendis pariatur, et enim provident nesciunt suscipit accusantium iste saepe, accusamus odit
+        soluta veritatis recusandae.</p>
+</div>
+
+{% endblock %} {% block nav_active %}
+<script>
+    document.getElementById("nav-sponsors").classList.add("active");
+</script>
+{% endblock %}

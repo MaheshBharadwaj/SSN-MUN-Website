@@ -1,0 +1,239 @@
+.committees {
+    font-family: "Sofia", sans-serif;
+    padding: 7% 5%;
+    /* background-color: var(--primary-light); */
+    margin-bottom: 2%;
+    text-align: center;
+    background: var(--primary-dark);
+    /* fallback for old browsers */
+    /* background: -webkit-linear-gradient(to bottom, #91EAE4, #86A8E7, #7F7FD5); */
+    /* Chrome 10-25, Safari 5.1-6 */
+    /* background: linear-gradient(to bottom, #91EAE4, #86A8E7, #7F7FD5); */
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.committee-card-heading {
+    font-weight: 600;
+    font-size: 5em;
+    color: var(--secondary);
+    padding: 1%;
+    border: 5px solid var(--secondary);
+}
+
+.committees hr {
+    border-top: solid;
+    height: 2px;
+    color: var(--main-light);
+    padding-bottom: 1%;
+}
+
+.committee-card {
+    padding: 1% 0;
+}
+
+.committee-card-col {
+    padding: 5% 0;
+}
+
+.committee-card .booking-card {
+    width: 100%;
+    height: 100%;
+    min-height: 380px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex: 0 0 100%;
+    flex-direction: column;
+    overflow: hidden;
+    background-position: center center;
+    background-size: 150%;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: #0a4870;
+    transition: 0.3s;
+    border-radius: 2%;
+    border-top: 0.5px solid #686868;
+    background-color: #eee;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.134), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.1), 0 22.3px 17.9px rgba(0, 0, 0, 0.172), 0 41.8px 33.4px rgba(0, 0, 0, 0.186), 0 100px 80px rgba(0, 0, 0, 0.112);
+}
+
+.committee-card .booking-card::before {
+    content: "";
+    background: rgba(10, 72, 112, 0);
+    transition: 0.3s;
+}
+
+.committee-card .booking-card .book-container {
+    height: 50%;
+}
+
+.committee-card .booking-card .book-container .content {
+    position: relative;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    transform: translateY(-200px);
+    transition: 0.3s;
+    padding: 40% 0;
+}
+
+.committee-card .booking-card .book-container .content .btn {
+    border: 3px solid var(--primary-dark);
+    padding: 10px 15px;
+    background: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.3em;
+    color: var(--primary-dark);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.committee-card .booking-card .book-container .content .btn:hover {
+    background: white;
+    border: 0px solid white;
+    color: #0a4870;
+}
+
+.committee-card .booking-card .informations-container {
+    flex: 1 0 auto;
+    padding: 20px;
+    height: 40%;
+    background: #CCFFCC;
+    /* background: #f28d68; */
+    transform: translateY(206px);
+    transition: 0.5s;
+}
+
+.committee-card .booking-card .informations-container .sub-title {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.committee-card .committee-card .booking-card .informations-container .title {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.committee-card .booking-card .informations-container .title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    width: 50px;
+    margin: auto;
+    background: #0a4870;
+}
+
+.committee-card .booking-card .informations-container .price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.committee-card .booking-card .informations-container .price .icon {
+    margin-right: 10px;
+}
+
+.committee-card .booking-card .informations-container .more-information {
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.committee-card .booking-card .informations-container .more-information .info-and-date-container {
+    display: flex;
+}
+
+.committee-card .booking-card .informations-container .more-information .info-and-date-container .box {
+    flex: 1 0;
+    padding: 15px;
+    margin-top: 20px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background: white;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.committee-card .booking-card .informations-container .more-information .info-and-date-container .box .icon {
+    margin-bottom: 5px;
+}
+
+.committee-card .booking-card .informations-container .more-information .info-and-date-container .box.info {
+    color: #ec992c;
+    margin-right: 10px;
+}
+
+.committee-card .booking-card .informations-container .more-information .disclaimer {
+    margin-top: 20px;
+    font-size: 0.8em;
+    color: #7d7d7d;
+}
+
+.committee-card .booking-card:hover::before {
+    background: rgba(10, 72, 112, 0.6);
+}
+
+.committee-card .booking-card:hover .book-container .content {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.committee-card .booking-card:hover .informations-container {
+    transform: translateY(0px);
+}
+
+.committee-card .booking-card:hover .informations-container .more-information {
+    opacity: 1;
+}
+
+.informations-container h2 {
+    color: var(--primary-dark);
+    font-weight: 500;
+}
+
+@media screen and (max-width: 426px) {
+    .committee-card .booking-card {
+        max-width: 250px;
+        width: 90%;
+    }
+    .committee-card .booking-card .informations-container {
+        height: 50%;
+    }
+    .committee-card-heading {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .committee-card .booking-card::before {
+        background: rgba(10, 72, 112, 0.6);
+    }
+    .committee-card .booking-card {
+        background-size: 120%;
+        background-position: 50% 25%;
+    }
+    .committee-card .booking-card .book-container {
+        height: 70%;
+    }
+    .committee-card .booking-card .book-container .content {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    .committee-card .booking-card .informations-container {
+        transform: translateY(0px);
+    }
+    .committee-card .booking-card .informations-container .more-information {
+        opacity: 1;
+    }
+}

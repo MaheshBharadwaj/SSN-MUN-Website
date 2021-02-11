@@ -1,0 +1,63 @@
+{% extends "base.html" %} {% block page_css%}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/committee.css')}}" /> {% endblock %} {% block content %}
+
+<div class="committee-bg">
+    <div class="committee-heading">
+        <!-- <div class="bg-img"> -->
+        <!-- <h1>{{ committee.name }}</h1> -->
+        <h2>{{ committee.fullName }}</h2>
+        <!-- </div> -->
+        <blockquote class="blockquote text-center">
+            <p class="mb-0">{{ committee.quote }}</p>
+            <!-- <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer> -->
+        </blockquote>
+        <p>{{ committee.description }}</p>
+        {% if committee.name != "IP" %}
+        <h3> <strong>Agenda:</strong> {{ committee.agenda }}</h3>
+
+        <div class="row justify-content-center">
+            <a href="/background-guides/{{ committee.url }}" class="btn-hover-effect btn-hover-effect--effect-5" title="View More" download>Download the Background Guide</a>
+        </div>
+        {% else %}
+        <div class="row justify-content-center">
+            <a href="/background-guides/{{ committee.url }}" class="btn-hover-effect btn-hover-effect--effect-5" title="View More" download>Download the Style Guide</a>
+        </div>
+        {% endif %}
+
+    </div>
+
+
+    <div class="eb-member-div">
+        <div class="row eb-member-row d-flex flex-row justify-content-md-around no-gutters">
+            {% for member in members %}
+            <div class="eb-member-col col-lg-4 col-sm-10">
+                <div class="flip-card">
+                    <div class="content">
+                        <div class="front">
+                            <div class="eb-image">
+                                <img src="{{ member.img }}" alt="{{ member.name }}" />
+                            </div>
+                            <!-- <hr /> -->
+                            <div class="eb-info">
+                                <h2>{{ member.name }}</h2>
+                                <h3>{{ member.position }}</h3>
+                            </div>
+                        </div>
+                        <div class="back">
+                            <div class="eb-about">
+                                <p>{{ member.about }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %} {% block nav_active %}
+<script>
+    document.getElementById("nav-committee").classList.add("active");
+</script>
+{% endblock %}
