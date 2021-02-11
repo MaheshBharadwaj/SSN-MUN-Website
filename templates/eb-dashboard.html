@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="shortcut icon" href="{{url_for('static', filename='images/favicon.svg')}}" type="image/svg">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700&display=swap" rel="stylesheet">
@@ -74,9 +74,9 @@
 
     </header>
     <ul class="tabs nav-tabs">
-        <li class="tab"><a href="#sent">SENT</a></li>
-        <li class="tab"><a href="#received">RECEIVED</a></li>
-        <li class="tab"><a href="#eb">THROUGH EB</a></li>
+        <li class="tab"><a href="#sent">SENT (<span id="sent_length"></span>) </a></li>
+        <li class="tab"><a href="#received">RECEIVED (<span id="recv_length"></span>) </a></li>
+        <li class="tab"><a href="#eb">THROUGH EB (<span id="thru_length"></span>) </a></li>
     </ul>
 
     <div id="sent" class="col s12 chat-container">

@@ -1,4 +1,5 @@
 function load_sent_messages(location) {
+    let i = 0;
     fetch('/sent-messages/' + Date.now())
         .then(function(response) {
             return response.json()
@@ -12,16 +13,15 @@ function load_sent_messages(location) {
                 if (message['send-del-id'].slice(2) !== 'EB') {
                     return;
                 }
-                // message = JSON.parse(message);
-                // console.log("Message is" + message);
+                i += 1;
                 var li = document.createElement("li");
                 var message_header = document.createElement("div");
                 message_header.className = "collapsible-header"
                 var d = new Date(message['timestamp'] * 1000);
-                dateString = d.getHours() + ":" + d.getMinutes();
-                message_header.innerHTML = '<i class="material-icons" >sent</i>' + "To: " 
-                    + message['recv-del-country']
-                    + '<span class="badge" data-badge-caption="">' + dateString + '</span>';
+                dateString = ("00" + d.getHours()).slice(-2) + ":" + ("00" + d.getMinutes()).slice(-2);
+                message_header.innerHTML = '<i class="material-icons" >sent</i>' + "To: " +
+                    message['recv-del-country'] +
+                    '<span class="badge" data-badge-caption="">' + dateString + '</span>';
                 li.appendChild(message_header);
                 var message_content = document.createElement("div");
                 message_content.className = "collapsible-body"
@@ -29,11 +29,13 @@ function load_sent_messages(location) {
                 li.appendChild(message_content);
                 ul.appendChild(li);
             });
+            document.getElementById('sent_length').innerHTML = i;
         });
 }
 
 
 function load_recv_messages(location) {
+    let i = 0;
     fetch('/recv-messages/' + Date.now())
         .then(function(response) {
             return response.json()
@@ -48,17 +50,16 @@ function load_recv_messages(location) {
                 if (message['recv-del-id'].slice(2) !== 'EB') {
                     return;
                 }
-                // console.log(message)
-                // message = JSON.parse(message);
-                // console.log("Message is" + message);
+                i += 1
                 var li = document.createElement("li");
+
                 var message_header = document.createElement("div");
                 message_header.className = "collapsible-header"
                 var d = new Date(message['timestamp'] * 1000);
-                dateString = d.getHours() + ":" + d.getMinutes();
-                message_header.innerHTML = '<i class="material-icons" >mail</i>' + "From: " 
-                    + message['send-del-country']
-                    + '<span class="badge" data-badge-caption="">' + dateString + '</span>';
+                dateString = ("00" + d.getHours()).slice(-2) + ":" + ("00" + d.getMinutes()).slice(-2);
+                message_header.innerHTML = '<i class="material-icons" >mail</i>' + "From: " +
+                    message['send-del-country'] +
+                    '<span class="badge" data-badge-caption="">' + dateString + '</span>';
                 li.appendChild(message_header);
                 var message_content = document.createElement("div");
                 message_content.className = "collapsible-body"
@@ -66,10 +67,13 @@ function load_recv_messages(location) {
                 li.appendChild(message_content);
                 ul.appendChild(li);
             });
+            document.getElementById('recv_length').innerHTML = i;
+
         });
 }
 
 function load_eb_messages(location) {
+    let i = 0;
     fetch('/recv-messages/' + Date.now())
         .then(function(response) {
             return response.json()
@@ -84,14 +88,16 @@ function load_eb_messages(location) {
                 if (!message['to-eb']) {
                     return;
                 }
-                // console.log(message)
-                // message = JSON.parse(message);
+                i += 1;
                 console.log("Message is" + message);
                 var li = document.createElement("li");
+                var d = new Date(message['timestamp'] * 1000);
+                dateString = ("00" + d.getHours()).slice(-2) + ":" + ("00" + d.getMinutes()).slice(-2);
                 var message_header = document.createElement("div");
                 message_header.className = "collapsible-header"
                 message_header.innerHTML = '<i class="material-icons" >label_important</i>' +
-                    "From: " + message['send-del-country'] + "\nTo: " + message['recv-del-country'];
+                    "From: " + message['send-del-country'] + "\nTo: " + message['recv-del-country'] +
+                    '<span class="badge" data-badge-caption="">' + dateString + '</span>';
                 li.appendChild(message_header);
                 var message_content = document.createElement("div");
                 message_content.className = "collapsible-body"
@@ -99,9 +105,9 @@ function load_eb_messages(location) {
                 li.appendChild(message_content);
                 ul.appendChild(li);
             });
+            document.getElementById('thru_length').innerHTML = i;
+
         });
-    // load_recv_messages(false, "eb-messages-collapsible");
-    // load_sent_messages(false, "eb-messages-collapsible");
 }
 
 

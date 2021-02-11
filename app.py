@@ -10,6 +10,8 @@ from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, logout_user, login_required, current_user
 
+from quickstart import quickstart
+
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 app = Flask(__name__, static_folder=ROOT_DIR + "/static/")
 app.config["SECRET_KEY"] = "9OLWxND4o83j4K4iuopO"
@@ -85,22 +87,7 @@ class User(UserMixin, db.Model):
 
 
 db.create_all(app=app)
-
-# try:
-#     new_user = User(
-#         id="ADMIN432",
-#         email="maheshbharadwaj134511819124129@cse.ssn.edu.in",
-#         name="Pritham",
-#         password=generate_password_hash("admin@ssn", method="sha256"),
-#     )
-
-#     with app.app_context():
-#         # add the new user to the database
-#         db.session.add(new_user)
-#         db.session.commit()
-#         print("added user")
-# except Exception as e:
-#     print(e)
+quickstart()
 
 
 @login_manager.user_loader
