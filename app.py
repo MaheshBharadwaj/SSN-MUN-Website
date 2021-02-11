@@ -7,7 +7,7 @@ import time
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
-from flask import Flask, render_template, redirect, url_for, request, flash, send_file
+from flask import Flask, render_template, redirect, url_for, request, flash, send_file, send_from_directory
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, logout_user, login_required, current_user
@@ -403,4 +403,4 @@ def get_recv_message(garbage):
 
 
 if __name__ == "__main__":
-    app.run(threaded=True)
+    app.run(host="0.0.0.0", port=80, threaded=True)
