@@ -205,7 +205,7 @@ def registrations(type=None):
         return render_template(
             "registration_form.html",
             page_title="Delegate Registration",
-            doc_link="https://docs.google.com/forms/d/e/1FAIpQLScBAizh-hb2glIMGplE7lCoAldgSoHZkVol9sc2o7JS_i7rCw/viewform?embedded=true", authors=authors_shuffle()
+            doc_link="https://docs.google.com/forms/d/e/1FAIpQLScoxoetemZQHqdBEtq_b6eIZhJdiS3cCsWhgevDgQC59TowhQ/viewform?embedded=true", authors=authors_shuffle()
         )
     elif type == "ip":
         return render_template(
