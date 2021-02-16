@@ -13,6 +13,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, logout_user, login_required, current_user
 
 from quickstart import quickstart
+from generate_sheet import generate_sheet
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 app = Flask(__name__, static_folder=ROOT_DIR + "/static/")
@@ -402,5 +403,14 @@ def get_recv_message(garbage):
     return send_file(ROOT_DIR+'/messages/'+com+'/'+folder+'/recv.json')
 
 
+@app.route('/update-db')
+def update_eb():
+    quickstart()
+    print('---------------\nLoaded data from sheet\n---------------')
+    generate_sheet()
+
+    return send_file(ROOT_DIR + '/static/Users.xlsx')
+
+
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=80, threaded=True)
+    app.run(host='0.0.0.0', port=80, threaded=True)
