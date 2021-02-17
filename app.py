@@ -298,14 +298,17 @@ def send_delegate():
     except:
         to_eb = False
 
+    substantiative_check = False
+
     # the message object itself
     message_obj = {
         'send-del-id': send_delegate_id,
         'send-del-country': send_delegate_country,
         'recv-del-id': recv_delegate_id,
         'recv-del-country': recv_delegate_country,
-        'message': message,
+        'substantiative': substantiative_check,
         'timestamp': time.time(),
+        'message': message,
         'to-eb': to_eb
     }
 
@@ -351,6 +354,10 @@ def send_eb():
     send_delegate_id, send_delegate_country = current_user.id, current_user.country
     message = form['chit-message']
     to_eb = False
+    try:
+        substantiative_check = True if form['substantiative'] == 'on' else False
+    except:
+        substantiative_check = False
 
     # the message object itself
     message_obj = {
@@ -358,6 +365,7 @@ def send_eb():
         'send-del-country': send_delegate_country,
         'recv-del-id': recv_delegate_id,
         'recv-del-country': recv_delegate_country,
+        'substantiative': substantiative_check,
         'timestamp': time.time(),
         'message': message,
         'to-eb': to_eb
