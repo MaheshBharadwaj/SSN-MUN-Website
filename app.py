@@ -403,8 +403,8 @@ def get_recv_message(garbage):
     return send_file(ROOT_DIR+'/messages/'+com+'/'+folder+'/recv.json')
 
 
-@app.route('/update-db')
-def update_eb():
+@app.route('/update-db/<garbage>')
+def update_eb(garbage):
     quickstart()
     print('---------------\nLoaded data from sheet\n---------------')
     generate_sheet()

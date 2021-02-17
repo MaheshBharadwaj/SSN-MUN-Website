@@ -7,7 +7,10 @@ def generate_sheet():
     ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
     file_name = 'Users.xlsx'
-
+    try:
+        os.remove(ROOT_DIR+'/static/'+file_name)
+    except:
+        pass
     workbook = Workbook()
     sheet = workbook.active
 
