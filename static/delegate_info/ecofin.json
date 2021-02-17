@@ -1,186 +1,162 @@
 {
-  "EF101": {
-    "country": "Australia",
-    "name": "Rishal Naik"
-  },
-  "EF102": {
-    "country": "Bangladesh",
-    "name": "Karthikaayini ss"
-  },
-  "EF001": {
-    "country": "Belgium",
-    "name": "Sudhehan Kaliamurthi"
-  },
-  "EF103": {
-    "country": "Brazil",
-    "name": "Karthik V"
-  },
-  "EF104": {
-    "country": "Canada",
-    "name": "Adrij.A.Mohan"
-  },
-  "EF003": {
-    "country": "China",
-    "name": "Pradeep Vasu"
-  },
-  "EF004": {
-    "country": "Cuba",
-    "name": "Rethnakumar R G"
-  },
-  "EF005": {
-    "country": "Djibouti",
-    "name": "Shruthi Subramani"
-  },
-  "EF006": {
-    "country": "Finland",
-    "name": "Nabeela Gulam Khader"
-  },
-  "EF106": {
-    "country": "France",
-    "name": "Rishi Ram Lakshman"
-  },
-  "EF107": {
-    "country": "Germany",
-    "name": "Vishal Venkatarangan"
-  },
-  "EF008": {
-    "country": "Greece",
-    "name": "Raghav Dinesh"
-  },
-  "EF009": {
-    "country": "Haiti",
-    "name": "Shri Thrisha"
-  },
-  "EF010": {
-    "country": "India",
-    "name": "Keerthana Shankar"
-  },
-  "EF011": {
-    "country": "Italy",
-    "name": "Udit Samant"
+  "EF024": {
+    "country": "Turkey",
+    "name": "Shivangi Pandey"
   },
   "EF012": {
     "country": "Japan",
     "name": "Sivaram E"
   },
-  "EF013": {
-    "country": "Kiribati",
-    "name": "Vignesh M"
+  "EF009": {
+    "country": "Haiti",
+    "name": "Thrisha"
   },
-  "EF108": {
-    "country": "Libya",
-    "name": "Nishtha L"
+  "EF011": {
+    "country": "Italy",
+    "name": "Udit Samant"
   },
-  "EF109": {
-    "country": "Luxembourg",
-    "name": "Sharan Lakshman V."
-  },
-  "EF110": {
-    "country": "Malaysia",
-    "name": "Balu Priyanka"
-  },
-  "EF015": {
-    "country": "Mexico",
-    "name": "Syed Thaha Osman"
-  },
-  "EF111": {
-    "country": "Micronesia",
-    "name": "Amoolya Rao"
-  },
-  "EF016": {
-    "country": "New Zealand",
-    "name": "Bhagavathi R"
-  },
-  "EF113": {
-    "country": "Nicaragua",
-    "name": "K.V.Vaishnave"
-  },
-  "EF114": {
-    "country": "Pakistan",
-    "name": "Hariharasubramanyam K M"
-  },
-  "EF115": {
-    "country": "Portugal",
-    "name": "Dhanush Gajaraj"
+  "EF008": {
+    "country": "Greece",
+    "name": "Raghav Dinesh"
   },
   "EF017": {
     "country": "Qatar",
     "name": "Nandakishor V"
   },
-  "EF116": {
-    "country": "Russia",
-    "name": "Vandhana R"
+  "EF015": {
+    "country": "Mexico",
+    "name": "Syed Thaha Osman"
+  },
+  "EF010": {
+    "country": "India",
+    "name": "Keerthana Shankar"
+  },
+  "EF025": {
+    "country": "United Arab Emirates",
+    "name": "Supraja Vaidhyanathan"
+  },
+  "EF016": {
+    "country": "New Zealand",
+    "name": "Bhagavathi R"
+  },
+  "EF013": {
+    "country": "Kiribati",
+    "name": "Vignesh M"
+  },
+  "EF021": {
+    "country": "Sweden",
+    "name": "E Nivetha"
+  },
+  "EF026": {
+    "country": "Zimbabwe",
+    "name": "Hrishikesh Kumar"
+  },
+  "EF018": {
+    "country": "Singapore",
+    "name": "GR Pavan"
+  },
+  "EF006": {
+    "country": "Finland",
+    "name": "Nabeela Gulam Khader"
+  },
+  "EF001": {
+    "country": "Belgium",
+    "name": "Sudhehan Kaliamurthi"
+  },
+  "EF005": {
+    "country": "Djibouti",
+    "name": "SHRUTHI SUBRAMANI"
+  },
+  "EF003": {
+    "country": "CHINA",
+    "name": "Pradeep Vasu"
+  },
+  "EF004": {
+    "country": "Cuba",
+    "name": "Rethnakumar Rg"
+  },
+  "EF022": {
+    "country": "Taiwan",
+    "name": "M Chellakkamar"
+  },
+  "EF110": {
+    "country": "Malaysia",
+    "name": "Priyanka Balu"
+  },
+  "EF115": {
+    "country": "Portugal",
+    "name": "Dhanush Gajaraj"
+  },
+  "EF108": {
+    "country": "Libya",
+    "name": "Nishtha L"
+  },
+  "EF104": {
+    "country": "Canada",
+    "name": "Adrij A Mohan"
   },
   "EF117": {
     "country": "Rwanda",
     "name": "Malaveka A"
   },
-  "EF118": {
-    "country": "Saint Kitts and Nevis",
-    "name": "Karla Sof\u00eda Castillo Gonz\u00e1lez"
-  },
-  "EF119": {
-    "country": "Saudi Arabia",
-    "name": "Anand Modi"
-  },
   "EF120": {
     "country": "Sierra Leone",
-    "name": "Abishek P.S."
+    "name": "Abhishek P.S."
   },
-  "EF018": {
-    "country": "Singapore",
-    "name": "Pavan GR"
-  },
-  "EF121": {
-    "country": "Somalia",
-    "name": "Gokul Krishna K"
-  },
-  "EF122": {
-    "country": "South Africa",
-    "name": "Mahmuda Akther"
-  },
-  "EF123": {
-    "country": "Spain",
-    "name": "J Mahima Shirdi"
-  },
-  "EF021": {
-    "country": "Sweden",
-    "name": "Nivetha Elango"
-  },
-  "EF124": {
-    "country": "Switzerland",
-    "name": "Aditya Kumar"
-  },
-  "EF022": {
-    "country": "Taiwan",
-    "name": "M.Chellakkamar"
-  },
-  "EF125": {
-    "country": "Timor Leste",
-    "name": "Masoma"
+  "EF113": {
+    "country": "Nicaragua",
+    "name": "K.V. Vaishnave"
   },
   "EF126": {
     "country": "Tunisia",
     "name": "Pooja Kalyan Kumar"
   },
-  "EF024": {
-    "country": "Turkey",
-    "name": "Shivangi Pandey"
+  "EF114": {
+    "country": "Pakistan",
+    "name": "Hariharasubramanyam KM"
   },
-  "EF025": {
-    "country": "United Arab Emirates",
-    "name": "Supraja Vaidyanathan"
+  "EF124": {
+    "country": "Switzerland",
+    "name": "Aditya Kumar"
   },
-  "EF127": {
+  "EF116": {
+    "country": "Russia",
+    "name": "Vandhana R"
+  },
+  "EF107": {
+    "country": "Germany",
+    "name": "Vishal Venkatarangan"
+  },
+  "EF204": {
+    "country": "France",
+    "name": "Madhuri Mahalingam"
+  },
+  "EF207": {
+    "country": "Netherlands",
+    "name": "Chinmayee Dindore"
+  },
+  "EF201": {
+    "country": "Australia",
+    "name": "Sakshi Puri"
+  },
+  "EF203": {
+    "country": "Egypt",
+    "name": "Anjali Saran"
+  },
+  "EF213": {
     "country": "United Kingdom",
-    "name": "Praneshram S"
+    "name": "Bhavya Kandhari"
   },
-  "EF128": {
-    "country": "Yemen",
-    "name": "Sneha S"
+  "EF205": {
+    "country": "Ghana",
+    "name": "Izma Zainab"
   },
-  "EF026": {
-    "country": "Zimbabwe",
-    "name": "Hrishikesh Kumar"
+  "EF214": {
+    "country": "United States of America",
+    "name": "Domil Antony Johnson"
+  },
+  "EF212": {
+    "country": "Brazil",
+    "name": "Kommu Sreeraj"
   }
 }

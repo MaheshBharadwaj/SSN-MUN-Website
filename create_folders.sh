@@ -17,7 +17,7 @@ do
     # touch $messages_dir/$committee/EB/recv.json
     echo "[]" | cat > $messages_dir/$committee/EB/sent.json
     echo "[]" | cat > $messages_dir/$committee/EB/recv.json
-    for number in {000..200}
+    for number in {000..500}
     do
         mkdir $messages_dir/$committee/$number/
         echo "[]" | cat > $messages_dir/$committee/$number/sent.json;
