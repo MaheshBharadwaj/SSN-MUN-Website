@@ -159,6 +159,10 @@
     "country": "Denmark",
     "name": "Manasija Das"
   },
+  "HR999": {
+    "country": "Japan",
+    "name": "Sandhya Giri"
+  },
   "HR400": {
     "country": "Iran",
     "name": "Saiansh Raizada"
@@ -214,5 +218,13 @@
   "HR212": {
     "country": "Netherlands",
     "name": "Harish Kumar"
+  },
+  "HR903": {
+    "country": "Afghanistan",
+    "name": "Soumil Mittal"
+  },
+  "HR906": {
+    "country": "Argentina",
+    "name": "Nihshank Upadhyay"
   }
 }

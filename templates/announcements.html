@@ -1,0 +1,59 @@
+{% extends "base.html" %} {% block page_css%}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/announcements.css')}}" /> {% endblock %} {% block content %}
+<div class="announce-container">
+    <div class="chunk">
+
+        <h1>Committee Schedule</h1>
+        <p>
+            Please find the committee schedule for days 1 and 2 below:
+        </p>
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true" style="border:none;">Day 1</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false" style="border:none;">Day 2</button>
+            </li>
+
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <img src="{{url_for('static', filename='images/day1.jpeg')}}" alt="day1 image">
+            </div>
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <img src="{{url_for('static', filename='images/day2.jpeg')}}" alt="day2 image">
+            </div>
+
+        </div>
+    </div>
+
+    <div class="chunk">
+        <h1>Rules of Procedure</h1>
+        <div class="row justify-content-center">
+            <a href="/rop-guide" class="btn-hover-effect btn-hover-effect--effect-5" title="View More" download>Download the Rules of Procedure</a>
+        </div>
+    </div>
+
+
+    <div class="chunk">
+        <h1>SSNMUN 2021 ChitApp use guide</h1>
+        <div class="videoResponsive">
+            <iframe width="560" height="349" src="https://www.youtube.com/embed/2_HPVyu6j4k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; " allowfullscreen></iframe>
+        </div>
+
+    </div>
+
+
+    <div class="chunk">
+        <h1>Dress Code for SSNMUN 2021</h1>
+        <p>
+            The dress code is <em>Western Formals</em>. Indian formals are <em>optional</em> and can be worn on the second day of the conference.
+        </p>
+    </div>
+</div>
+
+{% endblock %} {% block nav_active %}
+<script>
+    document.getElementById("nav-announcements").classList.add("active");
+</script>
+{% endblock %}

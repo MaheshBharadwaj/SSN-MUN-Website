@@ -246,6 +246,16 @@ def contact():
     return render_template("contact_us.html", page_title="Contact Us", authors=authors_shuffle())
 
 
+@app.route('/announcements', methods=['GET'])
+def announcements():
+    return render_template("announcements.html", page_title="Announcements", authors=authors_shuffle())
+
+
+@app.route('/rop-guide', methods=['GET'])
+def rop_guide():
+    return send_file(ROOT_DIR + '/static/rop.pdf')
+
+
 @app.route("/login")
 def login():
     return render_template("login.html")
@@ -421,4 +431,4 @@ def update_eb(garbage):
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=80, threaded=True)
+    app.run(debug=True, threaded=True)
