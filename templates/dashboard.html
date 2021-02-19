@@ -8,7 +8,9 @@
     <link rel="shortcut icon" href="{{url_for('static', filename='images/favicon.svg')}}" type="image/svg">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Compiled and minified CSS -->
@@ -27,23 +29,23 @@
 <body>
 
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('.tabs').tabs();
             $('.fixed-action-btn').floatingActionButton();
-            $(document).ready(function() {
+            $(document).ready(function () {
                 $('.collapsible').collapsible();
             });
             $('.tooltipped').tooltip();
             $('.tap-target').tapTarget();
             $('.tap-target').tapTarget('open');
             setTimeout(
-                function() {
+                function () {
                     $('.tap-target').tapTarget('close');
 
                 }, 5000);
         });
 
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             var elems = document.querySelectorAll('.fixed-action-btn');
             var instances = M.FloatingActionButton.init(elems, {
                 direction: 'left'
@@ -84,7 +86,9 @@
         <ul class="collapsible" id='sent-messages-collapsible'>
             <li>
                 <div class="collapsible-header"><i class="material-icons">info</i>From SSNMUN</div>
-                <div class="collapsible-body"><span>Click on the compose button and choose delegate or eb to send a message. Substantiative messages are <span style="color: #b6faf1; font-weight: 800;">highlighted in this colour.</span></div>
+                <div class="collapsible-body"><span>Click on the compose button and choose delegate or eb to send a
+                        message. Substantiative messages are <span style="color: #b6faf1; font-weight: 800;">highlighted
+                            in this colour.</span></div>
             </li>
             <!-- <li>
                 <div class="collapsible-header"><i class="material-icons">send</i>Second</div>
@@ -100,7 +104,8 @@
         <ul class="collapsible" id="received-messages-collapsible">
             <li>
                 <div class=" collapsible-header"><i class="material-icons ">info</i>SSNMUN</div>
-                <div class="collapsible-body"><span>All the messages that you receive from other delegates will be located here</span></div>
+                <div class="collapsible-body"><span>All the messages that you receive from other delegates will be
+                        located here</span></div>
             </li>
             <!-- <li>
                 <div class="collapsible-header "><i class="material-icons ">mail</i>Second</div>
@@ -116,7 +121,8 @@
         <ul class="collapsible" id="eb-messages-collapsible">
             <li>
                 <div class="collapsible-header "><i class="material-icons ">info</i>SSNMUN</div>
-                <div class="collapsible-body "><span>Messages sent to EB and from EB to you will be located here.</span></div>
+                <div class="collapsible-body "><span>Messages sent to EB and from EB to you will be located here.</span>
+                </div>
             </li>
             <!-- <li>
                 <div class="collapsible-header "><i class="material-icons ">label_important</i>Second</div>
@@ -141,17 +147,20 @@
             <i class="fas fa-pen "></i>
         </a>
         <ul>
-            <li style="margin: 0 10px "><a href="/send-delegate " title="Delegate " class="btn-floating btn-large sub-compose tooltipped " data-position="top " data-tooltip="To Delegate "><i class="fas fa-user-alt "></i></a></li>
+            <li style="margin: 0 10px "><a href="/send-delegate " title="Delegate "
+                    class="btn-floating btn-large sub-compose tooltipped " data-position="top "
+                    data-tooltip="To Delegate "><i class="fas fa-user-alt "></i></a></li>
             <li style="margin: 0 10px ">
-                <a href="/send-eb " title="Executive Board " class="btn-floating btn-large sub-compose tooltipped " data-position="top " data-tooltip="To EB "><i class="fas fa-gavel "></i></a>
+                <a href="/send-eb " title="Executive Board " class="btn-floating btn-large sub-compose tooltipped "
+                    data-position="top " data-tooltip="To EB "><i class="fas fa-gavel "></i></a>
                 </a>
             </li>
         </ul>
     </div>
     </div>
     <script>
-        $(document).ready(function() {
-            setInterval(function() {
+        $(document).ready(function () {
+            setInterval(function () {
                 cache_clear()
             }, 60000);
         });

@@ -1,15 +1,18 @@
 {% extends "base.html" %} {% block page_css %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/registration.css') }}"> {% endblock %} {% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/registration.css') }}"> {% endblock %} {% block content
+%}
 
 <div class="reg-heading container text-center">
     <h1>Delegate Allotments</h1>
     <!-- change title and text as required -->
-    <h2>International Press allotments and Round 3 allotments are posted below. International Press reporters are requested to pay by the 9th of February 2021 and Round 3 delegates by the 12th of February 2021 to confirm their allotments. </h2>
+    <h2>The consolidated allotments across rounds are posted below.</h2>
 </div>
 
 <div class="country-matrix">
     <!-- paste link here -->
-    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR5gxiwI9KZnqfIymUWgu0NP14e2cfqSuSJKKIRuFOKMY5ETlY4TDsYsp3zIhwlIn2JBTHzfS6MdhFV/pubhtml?widget=true&headers=false" class="registration" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+    <iframe
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR5gxiwI9KZnqfIymUWgu0NP14e2cfqSuSJKKIRuFOKMY5ETlY4TDsYsp3zIhwlIn2JBTHzfS6MdhFV/pubhtml?widget=true&headers=false"
+        class="registration" frameborder="0" marginheight="0" marginwidth="0"></iframe>
 </div> {% endblock %} {% block nav_active %}
 <script>
     document.getElementById("nav-delegate-allocation").classList.add("active");
