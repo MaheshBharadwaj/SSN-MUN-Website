@@ -23,6 +23,12 @@ do
         echo "[]" | cat > $messages_dir/$committee/$number/sent.json;
         echo "[]" | cat > $messages_dir/$committee/$number/recv.json;
     done
+    for number in {900..999}
+    do
+        mkdir $messages_dir/$committee/$number/
+        echo "[]" | cat > $messages_dir/$committee/$number/sent.json;
+        echo "[]" | cat > $messages_dir/$committee/$number/recv.json;
+    done
 done
 
 
