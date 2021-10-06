@@ -36,6 +36,15 @@ a:focus {
     transition: all 0.3s;
 }
 
+#particles-js {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -10;
+    top: 0;
+    left: 0
+}
+
 
 /* NAVBAR */
 
@@ -203,7 +212,7 @@ ul ul a {
 .jumbotron-img {
     /* background: #cddde4; */
     
-    background: var(--primary-dark);
+    background: transparent;
     background-image: url(../images/colourlogo_withdatenew.png);
     height: calc(100vh - 70px);
     background-position: center;

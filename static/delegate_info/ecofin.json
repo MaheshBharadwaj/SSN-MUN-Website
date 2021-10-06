@@ -1,80 +1,4 @@
 {
-  "EF024": {
-    "country": "Turkey",
-    "name": "Shivangi Pandey"
-  },
-  "EF012": {
-    "country": "Japan",
-    "name": "Sivaram E"
-  },
-  "EF009": {
-    "country": "Haiti",
-    "name": "Thrisha"
-  },
-  "EF011": {
-    "country": "Italy",
-    "name": "Udit Samant"
-  },
-  "EF008": {
-    "country": "Greece",
-    "name": "Raghav Dinesh"
-  },
-  "EF017": {
-    "country": "Qatar",
-    "name": "Nandakishor V"
-  },
-  "EF015": {
-    "country": "Mexico",
-    "name": "Syed Thaha Osman"
-  },
-  "EF010": {
-    "country": "India",
-    "name": "Keerthana Shankar"
-  },
-  "EF025": {
-    "country": "United Arab Emirates",
-    "name": "Supraja Vaidhyanathan"
-  },
-  "EF016": {
-    "country": "New Zealand",
-    "name": "Bhagavathi R"
-  },
-  "EF013": {
-    "country": "Kiribati",
-    "name": "Vignesh M"
-  },
-  "EF021": {
-    "country": "Sweden",
-    "name": "E Nivetha"
-  },
-  "EF026": {
-    "country": "Zimbabwe",
-    "name": "Hrishikesh Kumar"
-  },
-  "EF018": {
-    "country": "Singapore",
-    "name": "GR Pavan"
-  },
-  "EF006": {
-    "country": "Finland",
-    "name": "Nabeela Gulam Khader"
-  },
-  "EF001": {
-    "country": "Belgium",
-    "name": "Sudhehan Kaliamurthi"
-  },
-  "EF005": {
-    "country": "Djibouti",
-    "name": "SHRUTHI SUBRAMANI"
-  },
-  "EF003": {
-    "country": "CHINA",
-    "name": "Pradeep Vasu"
-  },
-  "EF004": {
-    "country": "Cuba",
-    "name": "Rethnakumar Rg"
-  },
   "EF022": {
     "country": "Taiwan",
     "name": "M Chellakkamar"
@@ -159,8 +83,100 @@
     "country": "Brazil",
     "name": "Kommu Sreeraj"
   },
+  "EF024": {
+    "country": "Turkey",
+    "name": "Shivangi Pandey"
+  },
+  "EF012": {
+    "country": "Japan",
+    "name": "Sivaram E"
+  },
   "EF904": {
     "country": "South Africa",
     "name": "Anant Dev Kapoor"
+  },
+  "EF555": {
+    "country": "Somalia",
+    "name": "Gokul Krishna"
+  },
+  "EF009": {
+    "country": "Haiti",
+    "name": "Thrisha"
+  },
+  "EF011": {
+    "country": "Italy",
+    "name": "Udit Samant"
+  },
+  "EF008": {
+    "country": "Greece",
+    "name": "Raghav Dinesh"
+  },
+  "EF017": {
+    "country": "Qatar",
+    "name": "Nandakishor V"
+  },
+  "EF015": {
+    "country": "Mexico",
+    "name": "Syed Thaha Osman"
+  },
+  "EF010": {
+    "country": "India",
+    "name": "Keerthana Shankar"
+  },
+  "EF025": {
+    "country": "United Arab Emirates",
+    "name": "Supraja Vaidhyanathan"
+  },
+  "EF016": {
+    "country": "New Zealand",
+    "name": "Bhagavathi R"
+  },
+  "EF013": {
+    "country": "Kiribati",
+    "name": "Vignesh M"
+  },
+  "EF021": {
+    "country": "Sweden",
+    "name": "E Nivetha"
+  },
+  "EF026": {
+    "country": "Zimbabwe",
+    "name": "Hrishikesh Kumar"
+  },
+  "EF018": {
+    "country": "Singapore",
+    "name": "GR Pavan"
+  },
+  "EF006": {
+    "country": "Finland",
+    "name": "Nabeela Gulam Khader"
+  },
+  "EF001": {
+    "country": "Belgium",
+    "name": "Sudhehan Kaliamurthi"
+  },
+  "EF005": {
+    "country": "Djibouti",
+    "name": "SHRUTHI SUBRAMANI"
+  },
+  "EF003": {
+    "country": "CHINA",
+    "name": "Pradeep Vasu"
+  },
+  "EF004": {
+    "country": "Cuba",
+    "name": "Rethnakumar Rg"
+  },
+  "EF704": {
+    "country": "International Press 1",
+    "name": "Surya Sridhar"
+  },
+  "EF705": {
+    "country": "International Press 2",
+    "name": "Aaditya Shankar Natarajan"
+  },
+  "EF706": {
+    "country": "International Press 3",
+    "name": "Sakshi Jain"
   }
 }

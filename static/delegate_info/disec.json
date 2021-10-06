@@ -178,5 +178,21 @@
   "DI201": {
     "country": "United States of America",
     "name": "Varun R Swaminathan"
+  },
+  "DI701": {
+    "country": "International Press 1",
+    "name": "Sabariish Venkat"
+  },
+  "DI703": {
+    "country": "International Press 2",
+    "name": "Suraksha Vinod"
+  },
+  "DI699": {
+    "country": "Russian Federation",
+    "name": "Tanmay Pratti"
+  },
+  "DI698": {
+    "country": "People's Republic of China",
+    "name": "Lawrence Swaminathan"
   }
 }
