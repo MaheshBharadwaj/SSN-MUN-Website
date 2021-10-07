@@ -271,6 +271,14 @@
     background: darkorchid;
 }
 
+.payment-border{
+    border: 5px solid #26a0da;
+    /*
+    background: rgb(0,186,243);
+    background: radial-gradient(circle, rgba(0,186,243,1) 0%, rgba(255,255,255,1) 100%);
+    */
+}
+
 @media screen and (max-width: 768px) {
     .payment-container {
         margin: 0;
