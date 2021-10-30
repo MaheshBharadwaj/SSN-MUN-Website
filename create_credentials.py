@@ -8,7 +8,13 @@ import sqlite3 as sql
 from werkzeug.security import generate_password_hash, check_password_hash
 
 def generate_otp(id):
-    return hashlib.sha256(id.encode()).hexdigest()[-6:]
+    result = hashlib.sha1(id.encode()).hexdigest()
+    ans = ""
+    n = len(result)
+    for i in range(-1, -n-1, -1):
+        if not result[i].isalpha():
+            ans = result[i] + ans
+    return ans[-6:]
 
 def create_ids():
     """
