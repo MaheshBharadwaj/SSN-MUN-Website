@@ -1,0 +1,79 @@
+[{
+        "name": "Sadhana Smruthi",
+        "position": "Secretary General",
+        "img": "images/about/Sadhana.jpg",
+        "insta_url": "https://www.instagram.com/p/CISo2OFjq9s/"
+    },
+    {
+        "name": "Kathiyayani Sivakumar",
+        "position": "Deputy Secretary General",
+        "img": "images/about/Kathi.jpg",
+        "insta_url": "https://www.instagram.com/p/CITEX9ODLZB/"
+    },
+    {
+        "name": "Ashwin Ballal",
+        "position": "USG Finance",
+        "img": "/images/about/Ballal.jpg",
+        "insta_url": "https://www.instagram.com/p/CIiURbkjQfa/"
+    },
+    {
+        "name": "Harrinei",
+        "position": "USG Delegate Affairs",
+        "img": "images/about/Harrinei.jpg",
+        "insta_url": "https://www.instagram.com/p/CIVNoaWDfdW/"
+    },
+    {
+        "name": "Vignesh",
+        "position": "USG Delegate Affairs",
+        "img": "/images/about/Vignesh.jpg",
+        "insta_url": "https://www.instagram.com/p/CIVsQ0hDhBX/"
+    },
+    {
+        "name": "Stephen",
+        "position": "USG Sponsorship",
+        "img": "/images/about/Steven.jpg",
+        "insta_url": "https://www.instagram.com/p/CIYSOd1j00e/"
+    },
+    {
+        "name": "Kartic Bharadwaj Jayakumar",
+        "position": "USG Sponsorship",
+        "img": "/images/about/Kartic.jpg",
+        "insta_url": "https://www.instagram.com/p/CIXyRGqjk-o/"
+    },
+    {
+        "name": "Sai J",
+        "position": "USG Logistics",
+        "img": "images/about/SaiJ.jpg",
+        "insta_url": "https://www.instagram.com/p/CIc9x0ej6bD/"
+    },
+    {
+        "name": "Sandhya",
+        "position": "USG Logistics",
+        "img": "/images/about/Sandhya.jpg",
+        "insta_url": "https://www.instagram.com/p/CIdjuY3D-hB/"
+    },
+    {
+        "name": "Prithvi Srivatsav",
+        "position": "USG Publicity and PR",
+        "img": "/images/about/Pipey.jpg",
+        "insta_url": "https://www.instagram.com/p/CIayAuvjvz6/"
+    },
+    {
+        "name": "Deekshitha Sriraman",
+        "position": "USG Publicity and PR",
+        "img": "/images/about/Deekshitha.jpg",
+        "insta_url": "https://www.instagram.com/p/CIaZKrQjRjV/"
+    },
+    {
+        "name": "Anam Saatvik",
+        "position": "USG Design",
+        "img": "/images/about/Anam.jpg",
+        "insta_url": "https://www.instagram.com/p/CIf8U-7DaxN/"
+    },
+    {
+        "name": "Akshay Ramakrishnan",
+        "position": "USG Tech",
+        "img": "/images/about/Akshay.jpg",
+        "insta_url": "https://www.instagram.com/p/CIfiPiRDCKs/"
+    }
+]

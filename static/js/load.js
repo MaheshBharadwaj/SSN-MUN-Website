@@ -22,6 +22,9 @@ function load_sent_messages(location) {
                 var d = new Date(message['timestamp'] * 1000);
                 dateString = ("00" + d.getHours()).slice(-2) + ":" + ("00" + d.getMinutes()).slice(-2);
                 if (message['recv-del-id'].slice(2) == 'EB') {
+                    if (message['substantiative'] === true) {
+                        message_header.classList.add("sub-highlight");
+                    }
                     message_header.innerHTML = '<i class="material-icons" >mail</i>' + "To: EB" +
                         '<span class="new badge red" data-badge-caption="">' + dateString + '</span>';
                 } else {

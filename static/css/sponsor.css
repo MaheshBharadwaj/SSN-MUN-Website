@@ -1,0 +1,30 @@
+.sponsor-container {
+  text-align: center;
+  padding: 3%;
+}
+
+.sponsor-heading {
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  color: var(--secondary);
+  padding: 3%;
+  margin-bottom: 5%;
+  border-bottom: solid 5px;
+}
+
+.sponsor-details {
+  padding: 3%;
+  color: var(--text-color);
+}
+
+.title-sponsor-img {
+  height: 50vh;
+  width: 75vh;
+}
+
+@media (max-width: 768px) {
+  .title-sponsor-img {
+    height: 50vw;
+    width: 90vw;
+  }
+}

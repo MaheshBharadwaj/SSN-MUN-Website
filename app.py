@@ -1,16 +1,19 @@
 import hashlib
 import os
 import json
+import copy
+import random
 import time
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
-from flask import Flask, render_template, redirect, url_for, request, flash, send_file
+from flask import Flask, render_template, redirect, url_for, request, flash, send_file, send_from_directory
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, logout_user, login_required, current_user
 
 from quickstart import quickstart
+from generate_sheet import generate_sheet
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 app = Flask(__name__, static_folder=ROOT_DIR + "/static/")
@@ -54,9 +57,33 @@ def get_committee(id: str):
         return 'eb'
 
 
-committees = ['disec', 'unhrc', 'unsc', 'ecofin']
+def authors_shuffle():
+    authors = [{'name': 'Mahesh', 'github': "https://github.com/maheshbharadwaj"}, {'name': 'Vanathi', 'github': "https://github.com/vanathi-g"},
+               {'name': 'Dhiganth', 'github': "https://github.com/dhiganthrao"}, {'name': 'Pritham', 'github': "https://github.com/prithamimmanuel"}]
+    random.shuffle(authors)
+    return(authors)
+
+
+# secratariat.json has the info that we need to display on the about us page cards
+member_file_name = os.path.join(app.static_folder, "js", "secratariat.json")
+member_file = open(member_file_name)
+members = json.load(member_file)
+
+# executive_board.json has info about eb members
+member_file_name = os.path.join(
+    app.static_folder, "js", "executive_board.json")
+eb_member_file = open(member_file_name)
+eb_members = json.load(eb_member_file)
+
+# committees.json has required info about commitees - url, name, agenda
+comm_file_name = os.path.join(app.static_folder, "js", "committees.json")
+comm_file = open(comm_file_name)
+committees = json.load(comm_file)
+
+
+committees_list = ['disec', 'unhrc', 'unsc', 'ecofin']
 country_id = {}
-for committee in committees:
+for committee in committees_list:
     try:
         with open(ROOT_DIR+'/static/delegate_info/'+committee+'.json') as com_file:
             country_id[committee] = []
@@ -96,6 +123,139 @@ def load_user(user_id):
     return User.query.get(user_id)
 
 
+@app.errorhandler(404)
+def not_found(e):
+
+    return render_template("404.html"), 404
+
+
+@app.route("/", methods=["GET"])
+def index():
+
+    if request.method == "GET":
+        comm_copy = [copy.deepcopy(x) for x in committees]
+        for committee_obj in comm_copy:
+            committee_obj["img"] = url_for(
+                "static", filename=committee_obj["img"])
+        return render_template(
+            "index.html", page_title="SSN MUN 2021", committees=comm_copy, authors=authors_shuffle()
+        )
+
+
+@app.route("/organising-committee", methods=["GET"])
+def organising_committee():
+
+    if request.method == "GET":
+        # creating copy to avoid modifying original info - fixes images disappearing on refresh issue
+        members_copy = [copy.deepcopy(x) for x in members]
+
+        for member in members_copy:
+            member["img"] = url_for("static", filename=member["img"])
+        return render_template(
+            "organising_committee.html",
+            members=members_copy,
+            page_title="Organising Committee", authors=authors_shuffle()
+        )
+
+
+@app.route("/committee/<commname>", methods=["GET"])
+def committee(commname):
+    display_committee = None
+    # Figure out which committe info to display
+    for committee in committees:
+        if committee["url"] == commname:
+            display_committee = committee
+
+    if display_committee is None:
+        return render_template('404.html'), 404
+
+    # Only get info about EB members for required committee
+    comm_eb = [x for x in eb_members if x["committee"] == commname]
+    comm_eb_copy = [copy.deepcopy(x) for x in comm_eb]
+    for eb_member in comm_eb_copy:
+        eb_member["img"] = url_for("static", filename=eb_member["img"])
+
+    if request.method == "GET":
+        return render_template(
+            "committee.html",
+            committee=display_committee,
+            members=comm_eb_copy,
+            page_title=commname.upper(), authors=authors_shuffle()
+        )
+
+
+@app.route("/about", methods=["GET"])
+def about():
+
+    if request.method == "GET":
+        return render_template("about.html", page_title="About Us", authors=authors_shuffle())
+
+
+@app.route("/sponsors", methods=["GET"])
+def sponsors():
+
+    if request.method == "GET":
+        return render_template("sponsors.html", page_title="Sponsors", authors=authors_shuffle())
+
+
+@app.route("/registrations", methods=["GET"])
+@app.route("/registrations/<type>", methods=["GET"])
+def registrations(type=None):
+
+    if type == "delegate":
+        return render_template(
+            "registration_form.html",
+            page_title="Delegate Registration",
+            doc_link="https://docs.google.com/forms/d/e/1FAIpQLScoxoetemZQHqdBEtq_b6eIZhJdiS3cCsWhgevDgQC59TowhQ/viewform?embedded=true", authors=authors_shuffle()
+        )
+    elif type == "ip":
+        return render_template(
+            "registration_form.html",
+            page_title="IP Registration",
+
+            doc_link="https://docs.google.com/forms/d/e/1FAIpQLSclGtGrtRtdCpWyV9P6KRxRkX2pqjCmYRwdA88JaKMhcwhaBQ/viewform?embedded=true", authors=authors_shuffle()
+        )
+    # elif type == 'eb':
+    #     return render_template('registration_form.html', page_title='EB Registration', doc_link="https://docs.google.com/forms/d/e/1FAIpQLSfAmJ62D7SHiKNAsJzO1iIkYfSEqpoYLyvdJ0xCuvnSG-2xfg/viewform?embedded=true")
+    else:
+        return render_template("registrations.html", page_title="Registrations", authors=authors_shuffle())
+
+
+@app.route("/background-guides/<committee>", methods=["GET"])
+def background_guides(committee):
+
+    return send_from_directory(
+        ROOT_DIR + "/static/background_guides", committee + ".pdf"
+    )
+
+
+@app.route("/matrix", methods=["GET"])
+def matrix():
+
+    return render_template("matrix.html", page_title="Allocation Matrix", authors=authors_shuffle())
+
+
+@app.route("/payments", methods=["GET"])
+def payments():
+
+    return render_template("payments.html", page_title="Payments", authors=authors_shuffle())
+
+
+@app.route("/contact", methods=["GET"])
+def contact():
+    return render_template("contact_us.html", page_title="Contact Us", authors=authors_shuffle())
+
+
+@app.route('/announcements', methods=['GET'])
+def announcements():
+    return render_template("announcements.html", page_title="Announcements", authors=authors_shuffle())
+
+
+@app.route('/rop-guide', methods=['GET'])
+def rop_guide():
+    return send_file(ROOT_DIR + '/static/rop.pdf')
+
+
 @app.route("/login")
 def login():
     return render_template("login.html")
@@ -121,44 +281,9 @@ def login_post():
     return redirect(url_for("dashboard"))
 
 
-@app.route("/")
 @app.route("/dashboard")
 @login_required
 def dashboard():
-    # need to read how many sent messages there are.
-
-    # recv_json = os.path.join('messages/pogchamps/recv.json')
-    # sent_json = os.path.join('messages/pogchamps/sent.json')
-    # recv_file = open(recv_json)
-    # sent_file = open(sent_json)
-    # recv = json.load(recv_file)
-    # sent = json.load(sent_file)
-
-    # print(recv)
-    # print(sent)
-
-    # recv_file.close()
-    # sent_file.close()
-
-    # now = datetime.now()
-
-    # timestamp = datetime.timestamp(now)
-
-    bruh_object = {"message": "Hello there, fellow delegate!"}
-
-    # print(bruh_object)
-    # with open('messages/pogchamps/recv.json', 'r') as openfile:
-    #     json_object = json.load(openfile)
-
-    # json_object[timestamp] = bruh_object
-    # print(json_object)
-    # print(type(json_object))
-
-    # json_object = json.dumps(json_object)
-    # print(json_object)
-
-    # # with open("messages/pogchamps/recv.json", "w") as outfile:
-    # #     outfile.write(json_object)
 
     if current_user.id[2:] == 'EB':
         return render_template("eb-dashboard.html", name=current_user.name)
@@ -183,14 +308,17 @@ def send_delegate():
     except:
         to_eb = False
 
+    substantiative_check = False
+
     # the message object itself
     message_obj = {
         'send-del-id': send_delegate_id,
         'send-del-country': send_delegate_country,
         'recv-del-id': recv_delegate_id,
         'recv-del-country': recv_delegate_country,
-        'message': message,
+        'substantiative': substantiative_check,
         'timestamp': time.time(),
+        'message': message,
         'to-eb': to_eb
     }
 
@@ -221,7 +349,7 @@ def send_delegate():
         data.append(message_obj)
     with open(recv_json_path, 'w') as receiver_file:
         json.dump(data, receiver_file, indent=2)
-    return redirect("dashboard")
+    return redirect(url_for('dashboard'))
 
 
 @app.route('/send-eb', methods=['GET', 'POST'])
@@ -236,6 +364,10 @@ def send_eb():
     send_delegate_id, send_delegate_country = current_user.id, current_user.country
     message = form['chit-message']
     to_eb = False
+    try:
+        substantiative_check = True if form['substantiative'] == 'on' else False
+    except:
+        substantiative_check = False
 
     # the message object itself
     message_obj = {
@@ -243,6 +375,7 @@ def send_eb():
         'send-del-country': send_delegate_country,
         'recv-del-id': recv_delegate_id,
         'recv-del-country': recv_delegate_country,
+        'substantiative': substantiative_check,
         'timestamp': time.time(),
         'message': message,
         'to-eb': to_eb
@@ -288,5 +421,14 @@ def get_recv_message(garbage):
     return send_file(ROOT_DIR+'/messages/'+com+'/'+folder+'/recv.json')
 
 
+@app.route('/update-db/<garbage>')
+def update_eb(garbage):
+    quickstart()
+    print('---------------\nLoaded data from sheet\n---------------')
+    generate_sheet()
+
+    return send_file(ROOT_DIR + '/static/Users.xlsx')
+
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(threaded=True, debug=True)

@@ -75,8 +75,9 @@
     </header>
     <ul class="tabs nav-tabs">
         <li class="tab"><a href="#sent">SENT (<span id="sent_length"></span>) </a></li>
-        <li class="tab"><a href="#received">RECEIVED (<span id="recv_length"></span>) </a></li>
-        <li class="tab"><a href="#eb">THROUGH EB (<span id="thru_length"></span>) </a></li>
+        <li class="tab"><a href="#received">RECV (<span id="recv_length"></span>) </a></li>
+        <li class="tab"><a href="#substantiative">SUB (<span id="sub_length"></span>) </a></li>
+        <li class="tab"><a href="#eb">THRU EB (<span id="thru_length"></span>) </a></li>
     </ul>
 
     <div id="sent" class="col s12 chat-container">
@@ -100,6 +101,22 @@
             <li>
                 <div class=" collapsible-header "><i class="material-icons ">info</i>SSNMUN</div>
                 <div class="collapsible-body "><span>All the messages that you receive from other delegates will be located here.</span></div>
+            </li>
+            <!-- <li>
+                <div class="collapsible-header "><i class="material-icons ">mail</i>Second</div>
+                <div class="collapsible-body "><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+            <li>
+                <div class="collapsible-header "><i class="material-icons ">mail</i>Third</div>
+                <div class="collapsible-body "><span>Lorem ipsum dolor sit amet.</span></div>
+            </li> -->
+        </ul>
+    </div>
+    <div id="substantiative" class="col s12 chat-container">
+        <ul class="collapsible" id="substantiative-messages-collapsible">
+            <li>
+                <div class=" collapsible-header "><i class="material-icons ">info</i>SSNMUN</div>
+                <div class="collapsible-body "><span>All the <strong>substantiative</strong> messages that you receive from other delegates will be located here.</span></div>
             </li>
             <!-- <li>
                 <div class="collapsible-header "><i class="material-icons ">mail</i>Second</div>
@@ -152,7 +169,7 @@
         $(document).ready(function() {
             setInterval(function() {
                 cache_clear()
-            }, 30000);
+            }, 60000);
         });
 
         function cache_clear() {

@@ -1,0 +1,266 @@
+.contact-container {
+    min-height: calc(100vh - 81px);
+    align-items: center;
+    display: flex;
+    width: 100vw;
+}
+
+.contact-us-container {
+    max-width: 900px;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+}
+
+.contact-us-card-wrapper {
+    width: 400px;
+    height: 500px;
+    position: relative;
+}
+
+.contact-us-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 450px;
+    transform: translate(-50%, -50%);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.contact-us-card .contact-us-card-image {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: #000;
+    transition: .5s;
+}
+
+.contact-us-card:hover img {
+    opacity: 0.4;
+    transition: .5s;
+}
+
+.contact-us-card:hover .contact-us-card-image {
+    transform: translateY(-100px);
+    transition: all .9s;
+}
+
+
+/**** Social Icons *****/
+
+.contact-us-social-icons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    display: flex;
+}
+
+.contact-us-social-icons li {
+    list-style: none;
+}
+
+.contact-us-social-icons li a {
+    position: relative;
+    display: block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: #fff;
+    font-size: 23px;
+    color: #333;
+    font-weight: bold;
+    margin: 0 6px;
+    transition: .4s;
+    transform: translateY(200px);
+    opacity: 0;
+}
+
+.contact-us-card:hover .contact-us-social-icons li a {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.contact-us-social-icons li a:hover {
+    background: #000;
+    transition: .2s;
+}
+
+.contact-us-social-icons li a:hover .fab {
+    color: #fff;
+}
+
+.contact-us-social-icons li a .fab {
+    transition: .8s;
+}
+
+.contact-us-social-icons li a .fab:hover {
+    transform: rotateY(360deg);
+    color: #fff;
+}
+
+.contact-us-card:hover li:nth-child(1) a {
+    transition-delay: 0.1s;
+}
+
+.contact-us-card:hover li:nth-child(2) a {
+    transition-delay: 0.2s;
+}
+
+.contact-us-card:hover li:nth-child(3) a {
+    transition-delay: 0.3s;
+}
+
+.contact-us-card:hover li:nth-child(4) a {
+    transition-delay: 0.4s;
+}
+
+
+/**** Personal Details ****/
+
+.contact-us-details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    width: 100%;
+    height: 120px;
+    z-index: 1;
+    padding: 10px;
+}
+
+.contact-us-details h2 {
+    margin: 30px 0;
+    padding: 0;
+    text-align: center;
+}
+
+.contact-us-details h2 .job-title {
+    font-size: 1rem;
+    line-height: 2.5rem;
+    color: #333;
+    font-weight: 300;
+}
+
+.contact-us-jane {
+    position: absolute;
+    bottom: -120px;
+    left: 0;
+    opacity: 0;
+    background: #fff;
+    width: 100%;
+    height: 120px;
+    z-index: 3;
+    padding: 10px;
+    transition: .4s;
+}
+
+.contact-us-profile-two .contact-us-social-icons li a {
+    border-radius: 50%;
+}
+
+.contact-us-card:hover .contact-us-profile-img--two {
+    transform: rotateY(180deg);
+}
+
+.contact-us-card:hover .jane {
+    bottom: 0;
+    left: 0;
+    transition-delay: 0.5s;
+    opacity: 1;
+}
+
+
+/* New Version */
+
+
+/*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*/
+
+.nav-pills-custom .nav-link {
+    /* color: #aaa; */
+    color: var(--primary-dark);
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    background: #fff;
+    position: relative;
+}
+
+.nav-pills-custom .nav-link.active {
+    color: var(--secondary);
+    background: #fff;
+}
+
+.contact-page-container {
+    background-color: var(--primary-dark);
+    padding: 2rem;
+}
+
+.contact-page-container>h1 {
+    color: var(--main);
+    font-family: 'Poppins', serif;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 3em;
+    color: white;
+    padding: 2% 0;
+}
+
+.tab-pane>h4 {
+    color: var(--primary-dark);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.tab-pane>h5 {
+    font-size: 16px
+}
+
+
+/* Add indicator arrow for the active tab */
+
+@media (min-width: 992px) {
+    .contact-page-container>h1 {
+        font-size: 5em;
+    }
+    .contact-page-container {
+        margin-bottom: 0;
+        padding: 5rem;
+        min-height: calc(100vh - 81px - 294px);
+    }
+    .nav-pills-custom .nav-link::before {
+        content: '';
+        display: block;
+        border-top: 8px solid transparent;
+        border-left: 10px solid #fff;
+        border-bottom: 8px solid transparent;
+        position: absolute;
+        top: 50%;
+        right: -10px;
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+    .tab-pane>h4 {
+        font-size: 2.5em;
+    }
+}
+
+.nav-pills-custom .nav-link.active::before {
+    opacity: 1;
+}

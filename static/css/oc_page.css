@@ -1,0 +1,131 @@
+/* HEADING - JUMBOTRON */
+
+.oc-page {
+    background: var(--primary-dark);
+    /* background: #9CECFB; */
+    /* fallback for old browsers */
+    /* background: -webkit-linear-gradient(to bottom, #65C7F7, #9CECFB); */
+    /* Chrome 10-25, Safari 5.1-6 */
+    /* background: linear-gradient(to bottom, #65C7F7, #9CECFB); */
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.oc-heading {
+    font-family: 'Poppins', serif;
+    text-transform: uppercase;
+    background: transparent;
+    /* background-repeat: no-repeat;
+    background-size: cover; */
+    text-align: center;
+}
+
+.oc-heading>h1 {
+    font-weight: 900;
+    font-size: 7em;
+    color: white;
+    padding: 6% 0 2% 0;
+}
+
+.oc-heading>h3 {
+    font-weight: 900;
+    font-size: 3.5em;
+    color: var(--secondary);
+    padding: 1% 0 2% 0;
+}
+
+
+/* SECRETARIAT MEMBER CARDS  */
+
+.secretariat-member {
+    padding: 2%;
+}
+
+.secretariat-member-row {
+    justify-content: center;
+    padding: 0 12%;
+}
+
+.secretariat-member-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.secretariat-member-row-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+    text-align: center;
+    border-radius: 4%;
+    min-height: 450px;
+    margin: 7% 0;
+    padding: 4%;
+    width: 300px;
+    /* background-color: #7a4988; */
+    background-color: var(--navbar-color);
+    font-family: 'Nunito', sans-serif;
+}
+
+.secretariat-member-row-card>img {
+    border-radius: 50%;
+    height: 260px;
+    width: 260px;
+    padding: 3% 0;
+}
+
+.secretariat-member-row-card>h2 {
+    color: var(--text-color);
+    font-size: 2em;
+    font-weight: 600;
+    margin: 0;
+    padding: 2% 0;
+}
+
+.secretariat-member-row-card>h3 {
+    font-size: 1.00em;
+    font-weight: 600;
+    color: #7a7878;
+    margin: 0;
+    padding: 1% 0 4% 0;
+    text-transform: uppercase;
+}
+
+.secretariat-member-row-card button.btn-info {
+    position: absolute;
+    bottom: 50px;
+}
+
+
+/* FOR SMALLER SCREENS */
+
+@media screen and (max-width: 540px) {
+    .secretariat-member-row-card button.btn-info {
+        position: inherit;
+    }
+    .jumbotron {
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    .secretariat-member-row-card {
+        min-height: auto;
+    }
+    .secretariat-member-row-card>img {
+        height: 200px;
+        width: 200px;
+    }
+    .oc-heading>h1 {
+        font-size: 250%;
+    }
+    .oc-heading>h3 {
+        font-size: 155%;
+    }
+    .secretariat-member-row-card>h2 {
+        font-size: 150%;
+    }
+    .secretariat-member-row-card>h3 {
+        font-size: 90%;
+    }
+}
