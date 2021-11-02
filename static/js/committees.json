@@ -1,56 +1,56 @@
 [{
-        "url": "unsc",
-        "name": "UNSC",
-        "fullName": "United Nations Security Council",
-        "cardName": "SC",
-        "cardFullName": "Security Council",
-        "img": "images/committees/sc_logo.png",
-        "agenda": "The situation in the Nagorno-Karabakh region",
-        "quote": "\"Extending social and economic development throughout the world and eliminating nuclear weapons from military arsenals are the two fundamental prerequisites to replacing the culture of war with a culture of peace and building true security for all the world's people.\" - Douglas Roche",
-        "description": " Introducing the first council to be simulated at the online edition of SSNMUN 2021, the United Nations Security Council. Entrusted with the responsibility of maintaining international peace and security, the UN Security Council is the only organ that has the power to make decisions that all member states are then obligated to implement under the Charter. It requires a delegate from each of its member states to be present at the UN Headquarters at all times so that the Security Council can meet if and when the need arises. The council convenes regularly to assess threats to international security and is empowered to impose binding obligations on all 193 member states of the United Nations. Of course, making peace is harder than waging war. If diplomacy and resolving crises is your strong suit, come and join us at UNSC."
+    "url": "unsc",
+    "name": "UNSC",
+    "fullName": "United Nations Security Council",
+    "cardName": "SC",
+    "cardFullName": "Security Council",
+    "img": "images/committees/sc_logo.png",
+    "agenda": "",
+    "quote": "\"Peace does not mean an absence of conflict; differences will always be there. Peace means solving these differences through peaceful means; through dialogue, education, knowledge; and through humane ways.\"~ Dalai Lama XIV.",
+    "description": "The United Nations Security Council takes the lead in determining the existence of threats to peace or acts of aggression of one sovereign nation against another. The UNSC often acts as the final arbiter of peace, to prevent the world from plunging itself into self-destructive war. Responsible for peaceful resolution of complaints, disputes and more, the Security Council makes decisions that all Member States are obligated to implement under the Charter of the United Nations. \nJoin us in this simulation of the Security Council in our 8th edition of SSN MUN to evaluate, discuss and arbitrate matters threatening international peace and security. Roll your sleeves up, SSN's famous committee is back with a bang!"
     },
     {
-        "url": "disec",
-        "name": "UNGA DISEC",
-        "fullName": "United Nations General Assembly Disarmament and International Security Committee",
-        "cardName": "DISEC",
-        "cardFullName": "Disarmament and International Security Committee",
-        "img": "images/committees/disec_logo.png",
-        "agenda": "Discussing the nature of Protracted conflicts in the GUAM (Georgia, Ukraine, Azerbaijan and Moldova) area and its impact on international peace and security.",
-        "quote": "\"The burden of achieving disarmament cannot be borne by peace groups alone. Everybody, regardless of age, income, profession, gender or nationality has a stake in this quest\". - Ban Ki-Moon",
-        "description": "The Disarmament and International Security Committee (DISEC) is the First Committee of the United Nations General Assembly. This committee addresses and deals with issues pertinent to disarmament challenges to global security as well as threats to international peace. Through supporting debates and drafting resolutions, DISEC seeks to maintain countries' stability, promote transparency in armament and prevent an arms race in outer space. The need to control arms and military aggression never ceases. If conflict resolution and disarmament interests you, you know where to come!"
+    "url": "sf",
+    "name": "SFC",
+    "fullName": "The San Francisco Conference, 1945",
+    "cardName": "SFC",
+    "cardFullName": "The San Francisco Conference",
+    "img": "images/committees/sfc_logo.png",
+    "agenda": "",
+    "quote": "",
+    "description": "In search of methods for damage control and global peace, around 850 delegates from 50 nations assembled at San Francisco in 1945 to secure peace and build a better world for its future generations. This conference ended up being the largest international gathering of its time.\n Representatives of at least 80% of the World's population gathered to review and construct a viable set of principles to govern Judicial Arbitration, Economic and Social functions of the Nations, Maintenance of Peace and Security, etc. It led to the creation of the United Nations and its distinguished Charter, agreed upon unanimously by all 50 Nations.\nThe Organising Committee of SSN MUN 2022, is beyond excited to present to you its very first Historic Committee - The San Francisco conference of 1945. Be transported to this historical gathering, and show us what you would change and what you would do differently."
     },
     {
-        "url": "ecofin",
-        "name": "UNGA ECOFIN",
-        "fullName": "United Nations General Assembly Economic and Financial Committee",
-        "cardName": "ECOFIN",
-        "cardFullName": "Economic and Financial Committee",
-        "img": "images/committees/ecofin_logo.png",
-        "agenda": "Reviewing economic policy response and charting a roadmap for sustainable development in a post pandemic world",
-        "description": "The Economic and Financial Committee is the second of the six committees of the United Nations General Assembly. The committee concerns itself with questions of international importance regarding the economic and financial outlook of various countries and regions. Its primary roles include addressing issues related to economic growth and development with specific regard to macroeconomic policies on international trade. It secures financing for sustainable development, helps in the eradication of poverty and promotes globalisation and interdependence. This committee is open to all 193 members nations of the United Nations, each having equal representation and voting rights. The GA also has the power to convene an emergency special session in case it's needed. "
+    "url": "orf",
+    "name": "ORF",
+    "fullName": "Observer Research Foundation",
+    "cardName": "ORF",
+    "cardFullName": "Observer Research Foundation",
+    "img": "images/committees/orf_logo.png",
+    "agenda": "",
+    "description": "The Observer Research Foundation seeks to lead and aid policy thinking towards building a strong and prosperous India in a fair and equitable world.\nThe ORF helps discover and inform India's choices. It also carries Indian voices and ideas to forums aiming to shape global debates. It provides non-partisan, independent, well-researched analyses and inputs to diverse decision-makers in governments, business communities, and academia and to civil society around the world.\nWe, the Organising Committee of SSNMUN 2022, are excited to announce that the Observer Research Foundation (ORF) will be the 4th committee simulated in our upcoming online conference. Join it, and be the raven on India’s shoulder, whispering to Her the truth and the path to a brighter tomorrow."
     },
     {
-        "url": "hrc",
-        "name": "UNHRC",
-        "fullName": "United Nations Human Rights Council",
-        "cardName": "HRC",
-        "cardFullName": "Human Rights Council",
-        "img": "images/committees/hrc_logo.png",
-        "agenda": "Discussing the impact of unilateral coercive measures on the enjoyment of human rights",
-        "quote": "\"All human beings are born free and equal in dignity and rights. They are endowed with reason and conscience and should act towards one another in a spirit of brotherhood.\" - The Universal Declaration of Human Rights - Article 1",
-        "description": "The UN Human Rights Council is the principal intergovernmental body within the United Nations system responsible for strengthening the promotion and protection of human rights around the globe, and for addressing and taking action on human rights violations around the globe. The Council can discuss all thematic human rights issues and country-specific situations that require its attention. There is no enjoyment of security without development, there is no enjoyment of development without security, and most of all, there is no enjoyment of either without respect for human rights. The UNHRC is one of the five councils being simulated at SSN MUN this year. To all those warriors for human rights out there, welcome aboard!"
+    "url": "hrc",
+    "name": "UNHRC",
+    "fullName": "United Nations Human Rights Council",
+    "cardName": "HRC",
+    "cardFullName": "Human Rights Council",
+    "img": "images/committees/hrc_logo.png",
+    "agenda": "",
+    "quote": "\"There can be no peace without development, no development without peace, and no lasting peace or sustainable development without respect for human rights and the rule of law.\" – Former UN Deputy Secretary-General Jan Eliasson.",
+    "description": "The UN Human Rights Council is the principal intergovernmental body within the United Nations system whose mission is to promote and protect peace around the world. It has the ability to discuss all thematic human rights issues and situations that require its attention throughout the year. Regular meetings are held to ensure better implementation of human rights and prevention of future instances of violations.\nFor those who abide by a strict moral compass, and those who stand up for equality, this simulation will be morally rewarding. \"Be the change you wish to see in the world\". So, join us and voice out your opinions. Stand up for what you believe in!"
     },
-
+    
     {
-        "url": "ip",
-        "name": "IP",
-        "fullName": "International Press",
-        "cardName": "IP",
-        "cardFullName": "International Press",
-        "img": "images/committees/ip_logo.png",
-        "agenda": "",
-        "quote": "\"Journalism can never be silent: that is its greatest virtue and its greatest fault. It must speak, and speak immediately, while the echoes of wonder clams of triumph and the signs of horror are still in the air.\" - Henry Grunwald",
-        "description": "The International Press (IP) is given the role of documenting conference proceedings in an interesting and catchy manner and yet has the responsibility to convey the details in a simple, direct and thought-provoking way. Apart from this, there are IP Photographers who capture the moments of intense debate and deliberation. Their photographs are an integral part of the conference reports and provide a wonderful visual experience. The IP does not represent a certain viewpoint or personal opinion. Instead, the job of the international press journalists is to act as unbiased journalists and present the happenings of the UN to the world. As journalist, they are expected to be quirky, sharp and sly. The IP is ideally meant for those who love writing and have an opinion on the affairs that truly matter. A keen eye for details and a curious personality will take you a long way in this committee."
+    "url": "ip",
+    "name": "IP",
+    "fullName": "International Press",
+    "cardName": "IP",
+    "cardFullName": "International Press",
+    "img": "images/committees/ip_logo.png",
+    "agenda": "",
+    "quote": "\"I still believe that if your aim is to change the world, journalism is a more immediate short-term weapon.\" - Tom Stoppard.",
+    "description": "The International Press consists of reporters and photographers who scour for information and capture iconic moments from the UN in an aesthetic and digestible manner for the general public to witness. No conference is complete without their stunning captures and witty reports.\nUnbiased reporting and sharp questions directed towards delegates to shed light on the proceedings of the UN is International Press' main responsibility. If you're someone with a knack for writing and an opinion on socio-political situations, International Press would love to have you. Quick wit, sly thinking and an eye for details is all you need to emerge as the best reporter in this Committee."
     }
 ]
