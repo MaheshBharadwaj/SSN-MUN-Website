@@ -1,79 +1,80 @@
-[{
-        "name": "Sadhana Smruthi",
-        "position": "Secretary General",
-        "img": "images/about/Sadhana.jpg",
-        "insta_url": "https://www.instagram.com/p/CISo2OFjq9s/"
+[ {
+    "name": "Kathiyayani Sivakumar",
+    "position": "Secretary General",
+    "img": "images/about/Kathi.jpg",
+    "insta_url": "https://www.instagram.com/p/CUeQUpgFzQQ/"
+},
+   
+    {
+        "name": "Deekshitha Sriraman",
+        "position": "Deputy Secretary-General",
+        "img": "/images/about/Deekshitha.jpg",
+        "insta_url": "https://www.instagram.com/p/CUesq5NFNl8/"
     },
     {
-        "name": "Kathiyayani Sivakumar",
-        "position": "Deputy Secretary General",
-        "img": "images/about/Kathi.jpg",
-        "insta_url": "https://www.instagram.com/p/CITEX9ODLZB/"
-    },
-    {
-        "name": "Ashwin Ballal",
-        "position": "USG Finance",
-        "img": "/images/about/Ballal.jpg",
-        "insta_url": "https://www.instagram.com/p/CIiURbkjQfa/"
-    },
-    {
-        "name": "Harrinei",
+        "name": "Vanathi G",
         "position": "USG Delegate Affairs",
-        "img": "images/about/Harrinei.jpg",
-        "insta_url": "https://www.instagram.com/p/CIVNoaWDfdW/"
+        "img": "images/about/Vanathi.jpg",
+        "insta_url": "https://www.instagram.com/p/CUg37ifF6GL/"
     },
     {
-        "name": "Vignesh",
+        "name": "Akshaya Mohan",
         "position": "USG Delegate Affairs",
-        "img": "/images/about/Vignesh.jpg",
-        "insta_url": "https://www.instagram.com/p/CIVsQ0hDhBX/"
+        "img": "/images/about/Akshaya.jpg",
+        "insta_url": "https://www.instagram.com/p/CUhkJ0LF6So/"
     },
-    {
-        "name": "Stephen",
+      {
+        "name": "Lakshana Murugan",
         "position": "USG Sponsorship",
-        "img": "/images/about/Steven.jpg",
-        "insta_url": "https://www.instagram.com/p/CIYSOd1j00e/"
+        "img": "/images/about/Lakshana.jpg",
+        "insta_url": "https://www.instagram.com/p/CUl-WQglX58/"
     },
     {
-        "name": "Kartic Bharadwaj Jayakumar",
+        "name": "Kavya Hariharan",
         "position": "USG Sponsorship",
-        "img": "/images/about/Kartic.jpg",
-        "insta_url": "https://www.instagram.com/p/CIXyRGqjk-o/"
+        "img": "/images/about/Kavya.png",
+        "insta_url": "https://instagram.com/p/CUmV1RilsLI/"
     },
     {
-        "name": "Sai J",
-        "position": "USG Logistics",
-        "img": "images/about/SaiJ.jpg",
-        "insta_url": "https://www.instagram.com/p/CIc9x0ej6bD/"
-    },
-    {
-        "name": "Sandhya",
-        "position": "USG Logistics",
-        "img": "/images/about/Sandhya.jpg",
-        "insta_url": "https://www.instagram.com/p/CIdjuY3D-hB/"
+        "name": "Paul Jabez",
+        "position": "USG Design",
+        "img": "/images/about/Paul.jpg",
+        "insta_url": "https://www.instagram.com/p/CUmulv1lswR/"
     },
     {
         "name": "Prithvi Srivatsav",
-        "position": "USG Publicity and PR",
+        "position": "USG Public Relations",
         "img": "/images/about/Pipey.jpg",
-        "insta_url": "https://www.instagram.com/p/CIayAuvjvz6/"
+        "insta_url": "https://www.instagram.com/p/CUoqP0HlNo3/"
     },
     {
-        "name": "Deekshitha Sriraman",
-        "position": "USG Publicity and PR",
-        "img": "/images/about/Deekshitha.jpg",
-        "insta_url": "https://www.instagram.com/p/CIaZKrQjRjV/"
+        "name": "Varshi",
+        "position": "USG Public Relations",
+        "img": "/images/about/Varshi.jpg",
+        "insta_url": "https://www.instagram.com/p/CUpThytlcrF/"
     },
     {
-        "name": "Anam Saatvik",
-        "position": "USG Design",
-        "img": "/images/about/Anam.jpg",
-        "insta_url": "https://www.instagram.com/p/CIf8U-7DaxN/"
+        "name": "Prasidha Prabhu",
+        "position": "USG Finance",
+        "img": "/images/about/Prasidha.jpg",
+        "insta_url": "https://www.instagram.com/p/CUkW9B8JMP5/"
     },
     {
-        "name": "Akshay Ramakrishnan",
+        "name": "Mahesh Bharadwaj K",
         "position": "USG Tech",
-        "img": "/images/about/Akshay.jpg",
-        "insta_url": "https://www.instagram.com/p/CIfiPiRDCKs/"
-    }
+        "img": "/images/about/Mahesh.jpg",
+        "insta_url": "https://www.instagram.com/p/CUh0mMZpj3y/"
+    },
+        {
+        "name": "Niel Parekh",
+        "position": "USG Logistics",
+        "img": "images/about/Niel.jpg",
+        "insta_url": "https://www.instagram.com/p/CUjhKxClKVB/"
+    },
+    {
+        "name": "Shaalini Thilagar",
+        "position": "USG Logistics",
+        "img": "/images/about/Shaalini.jpg",
+        "insta_url": "https://www.instagram.com/p/CUjypjklgLu/"
+    }  
 ]

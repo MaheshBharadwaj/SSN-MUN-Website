@@ -117,7 +117,7 @@ class User(UserMixin, db.Model):
 
 
 db.create_all(app=app)
-quickstart()
+# quickstart()
 
 
 @login_manager.user_loader
