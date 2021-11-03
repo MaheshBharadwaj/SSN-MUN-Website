@@ -43,7 +43,7 @@
 
         <nav id="sidebar">
             <div class="sidebar-header">
-                <img src="{{url_for('static', filename='images/alt-colourlogo_withdate_cropped.png')}}" alt="MUN alternate logo" style="width: 245px" />
+                <img src="{{url_for('static', filename='images/mun_logo_white_2022.png')}}" alt="MUN alternate logo" style="width: 245px" />
                 <!-- <h3>SSN MUN</h3> -->
             </div>
 
@@ -128,7 +128,7 @@
                         <span><i class="fas fa-bars"></i></span>
                     </button>
                     <div class="navbar-brand">
-                        <a href="{{url_for('index')}}">SSN MUN 2021</a>
+                        <a href="{{url_for('index')}}">SSN MUN 2022</a>
                     </div>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -154,7 +154,7 @@
             {% block content %}{% endblock %}
             <footer class="footer-distributed">
                 <div class="footer-left" data-aos="fade-right" data-aos-duration="1500">
-                    <h3>SSN MUN <span>2021</span></h3>
+                    <h3>SSN MUN <span>2022</span></h3>
 
                     <p class="footer-links">
                         <a href="/">Home</a> ·
@@ -186,7 +186,7 @@
                     </div>
                     <div class="footer-authors">
                         Designed by: {% for author in authors %}
-                        <a href="{{ author.github }}">{{ author.name }}</a><span>{% if loop.index < 4%}, {% endif
+                        <a href="{{ author.github }}">{{ author.name }}</a><span>{% if loop.index < 7%}, {% endif
                                 %}</span>{% endfor %}
                     </div>
                 </div>
@@ -196,7 +196,7 @@
                         <span>About SSNMUN</span> SSNMUN is an ever-evolving brand. From a highly successful first edition to an even bigger second edition, we’ve only been getting better.This year’s MUN will aim to have a greater outreach than ever before,
                         transcending issues of physical accessibility
                     </p>
-                    <p class="footer-company-name">SSN MUN TECH TEAM © 2021</p>
+                    <p class="footer-company-name">SSN MUN TECH TEAM © 2022</p>
                 </div>
             </footer>
         </div>

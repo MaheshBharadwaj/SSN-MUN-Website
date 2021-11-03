@@ -58,9 +58,12 @@ def get_committee(id: str):
 
 
 def authors_shuffle():
-    authors = [{'name': 'Mahesh', 'github': "https://github.com/maheshbharadwaj"}, {'name': 'Vanathi', 'github': "https://github.com/vanathi-g"},
-               {'name': 'Dhiganth', 'github': "https://github.com/dhiganthrao"}, {'name': 'Pritham', 'github': "https://github.com/prithamimmanuel"}]
-    random.shuffle(authors)
+    authors = [{'name': 'Mahesh', 'github': "https://github.com/maheshbharadwaj"}, {'name': "Shivanirudh", 'github': "https://github.com/Shivanirudh"},
+                {'name': 'Vishakan', 'github': "https://github.com/svishakan"}, {'name': 'Badri', 'github': "https://github.com/MBadriNarayanan"},
+                {'name': 'Sathya Priyaa', 'github': "https://github.com/sathyapriyaa-sketch"},
+                {'name': 'Shreya', 'github': "https://github.com/shreya1110-dev"},
+                {'name': 'Karun', 'github': "https://github.com/Karun842002"}]
+    #random.shuffle(authors)
     return(authors)
 
 
