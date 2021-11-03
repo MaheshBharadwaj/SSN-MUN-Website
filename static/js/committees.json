@@ -1,0 +1,56 @@
+[{
+    "url": "unsc",
+    "name": "UNSC",
+    "fullName": "United Nations Security Council",
+    "cardName": "SC",
+    "cardFullName": "Security Council",
+    "img": "images/committees/sc_logo.png",
+    "agenda": "",
+    "quote": "\"Peace does not mean an absence of conflict; differences will always be there. Peace means solving these differences through peaceful means; through dialogue, education, knowledge; and through humane ways.\"~ Dalai Lama XIV.",
+    "description": "The United Nations Security Council takes the lead in determining the existence of threats to peace or acts of aggression of one sovereign nation against another. The UNSC often acts as the final arbiter of peace, to prevent the world from plunging itself into self-destructive war. Responsible for peaceful resolution of complaints, disputes and more, the Security Council makes decisions that all Member States are obligated to implement under the Charter of the United Nations. \nJoin us in this simulation of the Security Council in our 8th edition of SSN MUN to evaluate, discuss and arbitrate matters threatening international peace and security. Roll your sleeves up, SSN's famous committee is back with a bang!"
+    },
+    {
+    "url": "sf",
+    "name": "SFC",
+    "fullName": "The San Francisco Conference, 1945",
+    "cardName": "SFC",
+    "cardFullName": "The San Francisco Conference",
+    "img": "images/committees/sfc_logo.png",
+    "agenda": "",
+    "quote": "",
+    "description": "In search of methods for damage control and global peace, around 850 delegates from 50 nations assembled at San Francisco in 1945 to secure peace and build a better world for its future generations. This conference ended up being the largest international gathering of its time.\n Representatives of at least 80% of the World's population gathered to review and construct a viable set of principles to govern Judicial Arbitration, Economic and Social functions of the Nations, Maintenance of Peace and Security, etc. It led to the creation of the United Nations and its distinguished Charter, agreed upon unanimously by all 50 Nations.\nThe Organising Committee of SSN MUN 2022, is beyond excited to present to you its very first Historic Committee - The San Francisco conference of 1945. Be transported to this historical gathering, and show us what you would change and what you would do differently."
+    },
+    {
+    "url": "orf",
+    "name": "ORF",
+    "fullName": "Observer Research Foundation",
+    "cardName": "ORF",
+    "cardFullName": "Observer Research Foundation",
+    "img": "images/committees/orf_logo_r.png",
+    "agenda": "",
+    "description": "The Observer Research Foundation seeks to lead and aid policy thinking towards building a strong and prosperous India in a fair and equitable world.\nThe ORF helps discover and inform India's choices. It also carries Indian voices and ideas to forums aiming to shape global debates. It provides non-partisan, independent, well-researched analyses and inputs to diverse decision-makers in governments, business communities, and academia and to civil society around the world.\nWe, the Organising Committee of SSNMUN 2022, are excited to announce that the Observer Research Foundation (ORF) will be the 4th committee simulated in our upcoming online conference. Join it, and be the raven on India’s shoulder, whispering to Her the truth and the path to a brighter tomorrow."
+    },
+    {
+    "url": "hrc",
+    "name": "UNHRC",
+    "fullName": "United Nations Human Rights Council",
+    "cardName": "HRC",
+    "cardFullName": "Human Rights Council",
+    "img": "images/committees/hrc_logo.png",
+    "agenda": "",
+    "quote": "\"There can be no peace without development, no development without peace, and no lasting peace or sustainable development without respect for human rights and the rule of law.\" - Former UN Deputy Secretary-General Jan Eliasson.",
+    "description": "The UN Human Rights Council is the principal intergovernmental body within the United Nations system whose mission is to promote and protect peace around the world. It has the ability to discuss all thematic human rights issues and situations that require its attention throughout the year. Regular meetings are held to ensure better implementation of human rights and prevention of future instances of violations.\nFor those who abide by a strict moral compass, and those who stand up for equality, this simulation will be morally rewarding. \"Be the change you wish to see in the world\". So, join us and voice out your opinions. Stand up for what you believe in!"
+    },
+    
+    {
+    "url": "ip",
+    "name": "IP",
+    "fullName": "International Press",
+    "cardName": "IP",
+    "cardFullName": "International Press",
+    "img": "images/committees/ip_logo.png",
+    "agenda": "",
+    "quote": "\"I still believe that if your aim is to change the world, journalism is a more immediate short-term weapon.\" - Tom Stoppard.",
+    "description": "The International Press consists of reporters and photographers who scour for information and capture iconic moments from the UN in an aesthetic and digestible manner for the general public to witness. No conference is complete without their stunning captures and witty reports.\nUnbiased reporting and sharp questions directed towards delegates to shed light on the proceedings of the UN is International Press' main responsibility. If you're someone with a knack for writing and an opinion on socio-political situations, International Press would love to have you. Quick wit, sly thinking and an eye for details is all you need to emerge as the best reporter in this Committee."
+    }
+]

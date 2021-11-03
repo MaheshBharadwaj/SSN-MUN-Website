@@ -1,0 +1,28 @@
+{%extends "base.html"%}{% block page_css %}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/sponsor.css')}}"> {% endblock %} {% block
+content %}
+<div class="container sponsor-container">
+    <h1 class="sponsor-heading">BANCSOL</h1>
+    <img class="title-sponsor-img" src="{{url_for('static', filename='images/sponsor1.jpeg')}}" />
+    <p class="sponsor-details">Energy Services Company providing solutions in converting existing battery systems into
+        Lithium technology in all segments of usage across in residential and commercial. Our Operations Corporate
+        office is in Navi Mumbai and Eastern Operations branch in Kolkata. <a
+            style="text-decoration: underline; color: aqua;" href="https://www.bancsol.in/"> Click here
+        </a> to visit the website.
+    </p>
+
+    <h1 class="sponsor-heading">RSJ CONSULTANTS</h1>
+    <img class="title-sponsor-img" src="{{url_for('static', filename='images/sponsor2.jpeg')}}" />
+    <!-- <p class="sponsor-details">Energy Services Company providing solutions in converting existing battery systems into
+        Lithium technology in all segments of usage across in residential and commercial. Our Operations Corporate
+        office is in Navi Mumbai and Eastern Operations branch in Kolkata. <a
+            style="text-decoration: underline; color: aqua;" href="https://www.bancsol.in/"> Click here
+        </a> to visit the website.
+    </p> -->
+</div>
+
+{% endblock %} {% block nav_active %}
+<script>
+    document.getElementById("nav-sponsors").classList.add("active");
+</script>
+{% endblock %}

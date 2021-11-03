@@ -1,0 +1,26 @@
+<div class="container-fluid committees" id="committee_section" data-aos="fade-right" data-aos-duration="1500">
+    <h2 class="committee-card-heading">COMMITTEES</h2>
+
+    <div class="row committee-card d-flex flex-row justify-content-md-around no-gutters">
+        {% for committee in committees %}
+        <div class="committee-card-col col-xl-2 col-md-5 col-sm-8">
+            <a href="/committee/{{ committee.url }}">
+                <!-- <a href="/#committee_section"> -->
+                <div class="booking-card" style="background-image: url({{ committee.img }});">
+                    <div class="book-container">
+
+                        <!-- <div class="content">
+                        </div> -->
+                        <!-- REMOVE ABOVE TO MAKE CARD FULL SIZE -->
+                    </div>
+                    <div class="informations-container">
+                        <h2 class="title">{{ committee.cardName }}</h2>
+                        <p class="sub-title">{{ committee.cardFullName }}</p>
+                        <!-- <div class="more-information"></div> -->
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>

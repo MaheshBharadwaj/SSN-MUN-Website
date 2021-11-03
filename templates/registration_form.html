@@ -1,0 +1,13 @@
+{% extends "base.html" %} 
+{% block page_css %} 
+<link rel="stylesheet" href="{{ url_for('static', filename='css/registration.css') }}">
+{% endblock %}
+{% block content %}
+<div class="registration-container">
+    <iframe src="{{ doc_link }}" class="registration" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+</div>
+{% endblock %} {% block nav_active %}
+<!-- <script type="text/javascript">
+    document.getElementsByTagName("body").style.overflowY = "hidden";
+</script> -->
+{% endblock %}

@@ -1,0 +1,180 @@
+/* Icon set - http://ionicons.com/ */
+
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,800);
+:root {
+    /* --profile-primary: #34495e; */
+    --profile-primary: var(--primary);
+    /* --profile-caption: #ffffff; */
+    --profile-caption: var(--primary);
+}
+
+figure.snip1218 {
+    box-shadow: 0 0 35px rgba(33, 33, 33, .7);
+    font-family: 'Raleway', Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    min-width: 220px;
+    max-width: 310px;
+    width: 100%;
+    background: var(--profile-primary);
+    color: #333;
+    text-align: center;
+    /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.15); */
+    font-size: 16px;
+}
+
+figure.snip1218 * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+}
+
+figure.snip1218 img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+figure.snip1218 .image {
+    margin-top: 15px;
+    position: relative;
+    border-bottom: 4px solid var(--profile-primary);
+    z-index: 1;
+}
+
+figure.snip1218 .image:before {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 20px 0 20px;
+    border-color: var(--profile-primary) transparent transparent transparent;
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -15px);
+    transform: translate(-50%, -15px);
+    z-index: -1;
+    -webkit-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+}
+
+figure.snip1218 .image p {
+    font-weight: 500;
+    margin: 0;
+    padding: 0 30px;
+    line-height: 1.6em;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    color: #ffffff;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    opacity: 0;
+    font-style: italic;
+}
+
+figure.snip1218 figcaption {
+    background-color: var(--profile-caption);
+    padding: 25px;
+    padding-top: 50px !important;
+}
+
+figure.snip1218 h3 {
+    margin: 0 0 5px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+figure.snip1218 h3 span {
+    font-weight: 800;
+}
+
+figure.snip1218 h5 {
+    margin: 0 0 15px;
+    font-weight: 400;
+}
+
+figure.snip1218 i {
+    margin-right: 5px;
+    display: inline-block;
+    font-size: 24px;
+    color: #000000;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    background: white;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+
+/* figure.snip1218 i:hover {
+    background-color: var(--profile-primary);
+    color: white !important;
+}
+
+figure.snip1218:hover .image:before,
+figure.snip1218.hover .image:before {
+    border-color: var(--profile-primary) transparent transparent transparent;
+    -webkit-transform: translate(-50%, 0px);
+    transform: translate(-50%, 0px);
+}
+
+figure.snip1218:hover .image p,
+figure.snip1218.hover .image p {
+    opacity: 1;
+}
+
+figure.snip1218:hover img,
+figure.snip1218.hover img {
+    opacity: 0.2;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+} */
+
+
+/* FLIP CARD */
+
+
+/* 
+.y-card {
+    width: 310px;
+    height: 492.42px;
+    perspective: 500px;
+}
+
+.y-content {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.y-card:hover .y-content {
+    transform: rotateY( 180deg);
+    transition: transform 1.5s;
+}
+
+.y-front,
+.y-back {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: white; 
+    line-height: 300px;
+    color: #03446A; 
+    text-align: center;
+    font-size: 60px;
+    border-radius: 5px;
+    backface-visibility: hidden;
+}
+
+.y-back {
+    background: #03446A; 
+    color: white;
+    transform: rotateY( 180deg);
+} */

@@ -1,50 +1,82 @@
 {
-  "SC001": {
-    "country": "United Kingdom of Great Britain and Northern Ireland",
-    "name": "Adithiyha SK"
+  "SC012": {
+    "country": "Iran (O)",
+    "name": "Hrishikesh Jagannathan"
   },
-  "SC014": {
-    "country": "United States of America",
-    "name": "Alden D'Souza"
+  "SC007": {
+    "country": "Viet Nam",
+    "name": "Ashwin R"
+  },
+  "SC999": {
+    "country": "Turkey(O)",
+    "name": "Pratyush Kaith"
   },
   "SC015": {
     "country": "Russian Federation",
     "name": "Koshal Ram"
   },
+  "SC201": {
+    "country": "United States of America",
+    "name": "Alden D'Souza"
+  },
+  "SC208": {
+    "country": "India",
+    "name": "Skanda N Magal"
+  },
+  "SC210": {
+    "country": "French Republic",
+    "name": "Kiriti Kapavari"
+  },
+  "SC206": {
+    "country": "Armenia(O)",
+    "name": "Aditya Chandrashekar"
+  },
+  "SC205": {
+    "country": "Saint Vincent and the Grenadines",
+    "name": "Karthikay Singhal"
+  },
   "SC004": {
     "country": "Ireland",
     "name": "Dharun Aditya Senthilkumar"
   },
-  "SC016": {
-    "country": "Kenya",
-    "name": "Sandhya Giri"
+  "SC010": {
+    "country": "Greece (O)",
+    "name": "Mrudhula Vijayakumar"
+  },
+  "SC008": {
+    "country": "Tunisia",
+    "name": "Pranav Kumar"
+  },
+  "SC204": {
+    "country": "Mexico",
+    "name": "Jyotsna K"
+  },
+  "SC001": {
+    "country": "United Kingdom of Great Britain and Northern Ireland",
+    "name": "Adithiyha SK"
   },
   "SC005": {
     "country": "Norway",
     "name": "Adyant srinivasan"
   },
-  "SC008": {
-    "country": "Tunisia",
-    "name": "Pranav Kumar S"
-  },
-  "SC007": {
-    "country": "Viet Nam",
-    "name": "Ashwin Ramesh"
-  },
-  "SC012": {
-    "country": "Iran (O)",
-    "name": "N S Hrishekesh Jagannathan"
+  "SC013": {
+    "country": "ISRAEL",
+    "name": "Paul Jabez Talakayala"
   },
   "SC006": {
     "country": "Azerbaijan(O)",
-    "name": "Gokul Sundararaghavan"
+    "name": "Gokul S"
   },
-  "SC010": {
-    "country": "Greece(O)",
-    "name": "Mrudhula Vijayakumar"
+  "SC901": {
+    "country": "People's Republic of China",
+    "name": "Fazil Razak"
   },
-  "SC013": {
-    "country": "Israel(O)",
-    "name": "Paul Jabez Talakayala"
+  "SC702": {
+    "country": "International Press 1",
+    "name": "Harshkaran Singh"
+  },
+  "SC709": {
+    "country": "International Press 2",
+    "name": "Sumisha Mohan"
   }
 }
