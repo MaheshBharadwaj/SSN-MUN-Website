@@ -141,7 +141,7 @@ def index():
             committee_obj["img"] = url_for(
                 "static", filename=committee_obj["img"])
         return render_template(
-            "index.html", page_title="SSN MUN 2021", committees=comm_copy, authors=authors_shuffle()
+            "index.html", page_title="SSN MUN 2022", committees=comm_copy, authors=authors_shuffle()
         )
 
 
