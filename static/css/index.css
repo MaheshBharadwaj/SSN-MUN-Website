@@ -73,8 +73,6 @@ a:focus {
     color: var(--text-color)!important;
 }
 
-
-}
 .navbar-brand a {
     color: var(--text-color);
 }
