@@ -12,9 +12,11 @@
             <!-- <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer> -->
         </blockquote>
         <p>{{ committee.description }}</p>
+         <!-- 
         {% if committee.name != "IP" %}
+        
         <h3 id="agenda" data-text="{{committee.agenda}}"> <strong>Agenda:</strong> <span id="type-agenda"></span></h3>
-
+        
         <div class="row justify-content-center" data-aos="fade-right" data-aos-duration="1500">
             <a href="/background-guides/{{ committee.url }}" class="btn-hover-effect btn-hover-effect--effect-5" title="View More" download>Download the Background Guide</a>
         </div>
@@ -23,10 +25,11 @@
             <a href="/background-guides/{{ committee.url }}" class="btn-hover-effect btn-hover-effect--effect-5" title="View More" download>Download the Style Guide</a>
         </div>
         {% endif %}
+        -->
 
     </div>
 
-
+    <!--
     <div class="eb-member-div">
         <div class="row eb-member-row d-flex flex-row justify-content-md-around no-gutters">
             {% for member in members %}
@@ -37,7 +40,7 @@
                             <div class="eb-image">
                                 <img src="{{ member.img }}" alt="{{ member.name }}" />
                             </div>
-                            <!-- <hr /> -->
+                            <-- <hr /> - ->
                             <div class="eb-info">
                                 <h2>{{ member.name }}</h2>
                                 <h3>{{ member.position }}</h3>
@@ -54,6 +57,7 @@
             {% endfor %}
         </div>
     </div>
+    -->
 </div>
 
 {% endblock %} {% block nav_active %}
