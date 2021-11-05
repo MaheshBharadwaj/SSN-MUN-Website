@@ -46,7 +46,7 @@
     flex-direction: column;
     overflow: hidden;
     background-position: center center;
-    background-size: 150%;
+    background-size: 90%;
     background-repeat: no-repeat;
     text-align: center;
     color: #0a4870;
@@ -220,7 +220,7 @@
         background: rgba(10, 72, 112, 0.6);
     }
     .committee-card .booking-card {
-        background-size: 120%;
+        background-size: 90%;
         background-position: 50% 25%;
     }
     .committee-card .booking-card .book-container {
