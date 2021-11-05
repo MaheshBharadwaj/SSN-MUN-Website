@@ -211,7 +211,7 @@ ul ul a {
     /* background: #cddde4; */
     
     background: transparent;
-    background-image: url(../images/mun_logo_white_2022_compressed.png);
+    background-image: url(../images/logo_white_compressed.png);
     height: calc(100vh - 70px);
     background-position: center;
     background-repeat: no-repeat;
@@ -504,7 +504,7 @@ footer {
     .jumbotron-img {
         height: calc(50vh - 70px);
         margin: 0 25px;
-        background-image: url(../images/alt-colourlogo_withdate_cropped.png);
+        background-image: url(../images/logo_white_mobile_compressed.png);
     }
     
     .scroll-down {
