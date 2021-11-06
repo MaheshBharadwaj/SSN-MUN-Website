@@ -9,7 +9,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="icon" href="{{url_for('static', filename='images/logo_withdate.png')}}" />
+    <link rel="icon" href="{{url_for('static', filename='images/favicon.ico')}}" />
 
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/loading.css')}}" />
     <!-- Animation -->
@@ -66,7 +66,7 @@
                             <a href="/committee/unsc">UNSC</a>
                         </li>
                         <li>
-                            <a href="/committee/sf">SFC</a>
+                            <a href="/committee/sfc">SFC</a>
                         </li>
                         <li>
                             <a href="/committee/orf">ORF</a>
@@ -84,21 +84,20 @@
                 <!-- <li id="nav-registration">
                     <a href="/registrations">Registration</a>
                 </li> -->
-                <li id="nav-announcements">
+                <!-- <li id="nav-announcements">
                     <a href="/announcements">Announcements</a>
                 </li>
                 <li id="nav-delegate-allocation">
                     <a href="/matrix">Allotments</a>
-                </li>
+                </li> -->
 
-                <li id="nav-sponsors">
+                <!-- <li id="nav-sponsors">
                     <a href="/sponsors">Sponsors</a>
-                </li>
-
-
+                </li> -->
+<!-- 
                 <li id="payment-page">
                     <a href="/payments">Payments</a>
-                </li>
+                </li> -->
 
                 <li id="nav-oc">
                     <a href="/organising-committee">Organising Committee</a>
@@ -160,7 +159,8 @@
                         <a href="/">Home</a> ·
                         <!--DO NOT DELETE <a href="/registrations">Register Now</a> · -->
                         <a href="/#committee_section">Committees</a> ·
-                        <a href="/registrations">Registrations</a> ·
+                        <a href="/about">About Us</a> ·
+                        <!-- <a href="/registrations">Registrations</a> · -->
                         <a href="/contact">Contact Us</a>
                     </p>
                     <div class="footer-icons">
@@ -239,9 +239,7 @@
         });
     </script>
     <!-- Smooth Scrolling - JQuery Script -->
-    <script>
-        $(function() { $(".scroll-down").on("click", function(e) { //alert("clicked!"); //e.preventDefault(); $("html, body").animate({ scrollTop: $($(this).attr("href")).offset().top, }, "slow", "swing" ); }); });
-        </script>
+    
         <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
         <script>
             $(document).ready(function() {

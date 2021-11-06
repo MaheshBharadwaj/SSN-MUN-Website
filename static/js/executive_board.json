@@ -1,93 +1,93 @@
 [
   {
-    "committee": "disec",
-    "name": "Gowtham Srinivas",
-    "position": "Chairperson",
-    "img": "images/eb/Chair_DISEC.png",
+    "committee": "unsc",
+    "name": "Fazil Razak",
+    "position": "President",
+    "img": "images/eb/Pres_UNSC.jpg",
     "about": "Toph Beifong is an earthbending master, one of the most powerful of her time, and the discoverer of metalbending. Blind since birth, Toph was constantly treated condescendingly because of her visual impairment."
   },
   {
-    "committee": "disec",
-    "name": "Shashank Ravishankar",
-    "position": "Vice-Chairperson",
-    "img": "images/eb/Vice_Chair_DISEC.png",
-    "about": "Toph Beifong is an earthbending master, one of the most powerful of her time, and the discoverer of metalbending. Blind since birth, Toph was constantly treated condescendingly because of her visual impairment."
-  },
-  {
-    "committee": "disec",
+    "committee": "unsc",
     "name": "Raunak Chaudhuri",
+    "position": "Vice-President",
+    "img": "images/eb/VicePres_UNSC.jpg",
+    "about": "Toph Beifong is an earthbending master, one of the most powerful of her time, and the discoverer of metalbending. Blind since birth, Toph was constantly treated condescendingly because of her visual impairment."
+  },
+  {
+    "committee": "unsc",
+    "name": "Varun Swaminathan",
     "position": "Director",
-    "img": "images/eb/Director_DISEC.png",
+    "img": "images/eb/Dir_UNSC.jpg",
     "about": "Katara is a waterbending master, born in the Southern Water Tribe to Chief Hakoda and his wife Kya. During her childhood, she was the only waterbender living in the Southern Water Tribe and lived a peaceful life with her family."
   },
   {
-    "committee": "ecofin",
-    "name": "Navneeth Venkatesan",
-    "position": "Chairperson",
-    "img": "images/eb/Chair_ECOFIN.png",
-    "about": "By the conclusion of the Hundred Year War, Sokka became a master swordsman and a great warrior like his father. Sokka became the representative for the Southern Water Tribe on the United Republic Council, as well as its chairman."
-  },
-  {
-    "committee": "ecofin",
-    "name": "Sanjana Vijay",
-    "position": "Vice-Chairperson",
-    "img": "images/eb/Vice_Chair_ECOFIN.jpeg",
-    "about": "Aang was a male Air Nomad born in 12 BG and the Avatar during the Hundred Year War. His immediate predecessor was Avatar Roku."
-  },
-  {
-    "committee": "ecofin",
-    "name": "Ajay Gokul",
-    "position": "Director",
-    "img": "images/eb/Director_ECOFIN.png",
-    "about": "Aang was a male Air Nomad born in 12 BG and the Avatar during the Hundred Year War. His immediate predecessor was Avatar Roku."
-  },
-  {
-    "committee": "unsc",
+    "committee": "sfc",
     "name": "Ayush R",
-    "position": "President",
-    "img": "images/eb/President_UNSC.jpeg",
+    "position": "Chairperson of the delegation of USA",
+    "img": "images/eb/USA_SFC.jpg",
+    "about": "By the conclusion of the Hundred Year War, Sokka became a master swordsman and a great warrior like his father. Sokka became the representative for the Southern Water Tribe on the United Republic Council, as well as its chairman."
+  },
+  {
+    "committee": "sfc",
+    "name": "Gowtham Srinivas",
+    "position": "Chairperson of the delegation of USSR",
+    "img": "images/eb/USSR_SFC.jpg",
     "about": "Aang was a male Air Nomad born in 12 BG and the Avatar during the Hundred Year War. His immediate predecessor was Avatar Roku."
   },
   {
-    "committee": "unsc",
-    "name": "Karthika Ellangovan",
-    "position": "Vice-President",
-    "img": "images/eb/Vice_President_UNSC.png",
+    "committee": "orf",
+    "name": "Abhishek Sudke",
+    "position": "Chairperson",
+    "img": "images/eb/Chair_ORF.jpg",
+    "about": "Aang was a male Air Nomad born in 12 BG and the Avatar during the Hundred Year War. His immediate predecessor was Avatar Roku."
+  },
+  {
+    "committee": "orf",
+    "name": "Saiansh Razada",
+    "position": "Vice-Chairperson",
+    "img": "images/eb/ViceChair_ORF.jpg",
+    "about": "By the conclusion of the Hundred Year War, Sokka became a master swordsman and a great warrior like his father. Sokka became the representative for the Southern Water Tribe on the United Republic Council, as well as its chairman."
+  },
+  {
+    "committee": "orf",
+    "name": "Medha Iyer",
+    "position": "Director",
+    "img": "images/eb/Dir_ORF.jpg",
     "about": "By the conclusion of the Hundred Year War, Sokka became a master swordsman and a great warrior like his father. Sokka became the representative for the Southern Water Tribe on the United Republic Council, as well as its chairman."
   },
   {
     "committee": "hrc",
-    "name": "Ansull Lakhotia",
+    "name": "Kaushik Sarma",
     "position": "President",
-    "img": "images/eb/Chair_HRC.png",
-    "about": "By the conclusion of the Hundred Year War, Sokka became a master swordsman and a great warrior like his father. Sokka became the representative for the Southern Water Tribe on the United Republic Council, as well as its chairman."
-  },
-  {
-    "committee": "hrc",
-    "name": "Arvind Krishnan",
-    "position": "Vice-President",
-    "img": "images/eb/Vice_Chair_HRC.png",
+    "img": "images/eb/Pres_HRC.jpg",
     "about": "Aang was a male Air Nomad born in 12 BG and the Avatar during the Hundred Year War. His immediate predecessor was Avatar Roku."
   },
   {
     "committee": "hrc",
     "name": "Keerthana Babu",
+    "position": "Vice-President",
+    "img": "images/eb/VicePres_HRC.jpg",
+    "about": "Aang was a male Air Nomad born in 12 BG and the Avatar during the Hundred Year War. His immediate predecessor was Avatar Roku."
+  },
+  {
+    "committee": "hrc",
+    "name": "Aruna Venkatesa Selvan",
     "position": "Director",
-    "img": "images/eb/Director_HRC.png",
+    "img": "images/eb/Dir_HRC.jpg",
     "about": "Aang was a male Air Nomad born in 12 BG and the Avatar during the Hundred Year War. His immediate predecessor was Avatar Roku."
   },
   {
     "committee": "ip",
     "name": "Shruthi Sundar",
-    "position": "Co-Head",
-    "img": "images/eb/Co_Head1_IP.png",
+    "position": "Head",
+    "img": "images/eb/Head_IP.jpg",
     "about": "Aang was a male Air Nomad born in 12 BG and the Avatar during the Hundred Year War. His immediate predecessor was Avatar Roku."
   },
   {
     "committee": "ip",
-    "name": "Vaishnavi Deepak",
-    "position": "Co-Head",
-    "img": "images/eb/Co_Head2_IP.png",
+    "name": "Suhas Vaidya",
+    "position": "Editor-in-Chief",
+    "img": "images/eb/Editor_IP.jpg",
     "about": "By the conclusion of the Hundred Year War, Sokka became a master swordsman and a great warrior like his father. Sokka became the representative for the Southern Water Tribe on the United Republic Council, as well as its chairman."
   }
 ]

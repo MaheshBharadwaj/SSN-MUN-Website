@@ -12,8 +12,10 @@ content %}
   <a href="#letter" class="scroll-down"><i class="fas fa-angle-down fa-3x"></i></a>
 </div>
 
-{% include "index/letter.html" %} {% include "index/committee-card.html" %} {% include "index/sponsors.html" %} {%
-endblock %} {% block nav_active %}
+{% include "index/letter.html" %} {% include "index/committee-card.html" %} 
+{% include "index/sponsors.html" %} {%
+endblock %} 
+{% block nav_active %}
 <script>
   document.getElementById("nav-home").classList.add("active");
 </script>
