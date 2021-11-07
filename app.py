@@ -14,7 +14,9 @@ from flask_login import login_user, logout_user, login_required, current_user
 
 from quickstart import quickstart
 from generate_sheet import generate_sheet
-
+PORT = 5000
+HOST = "127.0.0.1"
+DEBUG = False
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 app = Flask(__name__, static_folder=ROOT_DIR + "/static/")
 app.config["SECRET_KEY"] = "9OLWxND4o83j4K4iuopO"
@@ -434,4 +436,4 @@ def update_eb(garbage):
 
 
 if __name__ == "__main__":
-    app.run(threaded=True, debug=True)
+    app.run(threaded=True, host=HOST, port=PORT, debug=DEBUG)
