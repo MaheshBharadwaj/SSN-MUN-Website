@@ -1,10 +1,10 @@
-[ {
-    "name": "Kathiyayani Sivakumar",
-    "position": "Secretary General",
-    "img": "images/about/Kathi.jpg",
-    "insta_url": "https://www.instagram.com/p/CUeQUpgFzQQ/"
-},
-   
+[
+    {
+        "name": "Kathiyayini Sivakumar",
+        "position": "Secretary General",
+        "img": "images/about/Kathi.jpg",
+        "insta_url": "https://www.instagram.com/p/CUeQUpgFzQQ/"
+    },
     {
         "name": "Deekshitha Sriraman",
         "position": "Deputy Secretary-General",
@@ -23,7 +23,7 @@
         "img": "/images/about/Akshaya.jpg",
         "insta_url": "https://www.instagram.com/p/CUhkJ0LF6So/"
     },
-      {
+    {
         "name": "Lakshana Murugan",
         "position": "USG Sponsorship",
         "img": "/images/about/Lakshana.jpg",
@@ -65,7 +65,7 @@
         "img": "/images/about/Mahesh.jpg",
         "insta_url": "https://www.instagram.com/p/CUh0mMZpj3y/"
     },
-        {
+    {
         "name": "Niel Parekh",
         "position": "USG Logistics",
         "img": "images/about/Niel.jpg",
@@ -76,5 +76,5 @@
         "position": "USG Logistics",
         "img": "/images/about/Shaalini.jpg",
         "insta_url": "https://www.instagram.com/p/CUjypjklgLu/"
-    }  
+    }
 ]
