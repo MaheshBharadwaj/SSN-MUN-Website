@@ -211,7 +211,7 @@ def registrations(type=None):
         return render_template(
             "registration_form.html",
             page_title="Delegate Registration",
-            doc_link="https://docs.google.com/forms/d/e/1FAIpQLScoxoetemZQHqdBEtq_b6eIZhJdiS3cCsWhgevDgQC59TowhQ/viewform?embedded=true", authors=authors_shuffle()
+            doc_link="https://docs.google.com/forms/d/e/1FAIpQLSfai2uD4S3XbJYLTLNmwzTsBSe8Mt1jlB3RKGPBPvEmetO1Mw/viewform?embedded=true", authors=authors_shuffle()
         )
     elif type == "ip":
         return render_template(
@@ -222,8 +222,8 @@ def registrations(type=None):
         )
     # elif type == 'eb':
     #     return render_template('registration_form.html', page_title='EB Registration', doc_link="https://docs.google.com/forms/d/e/1FAIpQLSfAmJ62D7SHiKNAsJzO1iIkYfSEqpoYLyvdJ0xCuvnSG-2xfg/viewform?embedded=true")
-    else:
-        return render_template("registrations.html", page_title="Registrations", authors=authors_shuffle())
+    
+    return render_template("registrations.html", page_title="Registrations", authors=authors_shuffle())
 
 
 @app.route("/background-guides/<committee>", methods=["GET"])

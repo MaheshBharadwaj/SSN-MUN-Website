@@ -3,7 +3,7 @@
 .registration-container {
   margin-left: auto;
   margin-right: auto;
-  width: 100vw;
+  max-width: 640px;
   height: 90vh;
   overflow-y: hidden;
 }
@@ -69,6 +69,10 @@
 }
 
 @media screen and (max-width: 768px) {
+  .registration-container{
+    width: 95vw !important;
+    max-width: 95vw !important;
+  }
   .reg-heading > h1 {
     font-size: 10vw;
     padding: 10% 0 5%;
