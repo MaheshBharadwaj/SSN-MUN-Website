@@ -1,3 +1,6 @@
+# Ignore firebase admin creds file
+serviceAccountKey.json
+
 # Ignore database
 db.sqlite
 
