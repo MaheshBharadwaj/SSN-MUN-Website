@@ -11,29 +11,29 @@ from google.auth.transport.requests import Request
 import sqlite3 as sql
 from werkzeug.security import generate_password_hash, check_password_hash
 
-
-def generate_otp(email):
-    return(str(int(hashlib.sha224(bytes(email, 'utf-8')).hexdigest()[-5:], 16)))
+from create_credentials import create_ids, generate_otp
 
 
 def quickstart():
     """Shows basic usage of the Sheets API.
     Prints values from a sample spreadsheet.
     """
-    conn = sql.connect("db.sqlite")
 
-    random.seed(41)
+    create_ids()
+    print("IDs created successfully")
+
+    conn = sql.connect("db.sqlite")
 
     # If modifying these scopes, delete the file token.pickle.
     SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 
     # The ID and range of a sample spreadsheet.
     SAMPLE_SPREADSHEET_ID = '1_k4i-Fq8W_IsI_W__dd38ZtwrbmByKHC5VUIsdXu1Pc'
-    COMMITTEE_ABBREVIATIONS = {'DISEC': 'DI',
-                               'UNSC': 'SC', 'ECOFIN': 'EF', 'UNHRC': 'HR'}
-    COMMITTEE_ABBR_REV = {'DI': 'DISEC',
-                          'SC': 'UNSC', 'EF': 'ECOFIN', 'HR': 'UNHRC'}
-    # ALL_COMMITTEES = ['DISEC', 'UNSC', 'ECOFIN', 'UNHRC']
+    COMMITTEE_ABBREVIATIONS = {'ORF': 'OR',
+                               'UNSC': 'SC', 'SFC': 'SF', 'UNHRC': 'HR'}
+    COMMITTEE_ABBR_REV = {'OR': 'ORF',
+                          'SC': 'UNSC', 'SF': 'SFC', 'HR': 'UNHRC'}
+    # ALL_COMMITTEES = ['ORF', 'UNSC', 'SFC', 'UNHRC']
     ALL_COMMITTEES = ['Sheet1']
     SAMPLE_RANGE_NAME = ALL_COMMITTEES[0]
     creds = None
@@ -66,7 +66,7 @@ def quickstart():
         values = result.get('values', [])
         values = values[1:]
 
-        delegates = {'disec': {}, 'ecofin': {}, 'unhrc': {}, 'unsc': {}}
+        delegates = {'orf': {}, 'sfc': {}, 'unhrc': {}, 'unsc': {}}
 
         if not values:
             print('No data found.')
@@ -78,19 +78,33 @@ def quickstart():
                     if(row[4]):
                         if row[1].strip()[:2] == 'IP':
                             continue
-                        delegate = {"id": row[2].strip(), "name": row[1].strip(), "email": row[4].strip(),
-                                    "password": generate_otp(row[4].strip()), "country": row[8].strip(), "committee": COMMITTEE_ABBR_REV[row[2].strip()[:2]]}
+
+                        idx = ""
+                        comm = ""
+                        
+                        if row[2].strip()[:2] == 'DI':
+                            comm='OR'
+                            idx = 'OR' + row[2].strip()[2:]
+                        elif row[2].strip()[:2] == 'EF':
+                            comm='SF'
+                            idx = 'SF' + row[2].strip()[2:]
+                        else:
+                            comm = row[2].strip()[:2]
+                            idx = row[2].strip()
+                        
+                        delegate = {"id": idx, "name": row[1].strip(), "email": row[4].strip(),
+                                    "password": generate_otp(idx), "country": row[8].strip(), "committee": COMMITTEE_ABBR_REV[comm]}
 
                         delegate_info = {
                             'country': delegate['country'], 'name': delegate['name']}
 
                         delegates[COMMITTEE_ABBR_REV[delegate['id']
                                                      [:2]].lower()][delegate['id']] = delegate_info
-
+                        
                         with sql.connect("db.sqlite") as con:
                             cur = con.cursor()
-                            cur.execute("INSERT INTO USER (ID, NAME, EMAIL, PASSWORD, COUNTRY, COMMITTEE) \
-                            VALUES (?,?,?,?,?,?)", (delegate['id'], delegate['name'], delegate['email'], delegate['password'], delegate['country'], delegate['committee']))
+                            cur.execute("UPDATE USER SET NAME = ?, EMAIL = ?, COUNTRY = ? \
+                            WHERE ID = ?", (delegate['name'], delegate['email'], delegate['country'], delegate['id']))
 
                             con.commit()
 
@@ -100,25 +114,6 @@ def quickstart():
 
                 except Exception as e:
                     print('Exception: ' + str(e))
-
-            for committee_abbr in COMMITTEE_ABBREVIATIONS.values():
-                delegate = {"id": f"{committee_abbr}EB",
-                            "name": "EB",
-                            "email": f"EB{committee_abbr}@ssn.edu.in",
-                            "country": "No Country",
-                            "password": generate_otp(f"EB{committee_abbr}@ssn.edu.in"),
-                            "committee": SAMPLE_RANGE_NAME}
-
-                try:
-                    with sql.connect("db.sqlite") as con:
-                        cur = con.cursor()
-                        cur.execute("INSERT INTO USER (ID, NAME, EMAIL, PASSWORD, COUNTRY, COMMITTEE) \
-                        VALUES (?,?,?,?,?,?)", (delegate['id'], delegate['name'], delegate['email'], delegate['password'], delegate['country'], delegate['committee']))
-
-                        con.commit()
-
-                except Exception as e:
-                    print(e)
 
             for committee_json_name in COMMITTEE_ABBR_REV.values():
                 committee_json_name = committee_json_name.lower()

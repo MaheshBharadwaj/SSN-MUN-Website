@@ -47,14 +47,14 @@ def check_password(user_password, password):
 
 
 def get_committee(id: str):
-    if id[0:2] == 'DI':
-        return 'disec'
+    if id[0:2] == 'OR':
+        return 'orf'
     elif id[0:2] == 'HR':
         return 'unhrc'
     elif id[0:2] == 'SC':
         return 'unsc'
-    elif id[0:2] == 'EF':
-        return 'ecofin'
+    elif id[0:2] == 'SF':
+        return 'sfc'
     else:
         return 'eb'
 
@@ -111,7 +111,7 @@ for committee in committees_list:
 class User(UserMixin, db.Model):
     # primary keys are required by SQLAlchemy
     id = db.Column(db.String(20), primary_key=True)
-    email = db.Column(db.String(100), unique=True)
+    email = db.Column(db.String(100))
     password = db.Column(db.String(100))
     name = db.Column(db.String(100))
     country = db.Column(db.String(200))
