@@ -260,6 +260,9 @@ def announcements():
 def rop_guide():
     return send_file(ROOT_DIR + '/static/rop.pdf')
 
+@app.route('/tech-team')
+def tech_team():
+    return render_template("tech-team.html", page_title="Tech Team", authors=authors_shuffle())
 
 @app.route("/login")
 def login():
@@ -424,6 +427,7 @@ def get_recv_message(garbage):
     folder = regid[2:]
 
     return send_file(ROOT_DIR+'/messages/'+com+'/'+folder+'/recv.json')
+
 
 
 @app.route('/update-db/<garbage>')

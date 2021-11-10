@@ -14,13 +14,13 @@ def main():
     # committees = ['HR']
 
     for committee in committees:
-        for i in range(1, 800):
-            idx = str(i)
-            while len(idx) < 3:
-                idx = "0" + idx
+        # for i in range(1, 800):
+        #     idx = str(i)
+        #     while len(idx) < 3:
+        #         idx = "0" + idx
 
-            firestore_db.collection(committee).document(idx).set({'recv_count': 0, 'recv_messages': [], 'sent_count': 0, 'sent_messages': []})
-
+        #     firestore_db.collection(committee).document(idx).set({'recv_count': 0, 'recv_messages': [], 'sent_count': 0, 'sent_messages': []})
+        firestore_db.collection(committee).document(committee + "EB").set({'recv_count': 0, 'recv_messages': [], 'sent_count': 0, 'sent_messages': []})
     snapshots = list(firestore_db.collection(u"HR").get())
     for snapshot in snapshots:
         print(snapshot.to_dict())
