@@ -69,3 +69,7 @@ def create_ids():
 
         except Exception as e:
             print(e)
+
+
+if __name__ == "__main__":
+    create_ids()

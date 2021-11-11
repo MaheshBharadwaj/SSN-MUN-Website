@@ -1,5 +1,4 @@
 #!/bin/bash
-exit;
 current_dir=`pwd`;
 # echo $current_dir
 
@@ -17,13 +16,7 @@ do
     # touch $messages_dir/$committee/EB/recv.json
     echo "[]" | cat > $messages_dir/$committee/EB/sent.json
     echo "[]" | cat > $messages_dir/$committee/EB/recv.json
-    for number in {000..500}
-    do
-        mkdir $messages_dir/$committee/$number/
-        echo "[]" | cat > $messages_dir/$committee/$number/sent.json;
-        echo "[]" | cat > $messages_dir/$committee/$number/recv.json;
-    done
-    for number in {900..999}
+    for number in {001..799}
     do
         mkdir $messages_dir/$committee/$number/
         echo "[]" | cat > $messages_dir/$committee/$number/sent.json;
