@@ -7,6 +7,12 @@ function load_sent_messages(location) {
         .then(function(myJson) {
             // console.log("the data is: " + myJson);
             var ul = document.getElementById(location);
+            ul.innerHTML = `<li>
+                            <div class="collapsible-header"><i class="material-icons">info</i>From SSNMUN</div>
+                            <div class="collapsible-body"><span>Click on the compose button and choose delegate or eb to send a
+                            message. Substantiative messages are <span style="color: #b6faf1; font-weight: 800;">highlighted
+                            in this colour.</span></div>
+                            </li>`;
             myJson.sort(function(a, b) {
                 return b['timestamp'] - a['timestamp'];
             });
@@ -53,6 +59,11 @@ function load_recv_messages(location) {
         })
         .then(function(myJson) {
             var ul = document.getElementById(location);
+            ul.innerHTML = `<li>
+                            <div class=" collapsible-header"><i class="material-icons ">info</i>SSNMUN</div>
+                            <div class="collapsible-body"><span>All the messages that you receive from other delegates will be
+                            located here</span></div>
+                            </li>`;
             myJson.sort(function(a, b) {
                 return b['timestamp'] - a['timestamp'];
             });
@@ -96,6 +107,11 @@ function load_thru_eb_messages(location) {
         .then(function(myJson) {
             // console.log("the data is: " + myJson);
             var ul = document.getElementById(location);
+            ul.innerHTML = `<li>
+                            <div class="collapsible-header "><i class="material-icons ">info</i>SSNMUN</div>
+                            <div class="collapsible-body "><span>Messages sent to EB and from EB to you will be located here.</span>
+                            </div>
+                            </li>`;
             myJson.sort(function(a, b) {
                 return b['timestamp'] - a['timestamp'];
             });
@@ -130,6 +146,7 @@ function load_thru_eb_messages(location) {
                 })
                 .then(function(myNewJson) {
                     var ul = document.getElementById(location);
+                    //ul.innerHTML = "";
                     myNewJson.sort(function(a, b) {
                         return b['timestamp'] - a['timestamp'];
                     });
@@ -169,3 +186,10 @@ window.onload = function() {
     load_recv_messages("received-messages-collapsible");
     load_thru_eb_messages("eb-messages-collapsible");
 };
+
+setInterval(function(){
+    console.log("Function fired interval");
+    load_sent_messages("sent-messages-collapsible");
+    load_recv_messages("received-messages-collapsible");
+    load_thru_eb_messages("eb-messages-collapsible");
+}, 120000);

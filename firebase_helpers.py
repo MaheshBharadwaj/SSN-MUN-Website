@@ -83,8 +83,31 @@ def send_eb(message_obj : dict):
     except Exception as e:
         print("Exception: " + str(e))
 
-def check_recved(user_id):
+# def check_recved(user_id):
+#     committee = user_id[:2]
+#     id = user_id[2:]
+
+#     data = firestore_db.collection(committee).document(id).get().to_dict()
+#     recv_count = data["recv_count"]
+
+#     return recv_count
+
+def get_sent_messages(user_id):
     committee = user_id[:2]
     id = user_id[2:]
 
-    return 5
+    data = firestore_db.collection(committee).document(id).get().to_dict()
+
+    sent_messages = data["sent_messages"]
+
+    return sent_messages
+
+def get_recv_messages(user_id):
+    committee = user_id[:2]
+    id = user_id[2:]
+
+    data = firestore_db.collection(committee).document(id).get().to_dict()
+
+    recv_messages = data["recv_messages"]
+
+    return recv_messages

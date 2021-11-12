@@ -479,7 +479,11 @@ def get_sent_message(garbage):
     com = regid[:2]
     folder = regid[2:]
 
-    return send_file(os.path.join(ROOT_DIR, "messages", com, folder, "sent.json"))
+    data = firebase_helpers.get_sent_messages(regid)
+
+    return jsonify(data)
+
+    #return send_file(os.path.join(ROOT_DIR, "messages", com, folder, "sent.json"))
 
 
 @app.route("/recv-messages/<garbage>")
@@ -489,7 +493,11 @@ def get_recv_message(garbage):
     com = regid[:2]
     folder = regid[2:]
 
-    return send_file(os.path.join(ROOT_DIR, "messages", com, folder, "recv.json"))
+    data = firebase_helpers.get_recv_messages(regid)
+
+    return jsonify(data)
+
+    #return send_file(os.path.join(ROOT_DIR, "messages", com, folder, "recv.json"))
 
 
 @app.route("/update-db/<garbage>")
