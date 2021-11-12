@@ -98,24 +98,6 @@
     bottom: 50px;
 }
 
-.tech-member-row-card a{
-    position: relative;
-    display: block;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    background: #fff;
-    font-size: 23px;
-    color: #333;
-    font-weight: bold;
-    margin: 0 6px;
-    transition: .4s;
-    transform: translateY(200px);
-    opacity: 0;
-}
-
-
 
 /* FOR SMALLER SCREENS */
 

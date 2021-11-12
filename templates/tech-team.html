@@ -19,11 +19,14 @@
                         <div class="tech-member-row-card">
                             <img src= "{{ member.img }}" alt="{{member.name}}">
                             <h2>{{ member.name }}</h2>
-                            <h3>{{ member.position }}<br>
-                                <a class = "btn-success btn" href = "{{ member.github_url }}" target = "_blank" rel = "noopener noreferrer"><i class="fab fa-github fa-2x" style = "color:white"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <a class = "btn-success btn" href = "{{ member.linkedin_url }}" target = "_blank" rel = "noopener noreferrer"><i class="fab fa-linkedin fa-2x" style = "color:white"></i></a></h3>
+                            <h3>{{ member.position }}</h3>
+                            <div>
+                                <a href = "{{ member.github_url }}" target = "_blank" rel = "noopener noreferrer"><i class="fab fa-github fa-2x" style = "color:white"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                <a href = "{{ member.linkedin_url }}" target = "_blank" rel = "noopener noreferrer"><i class="fab fa-linkedin fa-2x" style = "color:white"></i></a></h3>
                                 <!-- <i class="fab fa-github fa-2x" style = "color:white" href = "{{ member.github_url }}"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <i class="fab fa-linkedin fa-2x" style = "color:white"></i> -->
+                                    <i class="fab fa-linkedin fa-2x" style = "color:white"></i> -->
+                            </div>
                             
                         </div>
                     </div>
