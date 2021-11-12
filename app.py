@@ -15,6 +15,7 @@ from flask import (
     redirect,
     url_for,
     request,
+    jsonify,
     flash,
     send_file,
     send_from_directory,
@@ -442,7 +443,7 @@ def send_eb():
         "message": message,
         "to-eb": to_eb,
     }
-    firebase_helpers.send_delegate(message_obj)
+    executor.submit(firebase_helpers.send_eb(message_obj))
     # writing to eb file if to-eb is true
     send_json_path = os.path.join(
         ROOT_DIR, "messages", send_delegate_id[:2], send_delegate_id[2:], "sent.json"
@@ -462,6 +463,13 @@ def send_eb():
         json.dump(data, receiver_file, indent=2)
 
     return redirect(url_for("dashboard"))
+
+@app.route("/check-refresh")
+@login_required
+def check_refresh():
+    data = jsonify(result = firebase_helpers.check_recved(current_user.id))
+    print(data)
+    return data
 
 
 @app.route("/sent-messages/<garbage>")

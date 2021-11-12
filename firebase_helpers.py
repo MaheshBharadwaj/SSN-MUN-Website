@@ -20,6 +20,9 @@ firestore_db = firestore.client()
 
 
 def send_delegate(message_obj: dict):
+    """
+        Handles send and receive of messages through the database
+    """
     committee = message_obj["send-del-id"][:2]
     sender_id = message_obj["send-del-id"][2:]
     receiver_id = message_obj["recv-del-id"][2:]
@@ -29,11 +32,11 @@ def send_delegate(message_obj: dict):
         )
         sender_existing_array["sent_count"] += 1
         sender_existing_array["sent_messages"].append(message_obj)
-        recevier_existing_array = (
+        receiver_existing_array = (
             firestore_db.collection(committee).document(receiver_id).get().to_dict()
         )
-        recevier_existing_array["recv_count"] += 1
-        recevier_existing_array["recv_messages"].append(message_obj)
+        receiver_existing_array["recv_count"] += 1
+        receiver_existing_array["recv_messages"].append(message_obj)
 
         if message_obj["to-eb"]:
             eb_existing_array = (
@@ -46,10 +49,42 @@ def send_delegate(message_obj: dict):
             sender_existing_array
         )
         firestore_db.collection(committee).document(receiver_id).set(
-            recevier_existing_array
+            receiver_existing_array
         )
         if message_obj["to-eb"]:
             firestore_db.collection(committee).document("EB").set(eb_existing_array)
 
     except Exception as e:
         print("Exception: " + str(e))
+
+def send_eb(message_obj : dict):
+    committee = message_obj["send-del-id"][:2]
+    sender_id = message_obj["send-del-id"][2:]
+    receiver_id = "EB"
+    try:
+        sender_existing_array = (
+            firestore_db.collection(committee).document(sender_id).get().to_dict()
+        )
+        sender_existing_array["sent_count"] += 1
+        sender_existing_array["sent_messages"].append(message_obj)
+
+        
+        eb_existing_array = (
+            firestore_db.collection(committee).document("EB").get().to_dict()
+        )
+        eb_existing_array["recv_count"] += 1
+        eb_existing_array["recv_messages"].append(message_obj)
+
+        firestore_db.collection(committee).document(sender_id).set(
+            sender_existing_array
+        )
+        firestore_db.collection(committee).document("EB").set(eb_existing_array)
+
+    except Exception as e:
+        print("Exception: " + str(e))
+
+def check_recved(user_id):
+    committee = user_id[:2]
+    id = user_id[2:]
+
+    return 5

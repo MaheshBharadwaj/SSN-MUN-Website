@@ -159,12 +159,50 @@
     </div>
     </div>
     <script>
+        var refresh = false;
+        var length = 0;
+        // $(document).ready(function () {
+        //     setInterval(function () {
+        //         cache_clear(
+        //     }, 60000);
+        // }); 
+        function refresh(data, textStatus, jqXHR){
+            console.log(data);
+            console.log(textStatus);
+            console.log("chumma");
+        }
+
+        
+
         $(document).ready(function () {
             setInterval(function () {
-                cache_clear()
-            }, 60000);
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", "/check-refresh", true);
+                xhr.responseType = "JSON";
+                xhr.onload = function(e) {
+                    var arrOfStrings = JSON.parse(xhr.response);
+                    console.log(arrOfStrings);
+                }
+                xhr.send();
+            }, 10000);
+            console.log("Vishakan says hi");
         });
+        
 
+        if(refresh == true){
+            cache_clear();
+            refresh = false;
+        }
+
+        // $(document).ready(function () {
+        //     if(refr  == True){
+        //         cache_clear();
+        //     }
+        //     refr=False;
+        // });
+        
+        
+        
         function cache_clear() {
             window.location.reload(true);
             console.log("reloaded"); // window.location.reloa}(); use this if you do not remove cache 
