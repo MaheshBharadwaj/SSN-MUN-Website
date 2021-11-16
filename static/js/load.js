@@ -74,6 +74,22 @@ function load_recv_messages(location) {
                 i += 1;
                 var li = document.createElement("li");
                 var message_header = document.createElement("div");
+                
+                var reply_button = document.createElement("button");
+                reply_button.setAttribute("id", "reply-button");
+                reply_button.message = message;
+                reply_button.innerHTML = "Reply";
+                reply_button.className += "btn waves-effect waves-light";
+
+                var reply_icon = document.createElement("i");
+                reply_icon.className += "material-icons right";
+                reply_icon.innerHTML = "send";
+                
+                
+                reply_button.appendChild(reply_icon);
+                reply_button.addEventListener("click", replyMessage);
+                
+                
                 message_header.className = "collapsible-header"
                 var d = new Date(message['timestamp'] * 1000);
                 dateString = ("00" + d.getHours()).slice(-2) + ":" + ("00" + d.getMinutes()).slice(-2);
@@ -88,9 +104,17 @@ function load_recv_messages(location) {
                 li.appendChild(message_header);
                 var message_content = document.createElement("div");
                 message_content.className = "collapsible-body"
-                message_content.textContent = message['message']
+                message_content.textContent = message['message'];
+                
+                var reply_br1 = document.createElement("br");
+                var reply_br2 = document.createElement("br");
+                
+                message_content.appendChild(reply_br1);
+                message_content.appendChild(reply_br2);
+                message_content.appendChild(reply_button);
                 li.appendChild(message_content);
                 ul.appendChild(li);
+                
             });
             document.getElementById('recv_length').innerHTML = i;
         });
@@ -193,3 +217,11 @@ setInterval(function(){
     load_recv_messages("received-messages-collapsible");
     load_thru_eb_messages("eb-messages-collapsible");
 }, 120000);
+
+function replyMessage(event){
+    message = event.currentTarget.message;
+    //console.log(message);
+    window.location.href = "/send-delegate?send_country=" + 
+                            message["send-del-country"] + "&send_country_id=" + 
+                            message["send-del-id"] + "&parent_id=" + message["message-id"];  
+};

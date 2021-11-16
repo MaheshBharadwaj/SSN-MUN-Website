@@ -58,12 +58,20 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">account_circle</i>
-                        <select name='recv-selected' searchable='List of options' id="xxxx" id="delegate-drop-down" required>
-                            <option value="null" selected>Choose the delegate</option>
-                            {% for item in mapper %}
-                                <option value="{{item.id}};{{item.country}}">{{item.country}}</option>
-                            {% endfor %}
-                         </select>
+                        {% if mapper is defined %}
+                            <select name='recv-selected' searchable='List of options' id="xxxx" id="delegate-drop-down" required>
+                                <option value="null" selected>Choose the delegate</option>
+                                {% for item in mapper %}
+                                    <option value="{{item.id}};{{item.country}}">{{item.country}}</option>
+                                {% endfor %}
+                            </select>
+                        {% else %}
+                            <select disabled name='recv-selected-dummy' searchable='List of options' id="xxxx" id="delegate-drop-down" required>
+                                <option value="{{send_country_id}};{{send_country}}" selected>{{send_country}}</option>
+                            </select>
+                            <input type="text" hidden name="recv-selected" value="{{send_country_id}};{{send_country}}"/>
+                            <input type="text" hidden name="parent_id" value="{{parent_id}}"/>
+                        {% endif %}
                         <label class='form-label'>Receiver</label>
                     </div>
 
@@ -104,6 +112,17 @@
 
     </div>
     <script src="{{url_for('static', filename='js/search.js')}}"></script>
+
+    <!-- <script>
+        let urlString = window.location.href;
+        let paramString = urlString.split('?')[1];
+        let country = paramString.split('=')[1];
+        console.log(country);
+        let delegateBar = document.getElementById("xxxx");
+        delegateBar.value = country;
+
+    </script> -->
+
 </body>
 
 </html>

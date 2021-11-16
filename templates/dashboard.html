@@ -77,10 +77,28 @@
 
     </header>
     <ul class="tabs nav-tabs">
-        <li class="tab"><a href="#sent">SENT (<span id="sent_length"></span>)</a></li>
         <li class="tab"><a href="#received">RECV (<span id="recv_length"></span>)</a></li>
+        <li class="tab"><a href="#sent">SENT (<span id="sent_length"></span>)</a></li>
         <li class="tab"><a href="#eb">THRU EB (<span id="thru_length"></span>)</a></li>
     </ul>
+
+    <div id="received" class="col s12 chat-container">
+        <ul class="collapsible" id="received-messages-collapsible">
+            <li>
+                <div class=" collapsible-header"><i class="material-icons ">info</i>SSNMUN</div>
+                <div class="collapsible-body"><span>All the messages that you receive from other delegates will be
+                        located here</span></div>
+            </li>
+            <!-- <li>
+                <div class="collapsible-header "><i class="material-icons ">mail</i>Second</div>
+                <div class="collapsible-body "><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+            <li>
+                <div class="collapsible-header "><i class="material-icons ">mail</i>Third</div>
+                <div class="collapsible-body "><span>Lorem ipsum dolor sit amet.</span></div>
+            </li> -->
+        </ul>
+    </div>
 
     <div id="sent" class="col s12 chat-container">
         <ul class="collapsible" id='sent-messages-collapsible'>
@@ -100,23 +118,7 @@
             </li> -->
         </ul>
     </div>
-    <div id="received" class="col s12 chat-container">
-        <ul class="collapsible" id="received-messages-collapsible">
-            <li>
-                <div class=" collapsible-header"><i class="material-icons ">info</i>SSNMUN</div>
-                <div class="collapsible-body"><span>All the messages that you receive from other delegates will be
-                        located here</span></div>
-            </li>
-            <!-- <li>
-                <div class="collapsible-header "><i class="material-icons ">mail</i>Second</div>
-                <div class="collapsible-body "><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-                <div class="collapsible-header "><i class="material-icons ">mail</i>Third</div>
-                <div class="collapsible-body "><span>Lorem ipsum dolor sit amet.</span></div>
-            </li> -->
-        </ul>
-    </div>
+    
     <div id="eb" class="col s12 chat-container ">
         <ul class="collapsible" id="eb-messages-collapsible">
             <li>

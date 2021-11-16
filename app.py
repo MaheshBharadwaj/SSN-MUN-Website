@@ -348,11 +348,20 @@ def dashboard():
 def send_delegate():
     # checking and displaying approriately for GET request
     if request.method == "GET":
-        return render_template(
-            "delegate-message.html",
-            mapper=country_id[get_committee(current_user.id)],
-            eb_flag=(current_user.id[2:] == "EB"),
-        )
+        if request.args.get("send_country") is not None:
+            return render_template(
+                "delegate-message.html",
+                send_country=request.args.get("send_country"),
+                send_country_id=request.args.get("send_country_id"),
+                parent_id=request.args.get("parent_id"),
+                eb_flag=(current_user.id[2:] == "EB"),
+            )
+        else:
+            return render_template(
+                "delegate-message.html",
+                mapper=country_id[get_committee(current_user.id)],
+                eb_flag=(current_user.id[2:] == "EB"),
+            )
 
     # getting all info from the submitted form
     form = request.form
@@ -368,6 +377,7 @@ def send_delegate():
 
     # the message object itself
     message_obj = {
+        "message-id": None,
         "send-del-id": send_delegate_id,
         "send-del-country": send_delegate_country,
         "recv-del-id": recv_delegate_id,
@@ -376,6 +386,7 @@ def send_delegate():
         "timestamp": time.time(),
         "message": message,
         "to-eb": to_eb,
+        "parent": form.get("parent_id", None),
     }
     executor.submit(firebase_helpers.send_delegate, message_obj)
     # firebase_helpers.send_delegate(message_obj)
