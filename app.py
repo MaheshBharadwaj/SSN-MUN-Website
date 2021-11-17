@@ -245,7 +245,7 @@ def registrations(type=None):
         return render_template(
             "registration_form.html",
             page_title="IP Registration",
-            doc_link="https://docs.google.com/forms/d/e/1FAIpQLSclGtGrtRtdCpWyV9P6KRxRkX2pqjCmYRwdA88JaKMhcwhaBQ/viewform?embedded=true",
+            doc_link="https://docs.google.com/forms/d/e/1FAIpQLScf1v7uXsI7u9aJKGozEBoNLqHGZFvKwNIRmmYoA8mjbkTUqA/viewform?embedded=true",
             authors=authors_shuffle(),
         )
     elif type is not None:

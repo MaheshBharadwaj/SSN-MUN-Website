@@ -1,3 +1,9 @@
+# Ignore venv
+mun/
+
+# Ignore wsgi file
+wsgi.py
+
 # Ignore firebase admin creds file
 serviceAccountKey.json
 
