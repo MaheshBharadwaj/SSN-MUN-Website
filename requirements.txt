@@ -2,6 +2,7 @@ flask==1.1.1
 firebase-admin==5.1.0
 google-api-core==1.23.0
 google-auth-httplib2 
+google-cloud-firestore==2.3.4
 openpyxl==3.0.6
 google-api-python-client==1.12.8
 google_auth_oauthlib==0.4.2
