@@ -81,8 +81,12 @@
 
                         <div class="input-field col s12">
                             <label>
+                                {% if not to_eb %}
                                 <input type="checkbox" class="filled-in" name="to-eb-check" />
-                                <span>Send message via EB</span>
+                                {% else %}
+                                <input type="checkbox" class="filled-in" name="to-eb-check" checked disabled/>
+                                {% endif %}
+                                <span>Send message via EB </span>
                             </label>
                         </div>
                     </div>

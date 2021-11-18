@@ -354,6 +354,7 @@ def send_delegate():
                 send_country=request.args.get("send_country"),
                 send_country_id=request.args.get("send_country_id"),
                 parent_id=request.args.get("parent_id"),
+                to_eb= False if request.args.get("to_eb") == "false" else True,
                 eb_flag=(current_user.id[2:] == "EB"),
             )
         else:

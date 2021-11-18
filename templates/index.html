@@ -2,8 +2,11 @@
 <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/committee_card.css')}}" />
 <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/letter.css')}}" /> {% endblock %}{% block
 content %}
-<div id="reg-alert" style="margin: 1rem;padding: 12px 32px 12px 20px;" class="alert alert-warning alert-dismissible fade show" role="alert">
-  <strong>Registrations open!</strong> Click <a href="/registrations" style="text-decoration: underline;">Here</a> to register now
+<div id="reg-alert-show" style="margin: 1rem;padding: 12px 32px 12px 20px;"
+  class="alert alert-warning alert-dismissible fade show" role="alert">
+  Round 1 delegate allotements are out: Click <a href="/matrix"
+    style="text-decoration: underline;">Here</a> to view. Pay now to secure your allotment by following the instructions
+  given <a href="/payments" style="text-decoration: underline;">here.</a>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -12,9 +15,9 @@ content %}
   <a href="#letter" class="scroll-down"><i class="fas fa-angle-down fa-3x"></i></a>
 </div>
 
-{% include "index/letter.html" %} {% include "index/committee-card.html" %} 
+{% include "index/letter.html" %} {% include "index/committee-card.html" %}
 {% include "index/sponsors.html" %} {%
-endblock %} 
+endblock %}
 {% block nav_active %}
 <script>
   document.getElementById("nav-home").classList.add("active");
