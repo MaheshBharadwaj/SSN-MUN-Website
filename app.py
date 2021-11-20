@@ -514,7 +514,7 @@ def get_recv_message(garbage):
 
 @app.route("/update-db/<garbage>")
 def update_eb(garbage):
-    quickstart()
+    # quickstart()
     print("---------------\nLoaded data from sheet\n---------------")
     generate_sheet()
 

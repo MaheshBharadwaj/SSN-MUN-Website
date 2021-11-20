@@ -14,12 +14,11 @@ Promise.all([sentPromise, recvPromise]).then((values) => {
         sentJson = jsonValues[0];
         recvJson = jsonValues[1];
         var throughCount = 0;
-        var throughUl = document.getElementById("eb-messages-collapsible");
-        throughUl.innerHTML = `<li>
-                            <div class="collapsible-header "><i class="material-icons ">info</i>SSNMUN</div>
-                            <div class="collapsible-body "><span>Messages sent to EB and from EB to you will be located here.</span>
-                            </div>
-                            </li>`;
+        var throughUl = document.getElementById("thru-messages-collapsible");
+        throughUl.innerHTML = `  <li>
+        <div class="collapsible-header "><i class="material-icons ">info</i>SSNMUN</div>
+        <div class="collapsible-body "><span>Messages sent via EB will be stored here.</span></div>
+        </li>`;
         throughCount = sentMessagesHandler(sentJson, recvJson, throughUl, throughCount);
         throughCount = recvMessagesHandler(sentJson, recvJson, throughUl, throughCount);
         document.getElementById('thru_length').innerHTML = throughCount;
@@ -40,52 +39,19 @@ function sentMessagesHandler(sentJson, recvJson, throughUl, throughCount) {
     var sentUl = document.getElementById("sent-messages-collapsible");
     sentUl.innerHTML = `<li>
                             <div class="collapsible-header"><i class="material-icons">info</i>From SSNMUN</div>
-                            <div class="collapsible-body"><span>Click on the compose button and choose delegate or eb to send a
-                            message. Substantiative messages are <span style="color: #5aaaed; font-weight: 800;">highlighted
-                            in this colour.</span></div>
+                            <div class="collapsible-body"><span>Click on the compose button and choose delegate to send a
+                            message 123.</div>
                             </li>`;
     sentJson.sort(function (a, b) {
         return b['timestamp'] - a['timestamp'];
     });
+
     sentJson.forEach((message) => {
-        if (message['to-eb'] === false) {
-            sentCount += 1;
-
-            var li = document.createElement("li");
-            var message_header = document.createElement("div");
-            message_header.className = "collapsible-header";
-            var d = new Date(message['timestamp'] * 1000);
-            dateString = ("00" + d.getHours()).slice(-2) + ":" + ("00" + d.getMinutes()).slice(-2);
-            if (message['recv-del-id'].slice(2) == 'EB') {
-                if (message['substantiative'] === true) {
-                    message_header.classList.add("sub-highlight");
-                }
-                message_header.innerHTML = '<i class="material-icons" >mail</i>' + "To: EB" +
-                    '<span class="new badge red" data-badge-caption="">' + dateString + '</span>';
-            } else {
-                message_header.innerHTML = '<i class="material-icons" >mail</i>' + "To: " +
-                    message['recv-del-country'] +
-                    '<span class="badge" data-badge-caption="">' + dateString + '</span>';
-            }
-            li.appendChild(message_header);
-            var message_content = document.createElement("div");
-            message_content.className = "collapsible-body"
-
-            var prepend = "";
-            if (message["parent"] != null) {
-                prepend += `<div style="opacity:0.7;">`;
-                console.log("Message[Parent]: " + message["parent"]);
-                parentMsg = recvMap.get(message["parent"]);
-                prepend += "Reply to message from: " + parentMsg["send-del-country"] + "<br>";
-                prepend += parentMsg["message"] + "<br><hr><br></div>";
-            }
-
-            message_content.innerHTML = prepend + message['message']
-            li.appendChild(message_content);
-            sentUl.appendChild(li);
+        if (message['send-del-id'].slice(2) !== 'EB') {
             return;
         }
-        throughCount += 1;
+        sentCount += 1;
+
         var li = document.createElement("li");
         var message_header = document.createElement("div");
         message_header.className = "collapsible-header";
@@ -102,6 +68,7 @@ function sentMessagesHandler(sentJson, recvJson, throughUl, throughCount) {
         li.appendChild(message_header);
         var message_content = document.createElement("div");
         message_content.className = "collapsible-body"
+
         var prepend = "";
         if (message["parent"] != null) {
             prepend += `<div style="opacity:0.7;">`;
@@ -111,17 +78,17 @@ function sentMessagesHandler(sentJson, recvJson, throughUl, throughCount) {
             prepend += parentMsg["message"] + "<br><hr><br></div>";
         }
 
-        message_content.innerHTML = prepend + message['message'];
+        message_content.innerHTML = prepend + message['message']
         li.appendChild(message_content);
-        throughUl.appendChild(li);
+        sentUl.appendChild(li);
     });
-    document.getElementById("sent_length").innerHTML = sentCount;
+    document.getElementById('sent_length').innerHTML = sentCount;
     return throughCount;
 }
 
-
 function recvMessagesHandler(sentJson, recvJson, throughUl, throughCount) {
     var recvCount = 0;
+    var subsCount = 0;
     var sentMap = new Map();
     sentJson.forEach((message) => {
         sentMap.set(message["message-id"], message);
@@ -131,11 +98,15 @@ function recvMessagesHandler(sentJson, recvJson, throughUl, throughCount) {
     recvUl.innerHTML = `<li>
     <div class=" collapsible-header"><i class="material-icons ">info</i>SSNMUN</div>
     <div class="collapsible-body"><span>All the messages that you receive from other delegates will be
-    located here</span></div>
+    located here.</span></div>
+    </li>`;
+    var subsUl = document.getElementById("substantiative-messages-collapsible");
+    subsUl.innerHTML = `  <li>
+    <div class=" collapsible-header "><i class="material-icons ">info</i>SSNMUN</div>
+    <div class="collapsible-body "><span>All the <strong>substantiative</strong> messages that you receive from other delegates will be located here.</span></div>
     </li>`;
     recvJson.forEach((message) => {
-        if (message['to-eb'] === false) {
-            recvCount += 1;
+        if (message['recv-del-id'].slice(2) === "EB") {
             var li = document.createElement("li");
             var message_header = document.createElement("div");
 
@@ -173,7 +144,15 @@ function recvMessagesHandler(sentJson, recvJson, throughUl, throughCount) {
             message_content.appendChild(reply_br2);
             message_content.appendChild(reply_button);
             li.appendChild(message_content);
-            recvUl.appendChild(li);
+            if (message["substantiative"] === false) {
+                recvUl.appendChild(li);
+                recvCount += 1;
+
+            }
+            else {
+                subsUl.appendChild(li);
+                subsCount += 1;
+            }
             return;
         }
         throughCount += 1;
@@ -186,14 +165,11 @@ function recvMessagesHandler(sentJson, recvJson, throughUl, throughCount) {
 
         var d = new Date(message['timestamp'] * 1000);
         dateString = ("00" + d.getHours()).slice(-2) + ":" + ("00" + d.getMinutes()).slice(-2);
-        if (message['send-del-id'].slice(2) == 'EB') {
-            message_header.innerHTML = '<i class="material-icons" >mail</i>' + "From: EB" +
-                '<span class="new badge red" data-badge-caption="">' + dateString + '</span>';
-        } else {
-            message_header.innerHTML = '<i class="material-icons" >mail</i>' + "From: " +
-                message['send-del-country'] +
-                '<span class="badge" data-badge-caption="">' + dateString + '</span>';
-        }
+
+        message_header.innerHTML = '<i class="material-icons" >mail</i>' + "From: " +
+            message['send-del-country'] + "To: " + message["recv-del-country"];
+        '<span class="badge" data-badge-caption="">' + dateString + '</span>';
+
         li.appendChild(message_header);
         var message_content = document.createElement("div");
         message_content.className = "collapsible-body"
@@ -217,6 +193,7 @@ function recvMessagesHandler(sentJson, recvJson, throughUl, throughCount) {
         throughUl.appendChild(li);
     });
     document.getElementById('recv_length').innerHTML = recvCount;
+    document.getElementById('sub_length').innerHTML = subsCount;
     return throughCount;
 }
 
