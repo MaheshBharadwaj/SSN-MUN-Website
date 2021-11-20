@@ -40,7 +40,7 @@ function sentMessagesHandler(sentJson, recvJson, throughUl, throughCount) {
     sentUl.innerHTML = `<li>
                             <div class="collapsible-header"><i class="material-icons">info</i>From SSNMUN</div>
                             <div class="collapsible-body"><span>Click on the compose button and choose delegate to send a
-                            message 123.</div>
+                            message.</div>
                             </li>`;
     sentJson.sort(function (a, b) {
         return b['timestamp'] - a['timestamp'];
@@ -58,10 +58,10 @@ function sentMessagesHandler(sentJson, recvJson, throughUl, throughCount) {
         var d = new Date(message['timestamp'] * 1000);
         dateString = ("00" + d.getHours()).slice(-2) + ":" + ("00" + d.getMinutes()).slice(-2);
         if (message['recv-del-id'].slice(2) == 'EB') {
-            message_header.innerHTML = '<i class="material-icons" >mail</i>' + "To: EB" +
+            message_header.innerHTML = '<i class="material-icons" >mail</i>' + "<b>To:&nbsp</b>EB" +
                 '<span class="new badge red" data-badge-caption="">' + dateString + '</span>';
         } else {
-            message_header.innerHTML = '<i class="material-icons" >mail</i>' + "To: " +
+            message_header.innerHTML = '<i class="material-icons" >mail</i>' + "<b>To:&nbsp</b>" +
                 message['recv-del-country'] +
                 '<span class="badge" data-badge-caption="">' + dateString + '</span>';
         }
@@ -74,7 +74,7 @@ function sentMessagesHandler(sentJson, recvJson, throughUl, throughCount) {
             prepend += `<div style="opacity:0.7;">`;
             console.log("Message[Parent]: " + message["parent"]);
             parentMsg = recvMap.get(message["parent"]);
-            prepend += "Reply to message from: " + parentMsg["send-del-country"] + "<br>";
+            prepend += "Reply to message <b>From:&nbsp</b>" + parentMsg["send-del-country"] + "<br>";
             prepend += parentMsg["message"] + "<br><hr><br></div>";
         }
 
@@ -89,6 +89,9 @@ function sentMessagesHandler(sentJson, recvJson, throughUl, throughCount) {
 function recvMessagesHandler(sentJson, recvJson, throughUl, throughCount) {
     var recvCount = 0;
     var subsCount = 0;
+    recvJson.sort(function (a, b) {
+        return b['timestamp'] - a['timestamp'];
+    });
     var sentMap = new Map();
     sentJson.forEach((message) => {
         sentMap.set(message["message-id"], message);
@@ -117,10 +120,10 @@ function recvMessagesHandler(sentJson, recvJson, throughUl, throughCount) {
             var d = new Date(message['timestamp'] * 1000);
             dateString = ("00" + d.getHours()).slice(-2) + ":" + ("00" + d.getMinutes()).slice(-2);
             if (message['send-del-id'].slice(2) == 'EB') {
-                message_header.innerHTML = '<i class="material-icons" >mail</i>' + "From: EB" +
+                message_header.innerHTML = '<i class="material-icons" >mail</i>' + "<b>From:&nbsp</b>EB" +
                     '<span class="new badge red" data-badge-caption="">' + dateString + '</span>';
             } else {
-                message_header.innerHTML = '<i class="material-icons" >mail</i>' + "From: " +
+                message_header.innerHTML = '<i class="material-icons" >mail</i>' + "<b>From:&nbsp</b>" +
                     message['send-del-country'] +
                     '<span class="badge" data-badge-caption="">' + dateString + '</span>';
             }
@@ -161,34 +164,18 @@ function recvMessagesHandler(sentJson, recvJson, throughUl, throughCount) {
         var li = document.createElement("li");
         var message_header = document.createElement("div");
         message_header.className = "collapsible-header"
-        var reply_button = createReplyButton(message);
 
         var d = new Date(message['timestamp'] * 1000);
         dateString = ("00" + d.getHours()).slice(-2) + ":" + ("00" + d.getMinutes()).slice(-2);
 
-        message_header.innerHTML = '<i class="material-icons" >mail</i>' + "From: " +
-            message['send-del-country'] + "To: " + message["recv-del-country"];
+        message_header.innerHTML = '<i class="material-icons" >mail</i>' + "<b>From:&nbsp</b>" +
+            message['send-del-country'] + " <b>&nbspTo:&nbsp</b> " + message["recv-del-country"];
         '<span class="badge" data-badge-caption="">' + dateString + '</span>';
 
         li.appendChild(message_header);
         var message_content = document.createElement("div");
         message_content.className = "collapsible-body"
-        var prepend = "";
-        if (message["parent"] != null) {
-            prepend += `<div style="opacity:0.7;">`;
-            console.log("Message[Parent]: " + message["parent"]);
-            parentMsg = sentMap.get(message["parent"]);
-            prepend += "Reply for message sent to: " + parentMsg["recv-del-country"] + "<br>";
-            prepend += parentMsg["message"] + "<br><hr><br></div>";
-        }
-
-        message_content.innerHTML = prepend + message['message'];
-        var reply_br1 = document.createElement("br");
-        var reply_br2 = document.createElement("br");
-
-        message_content.appendChild(reply_br1);
-        message_content.appendChild(reply_br2);
-        message_content.appendChild(reply_button);
+        message_content.innerHTML =  message['message'];
         li.appendChild(message_content);
         throughUl.appendChild(li);
     });
@@ -217,7 +204,6 @@ function createReplyButton(message) {
 
 function replyMessage(event) {
     message = event.currentTarget.message;
-    //console.log(message);
     window.location.href = "/send-delegate?send_country=" +
         message["send-del-country"] + "&send_country_id=" +
         message["send-del-id"] + "&parent_id=" + message["message-id"] + "&to_eb=" + message["to-eb"];

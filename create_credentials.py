@@ -6,6 +6,7 @@ import json
 
 import sqlite3 as sql
 from werkzeug.security import generate_password_hash, check_password_hash
+from tqdm import tqdm
 
 def generate_otp(id):
     result = hashlib.sha1(id.encode()).hexdigest()
@@ -29,8 +30,8 @@ def create_ids():
     COMMITTEE_ABBR_REV = {'OR': 'ORF',
                           'SC': 'UNSC', 'SF': 'SFC', 'HR': 'UNHRC'}
     
-    for committee_abbr in COMMITTEE_ABBREVIATIONS.values():
-        for i in range(1, 800):
+    for committee_abbr in tqdm(COMMITTEE_ABBREVIATIONS.values()):
+        for i in tqdm(range(1, 800)):
             idx = str(i)
             while len(idx) < 3:
                 idx = "0" + idx
@@ -72,4 +73,5 @@ def create_ids():
 
 
 if __name__ == "__main__":
+    qickstart()
     create_ids()

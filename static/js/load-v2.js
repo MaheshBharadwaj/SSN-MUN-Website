@@ -60,10 +60,10 @@ function sentMessagesHandler(sentJson, recvJson, throughUl, throughCount) {
                 if (message['substantiative'] === true) {
                     message_header.classList.add("sub-highlight");
                 }
-                message_header.innerHTML = '<i class="material-icons" >mail</i>' + "To: EB" +
+                message_header.innerHTML = '<i class="material-icons" >mail</i>' + "<b>To:&nbsp</b>EB" +
                     '<span class="new badge red" data-badge-caption="">' + dateString + '</span>';
             } else {
-                message_header.innerHTML = '<i class="material-icons" >mail</i>' + "To: " +
+                message_header.innerHTML = '<i class="material-icons" >mail</i>' + "<b>To:&nbsp</b>" +
                     message['recv-del-country'] +
                     '<span class="badge" data-badge-caption="">' + dateString + '</span>';
             }
@@ -73,10 +73,12 @@ function sentMessagesHandler(sentJson, recvJson, throughUl, throughCount) {
 
             var prepend = "";
             if (message["parent"] != null) {
+                console.log("Message has parent: " + message["parent"]);
                 prepend += `<div style="opacity:0.7;">`;
                 console.log("Message[Parent]: " + message["parent"]);
                 parentMsg = recvMap.get(message["parent"]);
-                prepend += "Reply to message from: " + parentMsg["send-del-country"] + "<br>";
+                console.log("Message Parent Obj: " + parentMsg);
+                prepend += "Reply to message <b>From:&nbsp</b>" + parentMsg["send-del-country"] + "<br>";
                 prepend += parentMsg["message"] + "<br><hr><br></div>";
             }
 
@@ -92,10 +94,10 @@ function sentMessagesHandler(sentJson, recvJson, throughUl, throughCount) {
         var d = new Date(message['timestamp'] * 1000);
         dateString = ("00" + d.getHours()).slice(-2) + ":" + ("00" + d.getMinutes()).slice(-2);
         if (message['recv-del-id'].slice(2) == 'EB') {
-            message_header.innerHTML = '<i class="material-icons" >mail</i>' + "To: EB" +
+            message_header.innerHTML = '<i class="material-icons" >mail</i>' + "<b>To:&nbsp</b>EB" +
                 '<span class="new badge red" data-badge-caption="">' + dateString + '</span>';
         } else {
-            message_header.innerHTML = '<i class="material-icons" >mail</i>' + "To: " +
+            message_header.innerHTML = '<i class="material-icons" >mail</i>' + "<b>To:&nbsp</b>" +
                 message['recv-del-country'] +
                 '<span class="badge" data-badge-caption="">' + dateString + '</span>';
         }
@@ -104,10 +106,12 @@ function sentMessagesHandler(sentJson, recvJson, throughUl, throughCount) {
         message_content.className = "collapsible-body"
         var prepend = "";
         if (message["parent"] != null) {
+            console.log("Message has parent: " + message["parent"]);
             prepend += `<div style="opacity:0.7;">`;
             console.log("Message[Parent]: " + message["parent"]);
             parentMsg = recvMap.get(message["parent"]);
-            prepend += "Reply to message from: " + parentMsg["send-del-country"] + "<br>";
+            console.log("Message parent Obj: " + parentMsg);
+            prepend += "Reply to message <b>From:&nbsp</b>" + parentMsg["send-del-country"] + "<br>";
             prepend += parentMsg["message"] + "<br><hr><br></div>";
         }
 
@@ -123,6 +127,9 @@ function sentMessagesHandler(sentJson, recvJson, throughUl, throughCount) {
 function recvMessagesHandler(sentJson, recvJson, throughUl, throughCount) {
     var recvCount = 0;
     var sentMap = new Map();
+    recvJson.sort(function (a, b) {
+        return b['timestamp'] - a['timestamp'];
+    });
     sentJson.forEach((message) => {
         sentMap.set(message["message-id"], message);
     });
@@ -146,10 +153,10 @@ function recvMessagesHandler(sentJson, recvJson, throughUl, throughCount) {
             var d = new Date(message['timestamp'] * 1000);
             dateString = ("00" + d.getHours()).slice(-2) + ":" + ("00" + d.getMinutes()).slice(-2);
             if (message['send-del-id'].slice(2) == 'EB') {
-                message_header.innerHTML = '<i class="material-icons" >mail</i>' + "From: EB" +
+                message_header.innerHTML = '<i class="material-icons" >mail</i>' + "<b>From:&nbsp</b>EB" +
                     '<span class="new badge red" data-badge-caption="">' + dateString + '</span>';
             } else {
-                message_header.innerHTML = '<i class="material-icons" >mail</i>' + "From: " +
+                message_header.innerHTML = '<i class="material-icons" >mail</i>' + "<b>From:&nbsp</b>" +
                     message['send-del-country'] +
                     '<span class="badge" data-badge-caption="">' + dateString + '</span>';
             }
@@ -158,10 +165,12 @@ function recvMessagesHandler(sentJson, recvJson, throughUl, throughCount) {
             message_content.className = "collapsible-body";
             var prepend = "";
             if (message["parent"] != null) {
+                console.log("Message has parent: " + message["parent"]);
                 prepend += `<div style="opacity:0.7;">`;
                 console.log("Message[Parent]: " + message["parent"]);
                 parentMsg = sentMap.get(message["parent"]);
-                prepend += "Reply for message sent to: " + parentMsg["recv-del-country"] + "<br>";
+                console.log("Parent Message Obj: " + parentMsg);
+                prepend += "Reply for message sent <b>To:&nbsp</b>" + parentMsg["recv-del-country"] + "<br>";
                 prepend += parentMsg["message"] + "<br><hr><br></div>";
             }
 
@@ -187,10 +196,10 @@ function recvMessagesHandler(sentJson, recvJson, throughUl, throughCount) {
         var d = new Date(message['timestamp'] * 1000);
         dateString = ("00" + d.getHours()).slice(-2) + ":" + ("00" + d.getMinutes()).slice(-2);
         if (message['send-del-id'].slice(2) == 'EB') {
-            message_header.innerHTML = '<i class="material-icons" >mail</i>' + "From: EB" +
+            message_header.innerHTML = '<i class="material-icons" >mail</i>' + "<b>From:&nbsp</b>EB" +
                 '<span class="new badge red" data-badge-caption="">' + dateString + '</span>';
         } else {
-            message_header.innerHTML = '<i class="material-icons" >mail</i>' + "From: " +
+            message_header.innerHTML = '<i class="material-icons" >mail</i>' + "<b>From:&nbsp</b>" +
                 message['send-del-country'] +
                 '<span class="badge" data-badge-caption="">' + dateString + '</span>';
         }
@@ -202,7 +211,7 @@ function recvMessagesHandler(sentJson, recvJson, throughUl, throughCount) {
             prepend += `<div style="opacity:0.7;">`;
             console.log("Message[Parent]: " + message["parent"]);
             parentMsg = sentMap.get(message["parent"]);
-            prepend += "Reply for message sent to: " + parentMsg["recv-del-country"] + "<br>";
+            prepend += "Reply for message sent <b>To:&nbsp</b>" + parentMsg["recv-del-country"] + "<br>";
             prepend += parentMsg["message"] + "<br><hr><br></div>";
         }
 
@@ -240,8 +249,13 @@ function createReplyButton(message) {
 
 function replyMessage(event) {
     message = event.currentTarget.message;
-    //console.log(message);
-    window.location.href = "/send-delegate?send_country=" +
-        message["send-del-country"] + "&send_country_id=" +
-        message["send-del-id"] + "&parent_id=" + message["message-id"] + "&to_eb=" + message["to-eb"];
+       
+    if (message["send-del-id"].slice(2) === "EB") {
+        window.location.href = "/send-eb?parent_id=" + message["message-id"];
+    }
+    else {
+        window.location.href = "/send-delegate?send_country=" +
+            message["send-del-country"] + "&send_country_id=" +
+            message["send-del-id"] + "&parent_id=" + message["message-id"] + "&to_eb=" + message["to-eb"];
+    }
 };

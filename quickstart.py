@@ -7,6 +7,7 @@ import json
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
+from tqdm import tqdm
 
 import sqlite3 as sql
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -71,7 +72,7 @@ def quickstart():
         if not values:
             print('No data found.')
         else:
-            for row in values:
+            for row in tqdm(values):
                 try:
                     # Print columns A and E, which correspond to indices 0 and 4.
 

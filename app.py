@@ -36,13 +36,7 @@ executor = Executor(app)
 app.config["SECRET_KEY"] = "9OLWxND4o83j4K4iuopO"
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db.sqlite"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-
-# format for JSON message object
-# messageid {
-#     reciever or sender:
-#     message: content
-# }
-
+COMMITTEE_ABBR_REV = {"OR": "ORF", "SC": "UNSC", "SF": "SFC", "HR": "UNHRC"}
 
 db = SQLAlchemy()
 db.init_app(app)
@@ -339,7 +333,7 @@ def login_post():
 def dashboard():
 
     if current_user.id[2:] == "EB":
-        return render_template("eb-dashboard.html", name=current_user.name)
+        return render_template("eb-dashboard.html", committee=COMMITTEE_ABBR_REV[current_user.committee])
     return render_template("dashboard.html", name=current_user.name)
 
 
@@ -354,7 +348,6 @@ def send_delegate():
                 send_country=request.args.get("send_country"),
                 send_country_id=request.args.get("send_country_id"),
                 parent_id=request.args.get("parent_id"),
-                to_eb= False if request.args.get("to_eb") == "false" else True,
                 eb_flag=(current_user.id[2:] == "EB"),
             )
         else:
@@ -428,8 +421,11 @@ def send_delegate():
 @login_required
 def send_eb():
     if request.method == "GET":
-        return render_template("eb-message.html")
-
+        if request.args.get("parent_id") is None:
+            return render_template("eb-message.html")
+        return render_template(
+            "eb-message.html", parent_id=request.args.get("parent_id")
+        )
     # getting all info from the submitted form
     form = request.form
     recv_delegate_id, recv_delegate_country = (
@@ -454,6 +450,7 @@ def send_eb():
         "timestamp": time.time(),
         "message": message,
         "to-eb": to_eb,
+        "parent": form.get("parent_id", None),
     }
     executor.submit(firebase_helpers.send_eb(message_obj))
     # writing to eb file if to-eb is true
@@ -476,13 +473,6 @@ def send_eb():
 
     return redirect(url_for("dashboard"))
 
-@app.route("/check-refresh")
-@login_required
-def check_refresh():
-    data = jsonify(result = firebase_helpers.check_recved(current_user.id))
-    print(data)
-    return data
-
 
 @app.route("/sent-messages/<garbage>")
 @login_required
@@ -494,8 +484,6 @@ def get_sent_message(garbage):
     data = firebase_helpers.get_sent_messages(regid)
 
     return jsonify(data)
-
-    #return send_file(os.path.join(ROOT_DIR, "messages", com, folder, "sent.json"))
 
 
 @app.route("/recv-messages/<garbage>")
@@ -509,7 +497,7 @@ def get_recv_message(garbage):
 
     return jsonify(data)
 
-    #return send_file(os.path.join(ROOT_DIR, "messages", com, folder, "recv.json"))
+    # return send_file(os.path.join(ROOT_DIR, "messages", com, folder, "recv.json"))
 
 
 @app.route("/update-db/<garbage>")

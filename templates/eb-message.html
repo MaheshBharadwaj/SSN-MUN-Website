@@ -57,6 +57,9 @@
                     <div class="input-field col s12">
                         <input disabled value="Executive Board" id="disabled" type="text" class="validate">
                         <label for="disabled">Recepient</label>
+                        {% if parent_id is defined %}
+                        <input type="text" hidden name="parent_id" value="{{parent_id}}"/>
+                        {% endif %}
                     </div>
                 </div>
 
