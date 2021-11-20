@@ -38,7 +38,7 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db.sqlite"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 COMMITTEE_ABBR_REV = {"OR": "ORF", "SC": "UNSC", "SF": "SFC", "HR": "UNHRC"}
 
-tech_file_name = os.path.join(app.static_folder, "js", "tech-team.json")
+tech_file_name = os.path.join(ROOT_DIR,"static", "js", "tech-team.json")
 tech_file = open(tech_file_name)
 tech_members = json.load(tech_file)
 
@@ -145,7 +145,7 @@ def index():
         for committee_obj in comm_copy:
             committee_obj["img"] = url_for("static", filename=committee_obj["img"])
         return render_template(
-            "index.html", page_title="SSN MUN 2022", committees=comm_copy,
+            "index.html", page_title="SSN MUN 2022", committees=comm_copy
         )
 
 
@@ -485,5 +485,5 @@ def update_eb(garbage):
     return send_file(os.path.join(ROOT_DIR, "static", "Users.xlsx"))
 
 
-if __name__ == "_main_":
+if __name__ == "__main__":
     app.run(threaded=True, host=HOST, port=PORT, debug=DEBUG)
