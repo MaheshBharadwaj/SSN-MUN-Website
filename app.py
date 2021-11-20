@@ -38,6 +38,10 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db.sqlite"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 COMMITTEE_ABBR_REV = {"OR": "ORF", "SC": "UNSC", "SF": "SFC", "HR": "UNHRC"}
 
+tech_file_name = os.path.join(app.static_folder, "js", "tech-team.json")
+tech_file = open(tech_file_name)
+tech_members = json.load(tech_file)
+
 db = SQLAlchemy()
 db.init_app(app)
 
@@ -65,20 +69,6 @@ def get_committee(id: str):
         return "sfc"
     else:
         return None
-
-
-def authors_shuffle():
-    authors = [
-        {"name": "Mahesh", "github": "https://github.com/maheshbharadwaj"},
-        {"name": "Shivanirudh", "github": "https://github.com/Shivanirudh"},
-        {"name": "Vishakan", "github": "https://github.com/svishakan"},
-        {"name": "Badri", "github": "https://github.com/MBadriNarayanan"},
-        {"name": "Sathya Priyaa", "github": "https://github.com/sathyapriyaa-sketch"},
-        {"name": "Shreya", "github": "https://github.com/shreya1110-dev"},
-        {"name": "Karun", "github": "https://github.com/Karun842002"},
-    ]
-    # random.shuffle(authors)
-    return authors
 
 
 # secratariat.json has the info that we need to display on the about us page cards
@@ -155,10 +145,7 @@ def index():
         for committee_obj in comm_copy:
             committee_obj["img"] = url_for("static", filename=committee_obj["img"])
         return render_template(
-            "index.html",
-            page_title="SSN MUN 2022",
-            committees=comm_copy,
-            authors=authors_shuffle(),
+            "index.html", page_title="SSN MUN 2022", committees=comm_copy,
         )
 
 
@@ -175,7 +162,6 @@ def organising_committee():
             "organising_committee.html",
             members=members_copy,
             page_title="Organising Committee",
-            authors=authors_shuffle(),
         )
 
 
@@ -202,7 +188,6 @@ def committee(commname):
             committee=display_committee,
             members=comm_eb_copy,
             page_title=commname.upper(),
-            authors=authors_shuffle(),
         )
 
 
@@ -210,18 +195,14 @@ def committee(commname):
 def about():
 
     if request.method == "GET":
-        return render_template(
-            "about.html", page_title="About Us", authors=authors_shuffle()
-        )
+        return render_template("about.html", page_title="About Us")
 
 
 @app.route("/sponsors", methods=["GET"])
 def sponsors():
 
     if request.method == "GET":
-        return render_template(
-            "sponsors.html", page_title="Sponsors", authors=authors_shuffle()
-        )
+        return render_template("sponsors.html", page_title="Sponsors")
 
 
 @app.route("/registrations", methods=["GET"])
@@ -233,23 +214,19 @@ def registrations(type=None):
             "registration_form.html",
             page_title="Delegate Registration",
             doc_link="https://docs.google.com/forms/d/e/1FAIpQLSfai2uD4S3XbJYLTLNmwzTsBSe8Mt1jlB3RKGPBPvEmetO1Mw/viewform?embedded=true",
-            authors=authors_shuffle(),
         )
     elif type == "ip":
         return render_template(
             "registration_form.html",
             page_title="IP Registration",
             doc_link="https://docs.google.com/forms/d/e/1FAIpQLScf1v7uXsI7u9aJKGozEBoNLqHGZFvKwNIRmmYoA8mjbkTUqA/viewform?embedded=true",
-            authors=authors_shuffle(),
         )
     elif type is not None:
         return render_template("404.html"), 404
     # elif type == 'eb':
     #     return render_template('registration_form.html', page_title='EB Registration', doc_link="https://docs.google.com/forms/d/e/1FAIpQLSfAmJ62D7SHiKNAsJzO1iIkYfSEqpoYLyvdJ0xCuvnSG-2xfg/viewform?embedded=true")
 
-    return render_template(
-        "registrations.html", page_title="Registrations", authors=authors_shuffle()
-    )
+    return render_template("registrations.html", page_title="Registrations")
 
 
 @app.route("/background-guides/<committee>", methods=["GET"])
@@ -264,31 +241,23 @@ def background_guides(committee):
 @app.route("/matrix", methods=["GET"])
 def matrix():
 
-    return render_template(
-        "matrix.html", page_title="Allocation Matrix", authors=authors_shuffle()
-    )
+    return render_template("matrix.html", page_title="Allocation Matrix")
 
 
 @app.route("/payments", methods=["GET"])
 def payments():
 
-    return render_template(
-        "payments.html", page_title="Payments", authors=authors_shuffle()
-    )
+    return render_template("payments.html", page_title="Payments")
 
 
 @app.route("/contact", methods=["GET"])
 def contact():
-    return render_template(
-        "contact_us.html", page_title="Contact Us", authors=authors_shuffle()
-    )
+    return render_template("contact_us.html", page_title="Contact Us")
 
 
 @app.route("/announcements", methods=["GET"])
 def announcements():
-    return render_template(
-        "announcements.html", page_title="Announcements", authors=authors_shuffle()
-    )
+    return render_template("announcements.html", page_title="Announcements")
 
 
 @app.route("/rop-guide", methods=["GET"])
@@ -296,11 +265,18 @@ def rop_guide():
     return send_file(os.path.join(ROOT_DIR, "static", "rop.pdf"))
 
 
-@app.route("/tech-team")
+@app.route("/tech-team", methods=["GET"])
 def tech_team():
-    return render_template(
-        "tech-team.html", page_title="Tech Team", authors=authors_shuffle()
-    )
+    # Figure out which member info to display
+    if request.method == "GET":
+        # creating copy to avoid modifying original info - fixes images disappearing on refresh issue
+        mem_copy = [copy.deepcopy(x) for x in tech_members]
+        for tech_member in mem_copy:
+            tech_member["img"] = url_for("static", filename=tech_member["img"])
+        return render_template(
+            "tech-team.html", tech_members=mem_copy, page_title="Tech Team"
+        )
+    return render_template("tech-team.html", page_title="Tech Team",)
 
 
 @app.route("/login")
@@ -333,7 +309,9 @@ def login_post():
 def dashboard():
 
     if current_user.id[2:] == "EB":
-        return render_template("eb-dashboard.html", committee=COMMITTEE_ABBR_REV[current_user.committee])
+        return render_template(
+            "eb-dashboard.html", committee=COMMITTEE_ABBR_REV[current_user.committee]
+        )
     return render_template("dashboard.html", name=current_user.name)
 
 
@@ -497,8 +475,6 @@ def get_recv_message(garbage):
 
     return jsonify(data)
 
-    # return send_file(os.path.join(ROOT_DIR, "messages", com, folder, "recv.json"))
-
 
 @app.route("/update-db/<garbage>")
 def update_eb(garbage):
@@ -509,5 +485,5 @@ def update_eb(garbage):
     return send_file(os.path.join(ROOT_DIR, "static", "Users.xlsx"))
 
 
-if __name__ == "__main__":
+if __name__ == "_main_":
     app.run(threaded=True, host=HOST, port=PORT, debug=DEBUG)

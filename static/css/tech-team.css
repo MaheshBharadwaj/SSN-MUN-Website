@@ -1,0 +1,239 @@
+/* HEADING - JUMBOTRON */
+
+.tech-page {
+    background: var(--primary-dark);
+    /* background: #9CECFB; */
+    /* fallback for old browsers */
+    /* background: -webkit-linear-gradient(to bottom, #65C7F7, #9CECFB); */
+    /* Chrome 10-25, Safari 5.1-6 */
+    /* background: linear-gradient(to bottom, #65C7F7, #9CECFB); */
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.tech-heading {
+    font-family: 'Poppins', serif;
+    text-transform: uppercase;
+    background: transparent;
+    /* background-repeat: no-repeat;
+    background-size: cover; */
+    text-align: center;
+}
+
+.tech-heading>h1 {
+    font-weight: 900;
+    font-size: 7em;
+    color: white;
+    padding: 6% 0 2% 0;
+}
+
+.tech-heading>h3 {
+    font-weight: 900;
+    font-size: 3.5em;
+    color: var(--secondary);
+    padding: 1% 0 2% 0;
+}
+
+
+/* SECRETARIAT MEMBER CARDS  */
+
+.tech-member {
+    padding: 2%;
+}
+
+.tech-member-row {
+    justify-content: center;
+    padding: 0 12%;
+}
+
+.tech-member-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.tech-member-row-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+    text-align: center;
+    border-radius: 4%;
+    min-height: 450px;
+    margin: 7% 0;
+    padding: 4%;
+    width: 300px;
+    /* background-color: #7a4988; */
+    background-color: var(--navbar-color);
+    font-family: 'Nunito', sans-serif;
+}
+
+.tech-member-row-card>img {
+    border-radius: 50%;
+    height: 260px;
+    width: 260px;
+    padding: 3% 0;
+}
+
+.tech-member-row-card>h2 {
+    color: var(--text-color);
+    font-size: 2em;
+    font-weight: 600;
+    margin: 0;
+    padding: 2% 0;
+}
+
+.tech-member-row-card>h3 {
+    font-size: 1.00em;
+    font-weight: 600;
+    color: #7a7878;
+    margin: 0;
+    padding: 1% 0 4% 0;
+    text-transform: uppercase;
+}
+
+.tech-member-row-card button.btn-info {
+    position: absolute;
+    bottom: 50px;
+}
+
+
+/* FOR SMALLER SCREENS */
+
+@media screen and (max-width: 540px) {
+    .tech-member-row-card button.btn-info {
+        position: inherit;
+    }
+    .jumbotron {
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    .tech-member-row-card {
+        min-height: auto;
+    }
+    .tech-member-row-card>img {
+        height: 200px;
+        width: 200px;
+    }
+    .tech-heading>h1 {
+        font-size: 250%;
+    }
+    .tech-heading>h3 {
+        font-size: 155%;
+    }
+    .tech-member-row-card>h2 {
+        font-size: 150%;
+    }
+    .tech-member-row-card>h3 {
+        font-size: 90%;
+    }
+}
+
+/*tech team social icons*/
+
+.footer-icons {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+}
+
+ 
+.footer-icons i:hover {
+    color: var(--secondary);
+    transition: 1s;
+}
+
+ 
+.footer-icons span {
+    display: block;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+
+.footer-icons a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 2px;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 1rem;
+    margin-bottom: 5px;
+}
+
+
+.tech-social-icons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    display: flex;
+}
+
+.tech-social-icons li {
+    list-style: none;
+}
+
+.tech-social-icons li a {
+    position: relative;
+    display: block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: #fff;
+    font-size: 23px;
+    color: #333;
+    font-weight: bold;
+    margin: 0 6px;
+    transition: .4s;
+    transform: translateY(200px);
+    opacity: 0;
+}
+
+.tech-card:hover .tech-social-icons li a {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.tech-social-icons li a:hover {
+    background: #000;
+    transition: .2s;
+}
+
+.tech-social-icons li a:hover .fab {
+    color: #fff;
+}
+
+.tech-social-icons li a .fab {
+    transition: .8s;
+}
+
+.tech-social-icons li a .fab:hover {
+    transform: rotateY(360deg);
+    color: #fff;
+}
+
+.tech-card:hover li:nth-child(1) a {
+    transition-delay: 0.1s;
+}
+
+.tech-card:hover li:nth-child(2) a {
+    transition-delay: 0.2s;
+}
+
+.tech-card:hover li:nth-child(3) a {
+    transition-delay: 0.3s;
+}
+
+.tech-card:hover li:nth-child(4) a {
+    transition-delay: 0.4s;
+}

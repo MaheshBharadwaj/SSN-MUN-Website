@@ -1,0 +1,51 @@
+[
+    {
+        "name": "Mahesh Bharadwaj K",
+        "position": "USG Tech",
+        "img": "/images/tech_team/mahesh.jpg",
+        "linkedin_url": "https://www.linkedin.com/in/maheshbharadwaj/",
+        "github_url": "https://github.com/MaheshBharadwaj"
+    },
+    {
+        "name": "Shivanirudh",
+        "position": "",
+        "img": "/images/tech_team/shivanirudh.jpg",
+        "linkedin_url": "https://www.linkedin.com/in/shivanirudh-s-g",
+        "github_url": "https://github.com/Shivanirudh"
+    },
+    {
+        "name": "Vishakan Subramanian",
+        "position": "",
+        "img": "/images/tech_team/vishakan.jpg",
+        "linkedin_url": "https://www.linkedin.com/in/vishakan-subramanian/",
+        "github_url": "https://github.com/svishakan"
+    },
+    {
+        "name": "M Badri Narayanan",
+        "position": "",
+        "img": "/images/tech_team/badri.JPG",
+        "linkedin_url": "https://www.linkedin.com/in/mbadrinarayanan",
+        "github_url": "https://github.com/MBadriNarayanan"
+    },
+    {
+        "name": "Sathya priyaa R",
+        "position": "",
+        "img": "/images/tech_team/sathya priya.jpg",
+        "linkedin_url": "https://www.linkedin.com/in/sathya-priyaa-26ba8a1bb/",
+        "github_url": "https://github.com/sathyapriyaa-sketch"
+    },
+    {
+        "name": "Shreya Sriram",
+        "position": "",
+        "img": "/images/tech_team/shreya.jpg",
+        "linkedin_url": "http://www.linkedin.com/in/shreya-sriram-s1",
+        "github_url": "https://github.com/shreya1110-dev"   
+    },
+    {
+        "name": "Karun Anantharaman",
+        "position": "",
+        "img": "/images/tech_team/karun.jpg",
+        "linkedin_url": "https://www.linkedin.com/in/karun84/",
+        "github_url": "https://github.com/Karun842002"
+    }
+]
