@@ -143,3 +143,7 @@ nav .brand-logo i {
 .sub-highlight {
     background-color: #b6faf1;
 }
+
+.btn:hover {
+    background : #8c5db8de;
+}
