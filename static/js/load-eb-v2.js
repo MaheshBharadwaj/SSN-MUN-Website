@@ -1,30 +1,31 @@
-var sentPromise = fetch('/sent-messages/' + Date.now());
-var recvPromise = fetch('/recv-messages/' + Date.now());
-
-
-Promise.all([sentPromise, recvPromise]).then((values) => {
-    sentResp = values[0];
-    recvResp = values[1];
-
-    var sentJsonPromise = sentResp.json();
-    var recvJsonPromise = recvResp.json();
-
-
-    Promise.all([sentJsonPromise, recvJsonPromise]).then((jsonValues) => {
-        sentJson = jsonValues[0];
-        recvJson = jsonValues[1];
-        var throughCount = 0;
-        var throughUl = document.getElementById("thru-messages-collapsible");
-        throughUl.innerHTML = `  <li>
-        <div class="collapsible-header "><i class="material-icons ">info</i>SSNMUN</div>
-        <div class="collapsible-body "><span>Messages sent via EB will be stored here.</span></div>
-        </li>`;
-        throughCount = sentMessagesHandler(sentJson, recvJson, throughUl, throughCount);
-        throughCount = recvMessagesHandler(sentJson, recvJson, throughUl, throughCount);
-        document.getElementById('thru_length').innerHTML = throughCount;
-
+function load_eb_messages(){
+    var sentPromise = fetch('/sent-messages/' + Date.now());
+    var recvPromise = fetch('/recv-messages/' + Date.now());
+    Promise.all([sentPromise, recvPromise]).then((values) => {
+        sentResp = values[0];
+        recvResp = values[1];
+    
+        var sentJsonPromise = sentResp.json();
+        var recvJsonPromise = recvResp.json();
+    
+    
+        Promise.all([sentJsonPromise, recvJsonPromise]).then((jsonValues) => {
+            sentJson = jsonValues[0];
+            recvJson = jsonValues[1];
+            var throughCount = 0;
+            var throughUl = document.getElementById("thru-messages-collapsible");
+            throughUl.innerHTML = `  <li>
+            <div class="collapsible-header "><i class="material-icons ">info</i>SSNMUN</div>
+            <div class="collapsible-body "><span>Messages sent via EB will be stored here.</span></div>
+            </li>`;
+            throughCount = sentMessagesHandler(sentJson, recvJson, throughUl, throughCount);
+            throughCount = recvMessagesHandler(sentJson, recvJson, throughUl, throughCount);
+            document.getElementById('thru_length').innerHTML = throughCount;
+    
+        });
     });
-});
+}
+
 
 function sentMessagesHandler(sentJson, recvJson, throughUl, throughCount) {
     var sentCount = 0;
@@ -201,6 +202,15 @@ function createReplyButton(message) {
     return reply_button;
 }
 
+window.onload = function() {
+    console.log("Function fired");
+    load_eb_messages();
+};
+
+setInterval(function(){
+    console.log("Interval Function fired ");
+    load_eb_messages();
+}, 120000);
 
 function replyMessage(event) {
     message = event.currentTarget.message;

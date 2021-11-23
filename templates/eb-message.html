@@ -25,9 +25,9 @@
         $(document).ready(function () {
             $('select').formSelect();
         });
-        window.onbeforeunload = function () {
-            return 'Are you sure you want to leave?';
-        };
+        // window.onbeforeunload = function () {
+        //     return 'Are you sure you want to leave?';
+        // };
     </script>
 
 </head>
@@ -85,7 +85,7 @@
                     <button class="btn-large waves-effect waves-light" type="submit" name="action">Submit
                         <i class="material-icons right">send</i>
                     </button>
-                    <a class="btn-large waves-effect waves-light cancel" href="/dashboard">Cancel
+                    <a class="btn-large waves-effect waves-light cancel" href="/dashboard" onclick="return confirm('Are you sure?')">Cancel
                         <i class="material-icons right">cancel</i>
                     </a>
                 </div>

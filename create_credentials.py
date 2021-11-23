@@ -73,5 +73,5 @@ def create_ids():
 
 
 if __name__ == "__main__":
-    qickstart()
+    #quickstart()
     create_ids()
