@@ -487,13 +487,18 @@ footer {
 }
 .footer-authors {
     /* color: #FF8C00; */
-    padding-left: 25px;
+    padding-left: 15px;
     color: var(--secondary);
 }
 .footer-authors a {
     color: var(--text-color);
 }
 .footer-authors a:hover {
+    color: var(--secondary);
+    transition: 0.5s;
+    text-decoration: none;
+}
+.footer-authors i:hover {
     color: var(--secondary);
     transition: 0.5s;
     text-decoration: none;
