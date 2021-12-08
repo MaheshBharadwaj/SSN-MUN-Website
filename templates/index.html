@@ -1,24 +1,18 @@
 {% extends "base.html" %} {% block page_css %}
 <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/committee_card.css')}}" />
-<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/letter.css')}}" /> {% endblock %}{% block
-content %}
-<div id="reg-alert" style="margin: 1rem;padding: 12px 32px 12px 20px;"
-  class="alert alert-warning alert-dismissible fade show" role="alert">
-  Round 2 delegate applications and International Press Applications are now open. Click <a style="text-decoration: underline;"
-    href="/registrations">here</a> to register.<button type="button" class="close" data-dismiss="alert"
-    aria-label="Close">
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/letter.css')}}" /> {% endblock %}{% block content %}
+<div id="reg-alert-show" style="margin: 1rem;padding: 12px 32px 12px 20px;" class="alert alert-warning alert-dismissible fade show" role="alert">
+    Round 2 allotments are released! Click <a style="text-decoration: underline;" href="/matrix">here</a> to view them. Make your payments <a style="text-decoration: underline;" href="/payments">here</a> to confirm your allotments.<button type="button"
+        class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
 <div class="jumbotron jumbotron-fluid jumbotron-img">
-  <a href="#letter" class="scroll-down"><i class="fas fa-angle-down fa-3x"></i></a>
+    <a href="#letter" class="scroll-down"><i class="fas fa-angle-down fa-3x"></i></a>
 </div>
 
-{% include "index/letter.html" %} {% include "index/committee-card.html" %}
-{% include "index/sponsors.html" %} {%
-endblock %}
-{% block nav_active %}
+{% include "index/letter.html" %} {% include "index/committee-card.html" %} {% include "index/sponsors.html" %} {% endblock %} {% block nav_active %}
 <script>
-  document.getElementById("nav-home").classList.add("active");
+    document.getElementById("nav-home").classList.add("active");
 </script>
 {% endblock %}

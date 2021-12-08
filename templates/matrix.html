@@ -1,6 +1,5 @@
 {% extends "base.html" %} {% block page_css %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/registration.css') }}"> {% endblock %} {% block content
-%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/registration.css') }}"> {% endblock %} {% block content %}
 
 <div class="reg-heading container text-center">
     <h1>Delegate Allotments</h1>
@@ -10,9 +9,7 @@
 
 <div class="country-matrix">
     <!-- paste link here -->p
-    <iframe
-        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ652oy2QV8DEWwVqgs3f6OATyKiGmlQU_QbORc7RXv15Ba9ZtI40aXVuMqIzcYuSAANPbCsPOAaek-/pubhtml?widget=true&amp;headers=false"
-        class="registration" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2-pfkhq8MYeRgnM82EhvwGtVFZDnKi-osT_3WJRTXxcSNbyGwbmsOUl1-J70JEZmW8k2Fn_sRINi5/pubhtml?widget=true&amp;headers=false" class="registration" frameborder="0" marginheight="0" marginwidth="0"></iframe>
 </div> {% endblock %} {% block nav_active %}
 <script>
     document.getElementById("nav-delegate-allocation").classList.add("active");
