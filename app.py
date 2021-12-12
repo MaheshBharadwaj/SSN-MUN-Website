@@ -38,7 +38,7 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db.sqlite"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 COMMITTEE_ABBR_REV = {"OR": "ORF", "SC": "UNSC", "SF": "SFC", "HR": "UNHRC"}
 
-tech_file_name = os.path.join(ROOT_DIR,"static", "js", "tech-team.json")
+tech_file_name = os.path.join(ROOT_DIR, "static", "js", "tech-team.json")
 tech_file = open(tech_file_name)
 tech_members = json.load(tech_file)
 
@@ -227,15 +227,6 @@ def registrations(type=None):
     #     return render_template('registration_form.html', page_title='EB Registration', doc_link="https://docs.google.com/forms/d/e/1FAIpQLSfAmJ62D7SHiKNAsJzO1iIkYfSEqpoYLyvdJ0xCuvnSG-2xfg/viewform?embedded=true")
 
     return render_template("registrations.html", page_title="Registrations")
-
-
-@app.route("/background-guides/<committee>", methods=["GET"])
-def background_guides(committee):
-    if committee in ["hrc", "unsc", "orf", "sfc"]:
-        return send_from_directory(
-            os.path.join(ROOT_DIR, "static", "background_guides"), committee + ".pdf"
-        )
-    return render_template("404.html"), 404
 
 
 @app.route("/matrix", methods=["GET"])

@@ -190,7 +190,8 @@ body {
 
 /* effect #5 */
 
-.btn-hover-effect--effect-5 {
+.btn-hover-effect--effect-5,
+.btn-hover-effect--effect-5:focus {
     background-color: var(--secondary);
     color: var(--main);
 }
@@ -236,7 +237,7 @@ body {
     justify-content: center;
     width: 300px;
     height: 300px;
-    content: '\f019';
+    content: '\f1c1';
     font-family: "Font Awesome 5 Free";
     font-size: 30px;
     font-weight: 900;
