@@ -76,16 +76,19 @@ a:focus {
 .navbar-brand a {
     color: var(--text-color);
 }
+
 .navbar-brand a:hover {
     color: var(--secondary);
     transition: 1s;
 }
+
 .line {
     width: 100%;
     height: 1px;
     border-bottom: 1px dashed #ddd;
     margin: 40px 0;
 }
+
 .register-btn {
     color: var(--primary);
     border-radius: 5px;
@@ -93,7 +96,9 @@ a:focus {
     height: 40px;
 }
 
+
 /* bar collapse button on navbar */
+
 #sidebarCollapse {
     width: 40px;
     height: 40px;
@@ -102,11 +107,14 @@ a:focus {
     margin-right: 10px;
 }
 
+
 /* #sidebarCollapse:hover {
     background: var(--main-light);
 } */
 
+
 /* SIDEBAR */
+
 #sidebar {
     width: 275px;
     position: fixed;
@@ -120,9 +128,11 @@ a:focus {
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
     z-index: 999;
 }
+
 #sidebar.active {
     left: 0;
 }
+
 #dismiss {
     width: 35px;
     height: 35px;
@@ -137,10 +147,12 @@ a:focus {
     -o-transition: all 0.3s;
     transition: all 0.3s;
 }
+
 #dismiss:hover {
     background: var(--primary-dark);
     color: var(--secondary);
 }
+
 .overlay {
     display: none;
     position: fixed;
@@ -151,40 +163,49 @@ a:focus {
     opacity: 0;
     transition: all 0.5s ease-in-out;
 }
+
 .overlay.active {
     display: block;
     opacity: 1;
 }
+
 #sidebar .sidebar-header {
     padding: 50px 15px 20px 15px;
     background: var(--primary-dark);
 }
+
 #sidebar ul.components {
     padding: 20px 0;
     /* border-bottom: 1px solid #47748b; */
 }
+
 #sidebar ul p {
     color: #fff;
     padding: 10px;
 }
+
 #sidebar ul li a {
     padding: 10px;
     font-size: 1.3em;
     display: block;
     text-transform: uppercase;
 }
+
 #sidebar ul li a:hover {
     color: var(--primary);
     background: #fff;
 }
+
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
     color: var(--secondary);
     background: var(--primary-dark);
 }
+
 a[data-toggle="collapse"] {
     position: relative;
 }
+
 .dropdown-toggle::after {
     display: block;
     position: absolute;
@@ -192,13 +213,16 @@ a[data-toggle="collapse"] {
     right: 20px;
     transform: translateY(-50%);
 }
+
 ul ul a {
     font-size: 1.1em !important;
     padding-left: 30px !important;
     background: var(--primary-dark);
 }
 
+
 /* CONTENT */
+
 #content {
     width: 100%;
     min-height: 100vh;
@@ -206,12 +230,14 @@ ul ul a {
     position: absolute;
 }
 
+
 /* HOMEPAGE TITLE JUMBOTRON (WITH MUN LOGO) */
+
 .jumbotron-img {
     /* background: #cddde4; */
-    
     background: transparent;
-    background-image: url(../images/logo_white_compressed.png);
+    /* background-image: url(../images/logo_white_compressed.png); */
+    background-image: url(../images/logo_sponsor.png);
     height: calc(100vh - 70px);
     background-position: center;
     background-repeat: no-repeat;
@@ -221,7 +247,9 @@ ul ul a {
     margin: 0;
 }
 
+
 /* ICON CUSTOMIZATION - ORIGINAL COLOURS */
+
 .fa-instagram {
     color: transparent;
     background: radial-gradient( circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
@@ -229,23 +257,30 @@ ul ul a {
     background-clip: text;
     -webkit-background-clip: text;
 }
+
 .fa-instagram.white {
     color: #eee;
 }
+
 .fa-twitter {
     color: #00aced;
 }
+
 .fa-twitter.white {
     color: #eee;
 }
+
 .fa-facebook-square {
     color: #087bea;
 }
+
 .fa-facebook-square.white {
     color: #eee;
 }
 
+
 /* ICON CUSTOMIZATION - MINT GREEN */
+
 
 /* .fa-facebook {
     color: var(--primary-dark);
@@ -256,23 +291,26 @@ ul ul a {
 .fa-twitter {
     color: var(--primary-dark);
 } */
+
 .social-media {
     /* margin-left: auto;
     margin-right: auto;
     padding-left: 30%;
     padding-top: 80%; */
-    
     position: absolute;
     width: 100%;
     bottom: 0;
     list-style-type: none;
     padding-bottom: 5.5em;
 }
+
 .social-media a {
     padding-right: 10px;
 }
 
+
 /* SCROLL DOWN BUTTON */
+
 .scroll-down {
     margin-left: auto;
     margin-right: auto;
@@ -280,67 +318,75 @@ ul ul a {
     color: var(--text-color);
 }
 
+
 /* Animation for Scroll Button */
+
 .scroll-down i {
     -webkit-animation: sdb04 2s infinite;
     animation: sdb04 2s infinite;
     box-sizing: border-box;
 }
+
 a:hover.scroll-down {
     color: var(--secondary) !important;
 }
+
 @-webkit-keyframes sdb04 {
     0% {
         -webkit-transform: translate(0, 0);
     }
-    
     20% {
         -webkit-transform: translate(0px, 20px);
     }
-    
     40% {
         -webkit-transform: translate(0, 0);
     }
 }
+
 @keyframes sdb04 {
     0% {
         transform: translate(0, 0);
     }
-    
     20% {
         transform: translate(0px, 20px);
     }
-    
     40% {
         transform: translate(0, 0);
     }
 }
 
+
 /* HOME PAGE SPONSORS CAROUSEL */
+
 .container.sponsors {
     margin-bottom: 3rem;
 }
+
 .carousel-indicators li {
     background-color: var(--primary-dark);
 }
+
 .carousel-indicators li.active {
     background-color: var(--primary-light);
 }
+
 .sponsor-title {
     margin: 20px 0 30px 0;
     color: var(--text-color);
 }
 
+
 /* FOOTER */
+
 footer {
     clear: both;
     position: absolute;
     height: -3em;
     /* margin-top: 40em; */
 }
+
 .footer-distributed {
     /* background-color: #292c2f; */
-    
     background-color: var(--primary-dark);
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
@@ -350,6 +396,7 @@ footer {
     padding: 45px 55px;
     /* margin-top: 5%; */
 }
+
 .footer-distributed .footer-left,
 .footer-distributed .footer-center,
 .footer-distributed .footer-right {
@@ -357,39 +404,48 @@ footer {
     vertical-align: top;
 }
 
+
 /* Footer left */
+
 .footer-distributed .footer-left {
     width: 40%;
 }
 
+
 /* The company logo */
+
 .footer-distributed h3 {
     color: #ffffff;
     font: normal 36px "Poppins", cursive;
     margin: 0;
 }
+
 .footer-distributed h3 span {
     /* color: #5383d3; */
-    
     color: var(--secondary);
 }
 
+
 /* Footer links */
+
 .footer-distributed .footer-links {
     color: #ffffff;
     margin: 20px 0 12px;
     padding: 0;
 }
+
 .footer-distributed .footer-links a {
     display: inline-block;
     line-height: 1.8;
     text-decoration: none;
     color: inherit;
 }
+
 .footer-distributed .footer-links a:hover {
     color: var(--secondary);
     transition: 0.7s;
 }
+
 .footer-distributed .footer-company-name {
     color: #8f9296;
     font-size: 14px;
@@ -397,13 +453,15 @@ footer {
     margin-top: 2rem;
 }
 
+
 /* Footer Center */
+
 .footer-distributed .footer-center {
     width: 35%;
 }
+
 .footer-distributed .footer-center i {
     /* background-color: #33383b; */
-    
     background-color: var(--primary-dark);
     color: #ffffff;
     font-size: 25px;
@@ -415,33 +473,39 @@ footer {
     margin: 10px 15px;
     vertical-align: middle;
 }
+
 .footer-distributed .footer-center i.fa-envelope {
     font-size: 17px;
     line-height: 38px;
 }
+
 .footer-distributed .footer-center p {
     display: inline-block;
     color: #ffffff;
     vertical-align: middle;
     margin: 0;
 }
+
 .footer-distributed .footer-center p span {
     display: block;
     font-weight: normal;
     font-size: 14px;
     line-height: 2;
 }
+
 .footer-distributed .footer-center p a {
     /* color: #5383d3; */
-    
     color: var(--secondary);
     text-decoration: none;
 }
 
+
 /* Footer Right */
+
 .footer-distributed .footer-right {
     width: 20%;
 }
+
 .footer-distributed .footer-company-about {
     line-height: 20px;
     color: #92999f;
@@ -449,6 +513,7 @@ footer {
     font-weight: normal;
     margin: 0;
 }
+
 .footer-distributed .footer-company-about span {
     display: block;
     color: #ffffff;
@@ -456,15 +521,18 @@ footer {
     font-weight: bold;
     margin-bottom: 20px;
 }
+
 .footer-distributed .footer-icons {
     margin-left: auto;
     margin-right: auto;
     margin-top: 25px;
 }
+
 .footer-distributed .footer-icons i:hover {
     color: var(--secondary);
     transition: 1s;
 }
+
 .footer-distributed .footer-icons span {
     display: block;
     color: #ffffff;
@@ -472,6 +540,7 @@ footer {
     font-weight: bold;
     margin-bottom: 20px;
 }
+
 .footer-distributed .footer-icons a {
     display: inline-block;
     width: 35px;
@@ -485,54 +554,61 @@ footer {
     margin-right: 1rem;
     margin-bottom: 5px;
 }
+
 .footer-authors {
     /* color: #FF8C00; */
     padding-left: 15px;
     color: var(--secondary);
 }
+
 .footer-authors a {
     color: var(--text-color);
 }
+
 .footer-authors a:hover {
     color: var(--secondary);
     transition: 0.5s;
     text-decoration: none;
 }
+
 .footer-authors i:hover {
     color: var(--secondary);
     transition: 0.5s;
     text-decoration: none;
 }
 
+
 /* MEDIA QUERY FOR SCROLL-DOWN BUTTON */
+
 @media screen and (max-width: 425px) {
     .jumbotron-img {
         height: calc(50vh - 70px);
         margin: 0 25px;
-        background-image: url(../images/logo_white_mobile_compressed.png);
+        /* background-image: url(../images/logo_white_mobile_compressed.png); */
+        background-image: url(../images/logo_sponsor_new.png);
     }
-    
     .scroll-down {
         display: none;
     }
-    
     .display-4 {
         font-size: 2rem;
     }
 }
 
+
 /* MEDIA QUERIES FOR FOOTER */
+
 @media (max-height: 800px) {
     footer {
         position: static;
     }
 }
+
 @media (max-width: 880px) {
     .footer-distributed {
         font: bold 14px sans-serif;
         padding: 35px 40px;
     }
-    
     .footer-distributed .footer-left,
     .footer-distributed .footer-center,
     .footer-distributed .footer-right {
@@ -541,15 +617,14 @@ footer {
         margin-bottom: 40px;
         text-align: center;
     }
-    
     .footer-distributed .footer-center i {
         margin-left: 0;
     }
-    
     .footer-distributed .footer-company-about {
         display: none;
     }
 }
+
 @media screen and (min-width: 768px) {
     #reg-alert {
         display: none;

@@ -1,30 +1,195 @@
+.about-ssn-container {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    padding: 5% 2%;
+    margin: 0 20%;
+    background-color: white;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.134), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.10), 0 22.3px 17.9px rgba(0, 0, 0, 0.172), 0 41.8px 33.4px rgba(0, 0, 0, 0.186), 0 100px 80px rgba(0, 0, 0, 0.112);
+}
+
 .sponsor-container {
-  text-align: center;
-  padding: 3%;
+    text-align: center;
+    padding: 3%;
 }
 
 .sponsor-heading {
-  font-weight: 700;
-  font-family: "Poppins", sans-serif;
-  color: var(--secondary);
-  padding: 3%;
-  margin-bottom: 5%;
-  border-bottom: solid 5px;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    color: var(--navbar-color);
+    padding: 3%;
 }
 
 .sponsor-details {
-  padding: 3%;
-  color: var(--text-color);
+    padding: 3%;
+    color: var(--main);
 }
 
 .title-sponsor-img {
-  height: 50vh;
-  width: 75vh;
+    width: 85%;
+}
+
+.sponsor-heading>h3 {
+    font-family: 'Poppins', serif;
+    text-transform: uppercase;
+    background: transparent;
+    /* background-repeat: no-repeat;
+    background-size: cover; */
+    text-align: center;
+    font-weight: 900;
+    font-size: 7em;
+    color: white;
+    padding: 6% 0 2% 0;
 }
 
 @media (max-width: 768px) {
-  .title-sponsor-img {
-    height: 50vw;
-    width: 90vw;
-  }
+    .about-ssn-container {
+        margin: 0 7.5%;
+    }
+    .title-sponsor-img {
+        width: 95%;
+    }
+    .sponsor-heading>h3 {
+        font-size: 3em;
+    }
+}
+
+.about-section {
+    background-position: center;
+    background-repeat: none;
+    background-size: cover;
+    padding: 5% 0;
+    display: block;
+    overflow: auto;
+}
+
+.btn-hover-effect {
+    position: absolute;
+    top: 50%;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-transition-timing-function: linear;
+    transition-timing-function: linear;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 22px 36px;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    text-decoration: none;
+    overflow: hidden;
+    margin-top: 2rem;
+}
+
+
+/* effect #5 */
+
+.btn-hover-effect--effect-5,
+.btn-hover-effect--effect-5:focus {
+    background-color: var(--secondary);
+    color: var(--main);
+}
+
+.btn-hover-effect--effect-5:before {
+    position: absolute;
+    top: 50%;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform, -webkit-transform;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-transition-timing-function: linear;
+    transition-timing-function: linear;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+    display: block;
+    width: 300px;
+    height: 300px;
+    content: '';
+    -webkit-transform: translate(-50%, -50%) scale(0);
+    transform: translate(-50%, -50%) scale(0);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+
+/* Button Styling */
+
+.btn-hover-effect--effect-5:after {
+    position: absolute;
+    top: 50%;
+    -webkit-transition: opacity .2s linear .2s, -webkit-transform .2s linear .2s;
+    transition: opacity .2s linear .2s, -webkit-transform .2s linear .2s;
+    transition: transform .2s linear .2s, opacity .2s linear .2s;
+    transition: transform .2s linear .2s, opacity .2s linear .2s, -webkit-transform .2s linear .2s;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 300px;
+    height: 300px;
+    content: '\f268';
+    font-family: "Font Awesome 5 Free";
+    font-size: 30px;
+    font-weight: 900;
+    line-height: inherit;
+    color: #FFF;
+    -webkit-transform: translate(-50%, -50%) scale(0);
+    transform: translate(-50%, -50%) scale(0);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    opacity: 0;
+    z-index: -1;
+}
+
+.btn-hover-effect--effect-5:hover {
+    color: transparent;
+}
+
+.btn-hover-effect--effect-5:hover:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transition-duration: .15s;
+    transition-duration: .15s;
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.btn-hover-effect--effect-5:hover:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transition-duration: .15s;
+    transition-duration: .15s;
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    color: #fff;
+}
+
+.btn-hover-effect .btn-hover-effect--effect-5 .download-icon {
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 400px) {
+    .btn-hover-effect {
+        font-size: 13px;
+    }
 }

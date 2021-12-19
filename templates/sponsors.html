@@ -1,25 +1,34 @@
 {%extends "base.html"%}{% block page_css %}
-<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/sponsor.css')}}"> {% endblock %} {% block
-content %}
-<div class="container sponsor-container">
-    <h1 class="sponsor-heading">BANCSOL</h1>
-    <img class="title-sponsor-img" src="{{url_for('static', filename='images/sponsor1.jpeg')}}" />
-    <p class="sponsor-details">Energy Services Company providing solutions in converting existing battery systems into
-        Lithium technology in all segments of usage across in residential and commercial. Our Operations Corporate
-        office is in Navi Mumbai and Eastern Operations branch in Kolkata. <a
-            style="text-decoration: underline; color: aqua;" href="https://www.bancsol.in/"> Click here
-        </a> to visit the website.
-    </p>
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/sponsor.css')}}"> {% endblock %} {% block content %}
 
-    <h1 class="sponsor-heading">RSJ CONSULTANTS</h1>
-    <img class="title-sponsor-img" src="{{url_for('static', filename='images/sponsor2.jpeg')}}" />
-    <!-- <p class="sponsor-details">Energy Services Company providing solutions in converting existing battery systems into
+<div class="sponsor-heading jumbtron">
+    <h3>Our Sponsors</h3>
+</div>
+
+<div class="about-section">
+    <div class='about-ssn-container' data-aos="zoom-in-up" data-aos-duration="1500">
+        <div class="container sponsor-container">
+            <h1 class="sponsor-heading">FLDEC Systems</h1>
+            <img class="title-sponsor-img" src="{{url_for('static', filename='images/sponsor1.png')}}" />
+            <p class="sponsor-details">FLDEC Systems is an electronic system design manufacturing company, based out of our very own Chennai. They are a collection of preeminent developers, innovators and manufacturers of top-class electronic products. <br><br>Using advanced engineering
+                techniques and pioneering technologies to deliver secure, made-to-order and modernized solutions to a variety of different industries, they are steadily on the path of achieving their goal of becoming the world’s foremost ODM & OEM of
+                utilitarian modules and a trustable name in embedded computing technologies. Some of the sectors they cater to includes data centers, military, aerospace, navy, medical, robotic, and automotive to name a few.<br><br>FLDEC is looking to
+                the future, rapidly investing in and adopting imminent future technologies like AI, ML, Embedded Vision, Big data analysis and surveillance. They astutely integrate these technologies to provide front-line solutions to their customers
+                in diverse domains including IOT, 5G wireless, cameras, Autonomous Automotive etc.<br><br>This year’s SSNMUN is thus brought to you by FLDEC Systems, your optimal ally of innovation.<br><br> 
+                <a style="text-decoration: underline;" href="https://fldec.com/">Click here<a> to visit FLDEC's website.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- <h1 class="sponsor-heading">RSJ CONSULTANTS</h1>
+    <img class="title-sponsor-img" src="{{url_for('static', filename='images/sponsor2.png')}}" /> -->
+<!-- <p class="sponsor-details">Energy Services Company providing solutions in converting existing battery systems into
         Lithium technology in all segments of usage across in residential and commercial. Our Operations Corporate
         office is in Navi Mumbai and Eastern Operations branch in Kolkata. <a
             style="text-decoration: underline; color: aqua;" href="https://www.bancsol.in/"> Click here
         </a> to visit the website.
     </p> -->
-</div>
 
 {% endblock %} {% block nav_active %}
 <script>
