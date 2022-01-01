@@ -19,6 +19,13 @@
         <div class="row justify-content-center" data-aos="fade-right" data-aos-duration="1500">
             <a href="{{committee.bgURL}}" target="_blank" class="btn-hover-effect btn-hover-effect--effect-5" title="View More">View the Background Guide</a>
         </div>
+
+        {% if committee.name == "SFC" %}
+        <div class="row justify-content-center" data-aos="fade-right" data-aos-duration="1500">
+            <a href="{{committee.draftURL}}" target="_blank" class="btn-hover-effect btn-hover-effect--effect-5" title="View More">View the Draft of Charter of UN</a>
+        </div>
+       
+        {% endif %}
         {% else %}
         <div class="row justify-content-center" data-aos="fade-right" data-aos-duration="1500">
             <a href="{{committee.bgURL}}" target="_blank" class="btn-hover-effect btn-hover-effect--effect-5" title="View More">View the IP Style Guide</a>
