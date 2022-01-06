@@ -1,0 +1,12 @@
+{% extends "base.html" %}{% block page_css%}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/check_later.css')}}"> {% endblock %}{% block
+    content %}
+
+    <div class="later-page">
+        <div class="later-heading jumbotron">
+            <h1>Early bird, are you?</h1>
+            <h3>Come back on January 7th, 2022 at 5PM!</h3>
+            <h4>Click <a href="/" class="home-link">here</a> to go to the home page</h4>
+        </div>
+    </div>
+    {% endblock %}

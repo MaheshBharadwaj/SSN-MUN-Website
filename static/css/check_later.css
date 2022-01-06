@@ -1,0 +1,57 @@
+/* HEADING - JUMBOTRON */
+
+.later-heading {
+    font-family: 'Poppins', serif;
+    text-transform: uppercase;
+    background: transparent;
+    /* background-repeat: no-repeat;
+    background-size: cover; */
+    text-align: center;
+}
+
+.later-heading>h1 {
+    font-weight: 900;
+    font-size: 7em;
+    color: white;
+    padding: 6% 0 2% 0;
+}
+
+.later-heading>h3 {
+    font-weight: 900;
+    font-size: 3.5em;
+    color: var(--secondary);
+    padding: 1% 0 2% 0;
+}
+
+.later-heading>h4 {
+    font-weight: 900;
+    font-size: 2em;
+    color: var(--secondary);
+    padding: 1% 0 2% 0;
+}
+
+.home-link{
+    color: var(--main-light);
+}
+
+.home-link:hover{
+    color: var(--primary-light)
+}
+
+/* FOR SMALLER SCREENS */
+
+@media screen and (max-width: 540px) {
+    .jumbotron {
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    .later-heading>h1 {
+        font-size: 250%;
+    }
+    .later-heading>h3 {
+        font-size: 155%;
+    }
+    .later-heading>h4 {
+        font-size: 125%;
+    }
+}
