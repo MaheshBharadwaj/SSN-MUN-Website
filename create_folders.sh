@@ -6,7 +6,7 @@ mkdir messages;
 messages_dir=$current_dir/messages;
 
 
-for committee in HR DI SC EF
+for committee in HR OR SC SF
 do
     mkdir $messages_dir/$committee;
     mkdir $messages_dir/$committee/EB;
