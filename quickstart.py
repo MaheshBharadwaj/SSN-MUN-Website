@@ -29,7 +29,7 @@ def quickstart():
     SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 
     # The ID and range of a sample spreadsheet.
-    SAMPLE_SPREADSHEET_ID = '1_k4i-Fq8W_IsI_W__dd38ZtwrbmByKHC5VUIsdXu1Pc'
+    SAMPLE_SPREADSHEET_ID = '15tMMNlrUIKc6n2cCosMq3dQ3whhuMRhMGSZ7Rt8-aTg'
     COMMITTEE_ABBREVIATIONS = {'ORF': 'OR',
                                'UNSC': 'SC', 'SFC': 'SF', 'UNHRC': 'HR'}
     COMMITTEE_ABBR_REV = {'OR': 'ORF',
@@ -76,42 +76,36 @@ def quickstart():
                 try:
                     # Print columns A and E, which correspond to indices 0 and 4.
 
-                    if(row[4]):
-                        if row[1].strip()[:2] == 'IP':
-                            continue
+                    
+                    # if row[2].strip()[:2] == 'DI':
+                    #     comm='OR'
+                    #     idx = 'OR' + row[2].strip()[2:]
+                    # elif row[2].strip()[:2] == 'EF':
+                    #     comm='SF'
+                    #     idx = 'SF' + row[2].strip()[2:]
+                    # else:
+                    comm = row[0].strip()[:2]
+                    idx = row[0].strip()
+                    
+                    delegate = {"id": idx, "name": row[1].strip(),
+                                "password": generate_otp(idx), "country": row[2].strip(), "committee": COMMITTEE_ABBR_REV[comm]}
 
-                        idx = ""
-                        comm = ""
-                        
-                        if row[2].strip()[:2] == 'DI':
-                            comm='OR'
-                            idx = 'OR' + row[2].strip()[2:]
-                        elif row[2].strip()[:2] == 'EF':
-                            comm='SF'
-                            idx = 'SF' + row[2].strip()[2:]
-                        else:
-                            comm = row[2].strip()[:2]
-                            idx = row[2].strip()
-                        
-                        delegate = {"id": idx, "name": row[1].strip(), "email": row[4].strip(),
-                                    "password": generate_otp(idx), "country": row[8].strip(), "committee": COMMITTEE_ABBR_REV[comm]}
+                    delegate_info = {
+                        'country': delegate['country'], 'name': delegate['name']}
 
-                        delegate_info = {
-                            'country': delegate['country'], 'name': delegate['name']}
+                    delegates[COMMITTEE_ABBR_REV[delegate['id']
+                                                    [:2]].lower()][delegate['id']] = delegate_info
+                    
+                    with sql.connect("db.sqlite") as con:
+                        cur = con.cursor()
+                        cur.execute("UPDATE USER SET NAME = ?, COUNTRY = ? \
+                        WHERE ID = ?", (delegate['name'], delegate['country'], delegate['id']))
 
-                        delegates[COMMITTEE_ABBR_REV[delegate['id']
-                                                     [:2]].lower()][delegate['id']] = delegate_info
-                        
-                        with sql.connect("db.sqlite") as con:
-                            cur = con.cursor()
-                            cur.execute("UPDATE USER SET NAME = ?, EMAIL = ?, COUNTRY = ? \
-                            WHERE ID = ?", (delegate['name'], delegate['email'], delegate['country'], delegate['id']))
+                        con.commit()
 
-                            con.commit()
-
-                        print('%s, %s, %s, %s, %s, %s' % (
-                            delegate['id'], delegate['name'], delegate['email'], delegate['password'], delegate['country'], delegate['committee']))
-                    # generate_otp(row[1])
+                    print('%s, %s, %s, %s, %s' % (
+                        delegate['id'], delegate['name'], delegate['password'], delegate['country'], delegate['committee']))
+                # generate_otp(row[1])
 
                 except Exception as e:
                     print('Exception: ' + str(e))

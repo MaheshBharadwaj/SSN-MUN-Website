@@ -8,9 +8,7 @@
     <link rel="shortcut icon" href="{{url_for('static', filename='images/favicon.svg')}}" type="image/svg">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Compiled and minified CSS -->
@@ -29,23 +27,23 @@
 <body>
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('.tabs').tabs();
             $('.fixed-action-btn').floatingActionButton();
-            $(document).ready(function () {
+            $(document).ready(function() {
                 $('.collapsible').collapsible();
             });
             $('.tooltipped').tooltip();
             $('.tap-target').tapTarget();
             $('.tap-target').tapTarget('open');
             setTimeout(
-                function () {
+                function() {
                     $('.tap-target').tapTarget('close');
 
                 }, 5000);
         });
 
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             var elems = document.querySelectorAll('.fixed-action-btn');
             var instances = M.FloatingActionButton.init(elems, {
                 direction: 'left'
@@ -73,7 +71,9 @@
     </div>
     </nav>
     <header class="header-banner">
-        Welcome, {{ current_user.name }}<br> Delegate of {{ current_user.country }}, {{ current_user.committee }}<br>
+        {% if current_user.committee == "ORF" %} Welcome, {{ current_user.name }}<br> Representing {{ current_user.country }} at {{ current_user.committee }} {% else %} Welcome, {{ current_user.name }}<br> Delegate of {{ current_user.country }}, {{ current_user.committee
+        }} {% endif %}
+        <br>
 
     </header>
     <ul class="tabs nav-tabs">
@@ -118,7 +118,7 @@
             </li> -->
         </ul>
     </div>
-    
+
     <div id="eb" class="col s12 chat-container ">
         <ul class="collapsible" id="eb-messages-collapsible">
             <li>
@@ -149,18 +149,15 @@
             <i class="fas fa-pen "></i>
         </a>
         <ul>
-            <li style="margin: 0 10px "><a href="/send-delegate " title="Delegate "
-                    class="btn-floating btn-large sub-compose tooltipped " data-position="top "
-                    data-tooltip="To Delegate "><i class="fas fa-user-alt "></i></a></li>
+            <li style="margin: 0 10px "><a href="/send-delegate " title="Delegate " class="btn-floating btn-large sub-compose tooltipped " data-position="top " data-tooltip="To Delegate "><i class="fas fa-user-alt "></i></a></li>
             <li style="margin: 0 10px ">
-                <a href="/send-eb " title="Executive Board " class="btn-floating btn-large sub-compose tooltipped "
-                    data-position="top " data-tooltip="To EB "><i class="fas fa-gavel "></i></a>
+                <a href="/send-eb " title="Executive Board " class="btn-floating btn-large sub-compose tooltipped " data-position="top " data-tooltip="To EB "><i class="fas fa-gavel "></i></a>
                 </a>
             </li>
         </ul>
     </div>
     </div>
-    
+
 
 </body>
 

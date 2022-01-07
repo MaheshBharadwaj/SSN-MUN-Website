@@ -87,7 +87,7 @@ comm_file = open(comm_file_name)
 committees = json.load(comm_file)
 
 
-committees_list = ["disec", "unhrc", "unsc", "ecofin"]
+committees_list = ["orf", "unhrc", "unsc", "sfc"]
 country_id = {}
 for committee in committees_list:
     try:
@@ -114,7 +114,6 @@ for committee in committees_list:
 class User(UserMixin, db.Model):
     # primary keys are required by SQLAlchemy
     id = db.Column(db.String(20), primary_key=True)
-    email = db.Column(db.String(100))
     password = db.Column(db.String(100))
     name = db.Column(db.String(100))
     country = db.Column(db.String(200))
@@ -272,8 +271,8 @@ def tech_team():
 
 @app.route("/login")
 def login():
-    # return render_template("login.html")
-    return render_template("check_later.html")
+    return render_template("login.html")
+    # return render_template("check_later.html")
 
 
 @app.route("/login", methods=["POST"])

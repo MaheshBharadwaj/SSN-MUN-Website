@@ -39,13 +39,13 @@ def create_ids():
             id = committee_abbr + idx
 
             try:
-                delegate = {"id": id, "name": "", "email": "",
+                delegate = {"id": id, "name": "",
                                 "password": generate_otp(id), "country": "", "committee": COMMITTEE_ABBR_REV[committee_abbr]}
                 # print(delegate['id'], delegate['password'])
                 with sql.connect("db.sqlite") as con:
                     cur = con.cursor()
-                    cur.execute("INSERT INTO USER (ID, NAME, EMAIL, PASSWORD, COUNTRY, COMMITTEE) \
-                    VALUES (?,?,?,?,?,?)", (delegate['id'], delegate['name'], delegate['email'], delegate['password'], delegate['country'], delegate['committee']))
+                    cur.execute("INSERT INTO USER (ID, NAME, PASSWORD, COUNTRY, COMMITTEE) \
+                    VALUES (?,?,?,?,?)", (delegate['id'], delegate['name'], delegate['password'], delegate['country'], delegate['committee']))
 
                     con.commit()
             except Exception as e:
@@ -54,17 +54,16 @@ def create_ids():
     # Insert EB details
     for committee_abbr in COMMITTEE_ABBREVIATIONS.values():
         delegate = {"id": f"{committee_abbr}EB",
-                    "name": "EB",
-                    "email": f"EB{committee_abbr}@ssn.edu.in",
-                    "country": "No Country",
+                    "name": "Executive Board",
+                    "country": COMMITTEE_ABBR_REV[committee_abbr],
                     "password": generate_otp(f"{committee_abbr}EB"),
                     "committee": committee_abbr}
 
         try:
             with sql.connect("db.sqlite") as con:
                 cur = con.cursor()
-                cur.execute("INSERT INTO USER (ID, NAME, EMAIL, PASSWORD, COUNTRY, COMMITTEE) \
-                VALUES (?,?,?,?,?,?)", (delegate['id'], delegate['name'], delegate['email'], delegate['password'], delegate['country'], delegate['committee']))
+                cur.execute("INSERT INTO USER (ID, NAME, PASSWORD, COUNTRY, COMMITTEE) \
+                VALUES (?,?,?,?,?)", (delegate['id'], delegate['name'], delegate['password'], delegate['country'], delegate['committee']))
 
                 con.commit()
 

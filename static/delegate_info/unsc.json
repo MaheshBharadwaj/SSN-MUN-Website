@@ -1,82 +1,66 @@
 {
-  "SC012": {
-    "country": "Iran (O)",
-    "name": "Hrishikesh Jagannathan"
-  },
-  "SC007": {
-    "country": "Viet Nam",
-    "name": "Ashwin R"
-  },
-  "SC999": {
-    "country": "Turkey(O)",
-    "name": "Pratyush Kaith"
-  },
-  "SC015": {
-    "country": "Russian Federation",
-    "name": "Koshal Ram"
-  },
-  "SC201": {
-    "country": "United States of America",
-    "name": "Alden D'Souza"
-  },
-  "SC208": {
-    "country": "India",
-    "name": "Skanda N Magal"
-  },
-  "SC210": {
-    "country": "French Republic",
-    "name": "Kiriti Kapavari"
-  },
-  "SC206": {
-    "country": "Armenia(O)",
-    "name": "Aditya Chandrashekar"
-  },
-  "SC205": {
-    "country": "Saint Vincent and the Grenadines",
-    "name": "Karthikay Singhal"
-  },
-  "SC004": {
-    "country": "Ireland",
-    "name": "Dharun Aditya Senthilkumar"
-  },
-  "SC010": {
-    "country": "Greece (O)",
-    "name": "Mrudhula Vijayakumar"
-  },
-  "SC008": {
-    "country": "Tunisia",
-    "name": "Pranav Kumar"
-  },
-  "SC204": {
-    "country": "Mexico",
-    "name": "Jyotsna K"
-  },
-  "SC001": {
-    "country": "United Kingdom of Great Britain and Northern Ireland",
-    "name": "Adithiyha SK"
-  },
-  "SC005": {
-    "country": "Norway",
-    "name": "Adyant srinivasan"
-  },
-  "SC013": {
-    "country": "ISRAEL",
-    "name": "Paul Jabez Talakayala"
-  },
-  "SC006": {
-    "country": "Azerbaijan(O)",
-    "name": "Gokul S"
-  },
-  "SC901": {
-    "country": "People's Republic of China",
-    "name": "Fazil Razak"
-  },
-  "SC702": {
-    "country": "International Press 1",
-    "name": "Harshkaran Singh"
-  },
-  "SC709": {
-    "country": "International Press 2",
-    "name": "Sumisha Mohan"
-  }
+    "SC300": {
+        "country": "United States of America",
+        "name": "Utkarsh Rastogi"
+    },
+    "SC401": {
+        "country": "French Republic",
+        "name": "MR Vishwavasu Aprameya"
+    },
+    "SC400": {
+        "country": "Soviet Union",
+        "name": "gokul sundararaghavan"
+    },
+    "SC500": {
+        "country": "Republic of China",
+        "name": "Sudhira"
+    },
+    "SC503": {
+        "country": "Ivory Coast",
+        "name": "Hyagreev Rethinavel"
+    },
+    "SC406": {
+        "country": "Jordan",
+        "name": "Shaarav Ayachit"
+    },
+    "SC407": {
+        "country": "Malaysia",
+        "name": "Pranav Namana"
+    },
+    "SC504": {
+        "country": "Netherlands",
+        "name": "Ashok"
+    },
+    "SC200": {
+        "country": "India",
+        "name": "Lawrence Swaminathan"
+    },
+    "SC303": {
+        "country": "Pakistan",
+        "name": "Adesh Chandrasekar"
+    },
+    "SC004": {
+        "country": "Syria",
+        "name": "Lenin Valentine"
+    },
+    "SC409": {
+        "country": "North Vietnam",
+        "name": "Adrij Mohan"
+    },
+    "SC006": {
+        "country": "Egypt",
+        "name": "Shreyas Subramanian"
+    },
+    "SC600": {
+        "country": "West Germany",
+        "name": "Shruti Ranganathan"
+    },
+    "SC701": {
+        "country": "International Press Reporter 1",
+        "name": "Rishit Chithirala"
+    },
+    "SC702": {
+        "country": "International Press Reporter 2",
+        "name": "Ananya Anandkumar"
+    }
 }

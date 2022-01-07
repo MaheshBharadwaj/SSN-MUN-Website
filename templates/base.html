@@ -18,23 +18,19 @@
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&family=Nunito:wght@300;600;900&display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&family=Nunito:wght@300;600;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins" />
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,800,900,400italic,700italic,900italic"
-        rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,800,900,400italic,700italic,900italic" rel="stylesheet" type="text/css" />
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
     <title>{{ page_title }}</title>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/index.css')}}" />
-    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/button.css')}}" /> {% block page_css
-    %} {% endblock%}
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/button.css')}}" /> {% block page_css %} {% endblock%}
 </head>
 
 <body class="checl">
@@ -47,8 +43,7 @@
 
         <nav id="sidebar">
             <div class="sidebar-header">
-                <img src="{{url_for('static', filename='images/logo_white_compressed.png')}}" alt="MUN alternate logo"
-                    style="width: 245px" />
+                <img src="{{url_for('static', filename='images/logo_white_compressed.png')}}" alt="MUN alternate logo" style="width: 245px" />
                 <!-- <h3>SSN MUN</h3> -->
             </div>
 
@@ -65,8 +60,7 @@
                     <a href="/about">About Us</a>
                 </li>
                 <li id="nav-committee">
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
-                        class="dropdown-toggle">Committees</a>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Committees</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
                             <a href="/committee/unsc">UNSC</a>
@@ -90,10 +84,10 @@
                 <!-- <li id="nav-registration">
                     <a href="/registrations">Registration</a>
                 </li> -->
-                <!-- <li id="nav-announcements">
+                <li id="nav-announcements">
                     <a href="/announcements">Announcements</a>
                 </li>
-                -->
+
                 <li id="nav-delegate-allocation">
                     <a href="/matrix">Allotments</a>
                 </li>
@@ -140,13 +134,11 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="https://www.instagram.com/ssn_mun/?hl=en" target="_blank"
-                                    rel="noopener noreferrer"><i class="fab fa-instagram fa-2x fa-white"></i>
+                                <a class="nav-link" href="https://www.instagram.com/ssn_mun/?hl=en" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram fa-2x fa-white"></i>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="https://www.facebook.com/groups/196993530907133/"
-                                    target="_blank" rel="noopener noreferrer"><i
+                                <a class="nav-link" href="https://www.facebook.com/groups/196993530907133/" target="_blank" rel="noopener noreferrer"><i
                                         class="fab fa-facebook-square fa-2x white"></i>
                                 </a>
                             </li>
@@ -169,13 +161,13 @@
                         <!-- <a href="/payments">Pay Now</a> · -->
                         <a href="/#committee_section">Committees</a> ·
                         <!-- <a href="/about">About Us</a> · -->
+                        <a href="/announcements">Announcements</a> ·
                         <!-- <a href="/registrations">Registrations</a> · -->
                         <a href="/contact">Contact Us</a>
                     </p>
                     <div class="footer-icons">
                         <span>Our social media handles</span>
-                        <a href="https://www.facebook.com/groups/196993530907133/" target="_blank"
-                            rel="noopener noreferrer"><i class="fa fa-facebook-square fa-2x white"></i></a>
+                        <a href="https://www.facebook.com/groups/196993530907133/" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook-square fa-2x white"></i></a>
                         <a href="https://twitter.com/ssn_mun" target="_blank" rel="noopener noreferrer"><i
                                 class="fa fa-twitter fa-2x white"></i></a>
                         <a href="https://www.instagram.com/ssn_mun/?hl=en" target="_blank" rel="noopener noreferrer"><i
@@ -203,9 +195,7 @@
 
                 <div class="footer-right" data-aos="fade-right" data-aos-duration="1500">
                     <p class="footer-company-about">
-                        <span>About SSNMUN</span> SSNMUN is an ever-evolving brand. From a highly successful first
-                        edition to an even bigger second edition, we’ve only been getting better.This year’s MUN will
-                        aim to have a greater outreach than ever before,
+                        <span>About SSNMUN</span> SSNMUN is an ever-evolving brand. From a highly successful first edition to an even bigger second edition, we’ve only been getting better.This year’s MUN will aim to have a greater outreach than ever before,
                         transcending issues of physical accessibility
                     </p>
                     <p class="footer-company-name">SSN MUN TECH TEAM © 2022</p>
@@ -217,22 +207,15 @@
     <div class="overlay"></div>
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <!-- jQuery Custom Scroller CDN -->
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
     <script src="{{url_for('static', filename='js/typewriter.js')}}"></script>
     <script>
-        document.onreadystatechange = function () {
+        document.onreadystatechange = function() {
             if (document.readyState !== "complete") {
                 document.querySelector("body").style.visibility = "hidden";
                 document.querySelector(".loader").style.visibility = "visible";
@@ -251,7 +234,7 @@
     {% block nav_active %}{% endblock %}
     <script src="{{url_for('static', filename='js/particle.js')}}"></script>
     <script>
-        particlesJS.load('particles-js', "{{url_for('static', filename='js/particles.json')}}", function () {
+        particlesJS.load('particles-js', "{{url_for('static', filename='js/particles.json')}}", function() {
             console.log('callback - particles.js config loaded');
         });
     </script>
@@ -259,7 +242,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             AOS.init({
                 disable: 'mobile'
             });

@@ -7,7 +7,7 @@
         </h1>
         <ol>
             <li>
-                Delegates would have received two emails from the Organising team of SSNMUN 2021.
+                Delegates would have received two emails from the Organising team of SSNMUN 2022.
             </li>
             <li>
                 The first email states the rules of conduct and appropriate guidelines that need to be adhered to during the conference.
@@ -31,22 +31,16 @@
             Please find the committee schedule for days 1 and 2 below:
         </p>
         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true" style="border:none;">Day 1</button>
+            <li class="nav-item">
+                <a class="nav-link active" style="text-decoration: none;" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Day 1</a>
             </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false" style="border:none;">Day 2</button>
+            <li class="nav-item">
+                <a class="nav-link" style="text-decoration: none;" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Day 2</a>
             </li>
-
         </ul>
-        <div class="tab-content just" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                <img src="{{url_for('static', filename='images/day1.png')}}" alt="day1 image">
-            </div>
-            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                <img src="{{url_for('static', filename='images/day2.png')}}" alt="day2 image">
-            </div>
-
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"><img src="{{url_for('static', filename='images/day1.jpeg')}}" alt="day1 img"></div>
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"><img src="{{url_for('static', filename='images/day2.jpeg')}}" alt="day2 img"></div>
         </div>
     </div>
 
@@ -59,9 +53,9 @@
 
 
     <div class="chunk" data-aos="fade-left" data-aos-duration="1500">
-        <h1>SSNMUN 2021 ChitApp use guide</h1>
+        <h1>SSNMUN 2022 ChitApp use guide</h1>
         <div class="videoResponsive">
-            <iframe width="560" height="349" src="https://www.youtube.com/embed/2_HPVyu6j4k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; " allowfullscreen></iframe>
+            <iframe src="{{url_for('static', filename='Chit_Demo.mp4')}}" width="640" height="480" allow="autoplay" allowfullscreen></iframe>
         </div>
 
     </div>

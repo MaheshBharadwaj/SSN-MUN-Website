@@ -27,11 +27,11 @@ def move_details(source_id, dest_committee):
     try:
         with sql.connect("db.sqlite") as con:
             cur = con.cursor()
-            cur.execute("SELECT ID,NAME,EMAIL,PASSWORD,COUNTRY,COMMITTEE FROM USER WHERE ID = '"+source_id+"'")
+            cur.execute("SELECT ID,NAME,PASSWORD,COUNTRY,COMMITTEE FROM USER WHERE ID = '"+source_id+"'")
         rows = cur.fetchall()
         for row in rows:
-            delegate_details = {"id": row[0].strip(), "name": row[1].strip(), "email": row[2].strip(),
-                                    "password": row[3].strip(), "country": row[4], "committee": row[5].strip()}
+            delegate_details = {"id": row[0].strip(), "name": row[1].strip(),
+                                    "password": row[2].strip(), "country": row[3], "committee": row[4].strip()}
             break
     
     except Exception as e:
@@ -57,17 +57,17 @@ def move_details(source_id, dest_committee):
     # Update details at the destination committee
     new_delegate_details = dict()
     try:
-        new_delegate_details = {"id": dest_id, "name": delegate_details['name'], "email": delegate_details['email'],
+        new_delegate_details = {"id": dest_id, "name": delegate_details['name'],
                                     "password": generate_otp(dest_id), "country": delegate_details['country'], "committee": dest_committee}
         with sql.connect("db.sqlite") as con:
             cur = con.cursor()
-            cur.execute("UPDATE USER SET NAME = ?, EMAIL = ?, COUNTRY = ? \
-            WHERE ID = ?", (new_delegate_details['name'], new_delegate_details['email'], new_delegate_details['country'], new_delegate_details['id']))
+            cur.execute("UPDATE USER SET NAME = ?, COUNTRY = ? \
+            WHERE ID = ?", (new_delegate_details['name'], new_delegate_details['country'], new_delegate_details['id']))
 
             con.commit()
 
         print('%s, %s, %s, %s, %s, %s' % (
-            new_delegate_details['id'], new_delegate_details['name'], new_delegate_details['email'], new_delegate_details['password'], new_delegate_details['country'], new_delegate_details['committee']))
+            new_delegate_details['id'], new_delegate_details['name'], new_delegate_details['password'], new_delegate_details['country'], new_delegate_details['committee']))
     except Exception as e:
         print('Exception: ' + str(e))
     
@@ -76,7 +76,7 @@ def move_details(source_id, dest_committee):
     try:
         with sql.connect("db.sqlite") as con:
             cur = con.cursor()
-            cur.execute("UPDATE USER SET NAME = '', EMAIL = '', COUNTRY = '' \
+            cur.execute("UPDATE USER SET NAME = '', COUNTRY = '' \
             WHERE ID = '"+ source_id + "'")
 
             con.commit()

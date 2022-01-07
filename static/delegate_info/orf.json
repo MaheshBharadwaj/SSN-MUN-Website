@@ -1,198 +1,142 @@
 {
-  "OR016": {
-    "country": "The Kingdom of Denmark",
-    "name": "Sriananthakamali S"
-  },
-  "OR013": {
-    "country": "Republic of Iraq",
-    "name": "Prahalad AV"
-  },
-  "OR005": {
-    "country": "The Republic of Estonia",
-    "name": "Kavya Hariharan"
-  },
-  "OR020": {
-    "country": "The Republic of Poland",
-    "name": "Sanjiv B N"
-  },
-  "OR014": {
-    "country": "Islamic Republic of Pakistan",
-    "name": "Bharath Vishal Ganesamoorthy"
-  },
-  "OR018": {
-    "country": "The Hellenic Republic",
-    "name": "Baghyashree P"
-  },
-  "OR022": {
-    "country": "Kingdom of Spain",
-    "name": "Lawrence Swaminathan"
-  },
-  "OR010": {
-    "country": "Republic of Korea",
-    "name": "Saroop Paul Carr"
-  },
-  "OR011": {
-    "country": "Republic of Turkey",
-    "name": "Ajan Sendhil"
-  },
-  "OR004": {
-    "country": "Republic of Bulgaria",
-    "name": "V.Samhita"
-  },
-  "OR030": {
-    "country": "The Sultanate of Oman",
-    "name": "Varun Deepak"
-  },
-  "OR007": {
-    "country": "The Argentine Republic",
-    "name": "Varun S Mohan"
-  },
-  "OR023": {
-    "country": "The Kingdom of Sweden",
-    "name": "Krisha Aarunee S"
-  },
-  "OR026": {
-    "country": "Republic of Cameroon",
-    "name": "Shravanthi"
-  },
-  "OR001": {
-    "country": "Ukraine",
-    "name": "Medha Iyer"
-  },
-  "OR029": {
-    "country": "The Republic of Kazakhstan",
-    "name": "Tanmay Pratti"
-  },
-  "OR003": {
-    "country": "Hungary",
-    "name": "Nikhil Vijay"
-  },
-  "OR017": {
-    "country": "The Republic of Belarus",
-    "name": "Nithya Rajkumar"
-  },
-  "OR008": {
-    "country": "The Republic of Indonesia",
-    "name": "Pranav DS"
-  },
-  "OR032": {
-    "country": "The Republic of Austria",
-    "name": "Prabhakaran.P"
-  },
-  "OR019": {
-    "country": "The Republic of Latvia",
-    "name": "Karun Anantharaman"
-  },
-  "OR002": {
-    "country": "The Republic of Armenia",
-    "name": "Kritik Varshi"
-  },
-  "OR015": {
-    "country": "The Republic of Croatia",
-    "name": "Charu Prabha"
-  },
-  "OR033": {
-    "country": "Russian Federation",
-    "name": "Aritra Karak"
-  },
-  "OR050": {
-    "country": "The Republic of Ecuador",
-    "name": "Anza Prem"
-  },
-  "OR037": {
-    "country": "The Kingdom of Saudi Arabia",
-    "name": "Hamsini Krishnan"
-  },
-  "OR027": {
-    "country": "Cote d' Ivorie",
-    "name": "Sushmitha srikanth"
-  },
-  "OR039": {
-    "country": "The Republic of Lithuania",
-    "name": "Ananya Ramakrishnan"
-  },
-  "OR040": {
-    "country": "The Kingdom of Netherlands",
-    "name": "Preetraj Raju Kurian"
-  },
-  "OR051": {
-    "country": "Swiss Confederation",
-    "name": "Gurnehmat Dhindsa"
-  },
-  "OR038": {
-    "country": "Kingdom of Belgium",
-    "name": "Sarthak Theurkar"
-  },
-  "OR043": {
-    "country": "The Republic of Peru",
-    "name": "Anushree Appandairajan"
-  },
-  "OR034": {
-    "country": "The Republic of Azerbaijan",
-    "name": "Swastik Shukla"
-  },
-  "OR202": {
-    "country": "French Republic",
-    "name": "Advait Ramesh Kaluve"
-  },
-  "OR203": {
-    "country": "United Kingdom of Great Britian and Northern Ireland",
-    "name": "Tarun Aiyappa"
-  },
-  "OR206": {
-    "country": "The Federative Republic of Brazil",
-    "name": "V.R.Nivedha Shalini"
-  },
-  "OR209": {
-    "country": "The Republic of Italy",
-    "name": "Advaith Ganesh"
-  },
-  "OR211": {
-    "country": "The Portuguese Republic",
-    "name": "Raghav Ahuja"
-  },
-  "OR207": {
-    "country": "Canada",
-    "name": "R Swamenathan"
-  },
-  "OR208": {
-    "country": "The Republic of India",
-    "name": "Padma Malini R"
-  },
-  "OR205": {
-    "country": "The Commonwealth of Australia",
-    "name": "Bhargavi C"
-  },
-  "OR212": {
-    "country": "Georgia",
-    "name": "Aditya Choudhary"
-  },
-  "OR210": {
-    "country": "The United Mexican States",
-    "name": "Shinjini Chakraborty"
-  },
-  "OR204": {
-    "country": "The Republic of North Macedonia",
-    "name": "Vedant Kumar Khetan"
-  },
-  "OR201": {
-    "country": "United States of America",
-    "name": "Varun R Swaminathan"
-  },
-  "OR701": {
-    "country": "International Press 1",
-    "name": "Sabariish Venkat"
-  },
-  "OR703": {
-    "country": "International Press 2",
-    "name": "Suraksha Vinod"
-  },
-  "OR699": {
-    "country": "Russian Federation",
-    "name": "Tanmay Pratti"
-  },
-  "OR698": {
-    "country": "People's Republic of China",
-    "name": "Lawrence Swaminathan"
-  }
+    "OR001": {
+        "country": "Aarshi Tirkey",
+        "name": "Fathema Sulaiman"
+    },
+    "OR500": {
+        "country": "Aastha Kaul",
+        "name": "Sumant B R"
+    },
+    "OR300": {
+        "country": "Abhijit Mukopadhyay",
+        "name": "Yogesh A"
+    },
+    "OR501": {
+        "country": "Akshay Mathur",
+        "name": "Shyam Sashvat R R"
+    },
+    "OR004": {
+        "country": "Amitabh Kant",
+        "name": "Ananya CB"
+    },
+    "OR006": {
+        "country": "Anil Ambani",
+        "name": "Bhavana Anand"
+    },
+    "OR007": {
+        "country": "Dhaval Desai",
+        "name": "Manushresth Mahesh"
+    },
+    "OR400": {
+        "country": "Dr. Manmohan Singh",
+        "name": "Sarthak Mohanty"
+    },
+    "OR401": {
+        "country": "H. H. S. Viswanathan",
+        "name": "Likhith Venkat Pagadala"
+    },
+    "OR504": {
+        "country": "J. M. Mauskar",
+        "name": "Kavin S"
+    },
+    "OR011": {
+        "country": "Kabir Taneja",
+        "name": "Kavya V.S"
+    },
+    "OR403": {
+        "country": "Leena Chandran Wadia",
+        "name": "Keerthana Raghuraman"
+    },
+    "OR505": {
+        "country": "Mahendra Kumawat",
+        "name": "Sai Sharan.V"
+    },
+    "OR506": {
+        "country": "Maya Mirchandani",
+        "name": "sreenithi R"
+    },
+    "OR205": {
+        "country": "Mohammad Javad Zarif",
+        "name": "Dharsan Prasaath R"
+    },
+    "OR015": {
+        "country": "Mukesh Ambani",
+        "name": "Vijay Aravindh R"
+    },
+    "OR602": {
+        "country": "N Sathiya Moorthy",
+        "name": "M CHELLAKKUMAR"
+    },
+    "OR017": {
+        "country": "Nilanjan Ghosh",
+        "name": "Sadhana Anand"
+    },
+    "OR507": {
+        "country": "Niranjan Sahoo",
+        "name": "Devadarsan A M"
+    },
+    "OR508": {
+        "country": "Nitin Gadkari",
+        "name": "Retanya T"
+    },
+    "OR019": {
+        "country": "Pinak Ranjan Chakravarty",
+        "name": "Rayyan Mohammad"
+    },
+    "OR207": {
+        "country": "Pushan Das",
+        "name": "Shubh Diwan"
+    },
+    "OR509": {
+        "country": "Raghuram Rajan",
+        "name": "Gaurav Vishnu"
+    },
+    "OR209": {
+        "country": "Rakesh Sood",
+        "name": "Niket Suchak"
+    },
+    "OR211": {
+        "country": "Ritika Passi",
+        "name": "Aishwarya Tewari"
+    },
+    "OR601": {
+        "country": "S. Jaishankar",
+        "name": "P.A.RAVI VATSAN"
+    },
+    "OR511": {
+        "country": "Sabrina Korreck",
+        "name": "Shanmuga Priya G"
+    },
+    "OR024": {
+        "country": "Sanjeev Ahluwalia",
+        "name": "Karthikeyan Chandrasekaran"
+    },
+    "OR025": {
+        "country": "Sean Kanuck",
+        "name": "Arjun Mukesh"
+    },
+    "OR212": {
+        "country": "Shahriar Alam",
+        "name": "Bhargavi.V"
+    },
+    "OR410": {
+        "country": "Shaktikanta Das",
+        "name": "Rohith Katta"
+    },
+    "OR603": {
+        "country": "Urjit Ravindra Patel",
+        "name": "Anirudh Bharadia"
+    },
+    "OR701": {
+        "country": "International Press Reporter 1",
+        "name": "A Sindhu Vasantha"
+    },
+    "OR702": {
+        "country": "International Press Reporter 2",
+        "name": "K Aadhira"
+    },
+    "OR703": {
+        "country": "International Press Reporter 3",
+        "name": "Sakshi Jain"
+    }
 }

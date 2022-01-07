@@ -1,182 +1,170 @@
 {
-  "SF022": {
-    "country": "Taiwan",
-    "name": "M Chellakkamar"
-  },
-  "SF110": {
-    "country": "Malaysia",
-    "name": "Priyanka Balu"
-  },
-  "SF115": {
-    "country": "Portugal",
-    "name": "Dhanush Gajaraj"
-  },
-  "SF108": {
-    "country": "Libya",
-    "name": "Nishtha L"
-  },
-  "SF104": {
-    "country": "Canada",
-    "name": "Adrij A Mohan"
-  },
-  "SF117": {
-    "country": "Rwanda",
-    "name": "Malaveka A"
-  },
-  "SF120": {
-    "country": "Sierra Leone",
-    "name": "Abhishek P.S."
-  },
-  "SF113": {
-    "country": "Nicaragua",
-    "name": "K.V. Vaishnave"
-  },
-  "SF126": {
-    "country": "Tunisia",
-    "name": "Pooja Kalyan Kumar"
-  },
-  "SF114": {
-    "country": "Pakistan",
-    "name": "Hariharasubramanyam KM"
-  },
-  "SF124": {
-    "country": "Switzerland",
-    "name": "Aditya Kumar"
-  },
-  "SF116": {
-    "country": "Russia",
-    "name": "Vandhana R"
-  },
-  "SF107": {
-    "country": "Germany",
-    "name": "Vishal Venkatarangan"
-  },
-  "SF204": {
-    "country": "France",
-    "name": "Madhuri Mahalingam"
-  },
-  "SF207": {
-    "country": "Netherlands",
-    "name": "Chinmayee Dindore"
-  },
-  "SF201": {
-    "country": "Australia",
-    "name": "Sakshi Puri"
-  },
-  "SF203": {
-    "country": "Egypt",
-    "name": "Anjali Saran"
-  },
-  "SF213": {
-    "country": "United Kingdom",
-    "name": "Bhavya Kandhari"
-  },
-  "SF205": {
-    "country": "Ghana",
-    "name": "Izma Zainab"
-  },
-  "SF214": {
-    "country": "United States of America",
-    "name": "Domil Antony Johnson"
-  },
-  "SF212": {
-    "country": "Brazil",
-    "name": "Kommu Sreeraj"
-  },
-  "SF024": {
-    "country": "Turkey",
-    "name": "Shivangi Pandey"
-  },
-  "SF012": {
-    "country": "Japan",
-    "name": "Sivaram E"
-  },
-  "SF904": {
-    "country": "South Africa",
-    "name": "Anant Dev Kapoor"
-  },
-  "SF555": {
-    "country": "Somalia",
-    "name": "Gokul Krishna"
-  },
-  "SF009": {
-    "country": "Haiti",
-    "name": "Thrisha"
-  },
-  "SF011": {
-    "country": "Italy",
-    "name": "Udit Samant"
-  },
-  "SF008": {
-    "country": "Greece",
-    "name": "Raghav Dinesh"
-  },
-  "SF017": {
-    "country": "Qatar",
-    "name": "Nandakishor V"
-  },
-  "SF015": {
-    "country": "Mexico",
-    "name": "Syed Thaha Osman"
-  },
-  "SF010": {
-    "country": "India",
-    "name": "Keerthana Shankar"
-  },
-  "SF025": {
-    "country": "United Arab Emirates",
-    "name": "Supraja Vaidhyanathan"
-  },
-  "SF016": {
-    "country": "New Zealand",
-    "name": "Bhagavathi R"
-  },
-  "SF013": {
-    "country": "Kiribati",
-    "name": "Vignesh M"
-  },
-  "SF021": {
-    "country": "Sweden",
-    "name": "E Nivetha"
-  },
-  "SF026": {
-    "country": "Zimbabwe",
-    "name": "Hrishikesh Kumar"
-  },
-  "SF018": {
-    "country": "Singapore",
-    "name": "GR Pavan"
-  },
-  "SF006": {
-    "country": "Finland",
-    "name": "Nabeela Gulam Khader"
-  },
-  "SF001": {
-    "country": "Belgium",
-    "name": "Sudhehan Kaliamurthi"
-  },
-  "SF005": {
-    "country": "Djibouti",
-    "name": "SHRUTHI SUBRAMANI"
-  },
-  "SF003": {
-    "country": "CHINA",
-    "name": "Pradeep Vasu"
-  },
-  "SF004": {
-    "country": "Cuba",
-    "name": "Rethnakumar Rg"
-  },
-  "SF704": {
-    "country": "International Press 1",
-    "name": "Surya Sridhar"
-  },
-  "SF705": {
-    "country": "International Press 2",
-    "name": "Aaditya Shankar Natarajan"
-  },
-  "SF706": {
-    "country": "International Press 3",
-    "name": "Sakshi Jain"
-  }
+    "SF200": {
+        "country": "Argentina",
+        "name": "Shonelle Andrea Morais"
+    },
+    "SF300": {
+        "country": "Australia",
+        "name": "Ishaan Burman"
+    },
+    "SF201": {
+        "country": "Belgium",
+        "name": "Manav Chhattri"
+    },
+    "SF401": {
+        "country": "Bolivia",
+        "name": "Samyuktha PR"
+    },
+    "SF202": {
+        "country": "Brazil",
+        "name": "Sudha Sakthivel"
+    },
+    "SF001": {
+        "country": "Canada",
+        "name": "Prahalad Rajagopal"
+    },
+    "SF500": {
+        "country": "Chile",
+        "name": "Shobana Devi G"
+    },
+    "SF400": {
+        "country": "China",
+        "name": "Jayashree PJ"
+    },
+    "SF600": {
+        "country": "Colombia",
+        "name": "Ranjit MA"
+    },
+    "SF504": {
+        "country": "Czechoslovakia",
+        "name": "Mohammad Mussa Haq"
+    },
+    "SF204": {
+        "country": "Denmark",
+        "name": "Benetta Yazhini"
+    },
+    "SF505": {
+        "country": "Dominican Republic",
+        "name": "Parthiban M"
+    },
+    "SF404": {
+        "country": "Egypt",
+        "name": "Naman Mishra"
+    },
+    "SF601": {
+        "country": "El Salvador",
+        "name": "Vedansh\tArora"
+    },
+    "SF004": {
+        "country": "Ethiopia",
+        "name": "Abdullah Sheriff"
+    },
+    "SF405": {
+        "country": "France",
+        "name": "Raghav Panjiray"
+    },
+    "SF213": {
+        "country": "Greece",
+        "name": "Akash Iyer"
+    },
+    "SF005": {
+        "country": "Guatemala",
+        "name": "Vishwajith LK"
+    },
+    "SF207": {
+        "country": "Haiti",
+        "name": "Ridhanya P"
+    },
+    "SF006": {
+        "country": "Honduras",
+        "name": "Samyukta Anand"
+    },
+    "SF007": {
+        "country": "India",
+        "name": "Ishaan"
+    },
+    "SF208": {
+        "country": "Lebanon",
+        "name": "Shivani Raj Vajjhala"
+    },
+    "SF508": {
+        "country": "Luxembourg",
+        "name": "N.NITHYASHRI"
+    },
+    "SF010": {
+        "country": "Mexico",
+        "name": "Arshiya Joshi"
+    },
+    "SF210": {
+        "country": "Netherlands",
+        "name": "Ibrahim Sheriff"
+    },
+    "SF011": {
+        "country": "Nicaragua",
+        "name": "Anish Panicker"
+    },
+    "SF211": {
+        "country": "New Zealand",
+        "name": "Nikhil Ravichandran"
+    },
+    "SF212": {
+        "country": "Norway",
+        "name": "Sarthak Tyagi"
+    },
+    "SF013": {
+        "country": "Panama",
+        "name": "Vishal Surya L B"
+    },
+    "SF018": {
+        "country": "Paraguay",
+        "name": "Harshida S P"
+    },
+    "SF015": {
+        "country": "Peru",
+        "name": "Sai Sriya Vemuri"
+    },
+    "SF215": {
+        "country": "Philippines",
+        "name": "Varshini R"
+    },
+    "SF407": {
+        "country": "Saudi Arabia",
+        "name": "Ahmed Sumaiya"
+    },
+    "SF408": {
+        "country": "South Africa",
+        "name": "Thien Lam"
+    },
+    "SF016": {
+        "country": "Turkey",
+        "name": "Poorva CS"
+    },
+    "SF216": {
+        "country": "United Kingdom",
+        "name": "Ishan Jasuja"
+    },
+    "SF017": {
+        "country": "Uruguay",
+        "name": "Pranavavel M"
+    },
+    "SF214": {
+        "country": "Venezuela",
+        "name": "Gia Roy"
+    },
+    "SF301": {
+        "country": "Yugoslavia",
+        "name": "Aditya Chandrashekar"
+    },
+    "SF701": {
+        "country": "International Press Reporter 1",
+        "name": "Navin Koushik M"
+    },
+    "SF702": {
+        "country": "International Press Reporter 2",
+        "name": "Lohita S"
+    },
+    "SF703": {
+        "country": "International Press Reporter 3",
+        "name": "Sidhaarth K Srikanth"
+    }
 }
