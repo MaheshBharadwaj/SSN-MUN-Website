@@ -35,9 +35,9 @@
         "country": "Burkina Faso",
         "name": "Anukrithi K"
     },
-    "HR008": {
-        "country": "Cameroon",
-        "name": "NANTHA KUMAR S A"
+    "HR207": {
+        "country": "China",
+        "name": "Sanchanya Murugesan"
     },
     "HR202": {
         "country": "Cuba",
@@ -71,6 +71,10 @@
         "country": "Germany",
         "name": "Aashrith Atmuri"
     },
+    "HR215": {
+        "country": "India",
+        "name": "Aswin S"
+    },
     "HR221": {
         "country": "Italy",
         "name": "Keshava Muralidhar"
@@ -95,9 +99,9 @@
         "country": "Mauritania",
         "name": "Fazil M"
     },
-    "HR205": {
+    "HR500": {
         "country": "Mexico",
-        "name": "Pramanya Guda"
+        "name": "Navaneetha Krishnan K S"
     },
     "HR023": {
         "country": "Namibia",
@@ -115,13 +119,13 @@
         "country": "Philippines",
         "name": "Shankar N"
     },
-    "HR207": {
-        "country": "Poland",
-        "name": "Sanchanya Murugesan"
-    },
     "HR034": {
         "country": "Republic of Korea",
         "name": "Adithya Muthukumar"
+    },
+    "HR508": {
+        "country": "Russian Federation",
+        "name": "Subhasri Shreya S L"
     },
     "HR026": {
         "country": "Senegal",
@@ -155,9 +159,13 @@
         "country": "Canada",
         "name": "Aishwarya.R"
     },
-    "HR215": {
-        "country": "Iceland",
-        "name": "Aswin S"
+    "HR008": {
+        "country": "DPRK",
+        "name": "NANTHA KUMAR S A"
+    },
+    "HR506": {
+        "country": "Iran",
+        "name": "Lakshmi Priya A"
     },
     "HR031": {
         "country": "Kenya",
@@ -183,13 +191,13 @@
         "country": "Switzerland",
         "name": "Keerthana Anand"
     },
+    "HR205": {
+        "country": "United States of America",
+        "name": "Pramanya Guda"
+    },
     "HR509": {
         "country": "United Arab Emirates",
         "name": "Preetha Selvarasu"
-    },
-    "HR506": {
-        "country": "Iran",
-        "name": "Lakshmi Priya A"
     },
     "HR701": {
         "country": "International Press Reporter 1",

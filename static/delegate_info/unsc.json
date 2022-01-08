@@ -1,11 +1,15 @@
 {
+    "SC600": {
+        "country": "United Kingdom",
+        "name": "Shruti Ranganathan"
+    },
     "SC300": {
         "country": "United States of America",
         "name": "Utkarsh Rastogi"
     },
-    "SC401": {
+    "SC503": {
         "country": "French Republic",
-        "name": "MR Vishwavasu Aprameya"
+        "name": "Hyagreev Rethinavel"
     },
     "SC400": {
         "country": "Soviet Union",
@@ -15,13 +19,9 @@
         "country": "Republic of China",
         "name": "Sudhira"
     },
-    "SC503": {
-        "country": "Ivory Coast",
-        "name": "Hyagreev Rethinavel"
-    },
-    "SC406": {
-        "country": "Jordan",
-        "name": "Shaarav Ayachit"
+    "SC502": {
+        "country": "Uruguay",
+        "name": "Raghavan K S"
     },
     "SC407": {
         "country": "Malaysia",
@@ -47,13 +47,13 @@
         "country": "North Vietnam",
         "name": "Adrij Mohan"
     },
+    "SC406": {
+        "country": "South Vietnam",
+        "name": "Shaarav Ayachit"
+    },
     "SC006": {
         "country": "Egypt",
         "name": "Shreyas Subramanian"
-    },
-    "SC600": {
-        "country": "West Germany",
-        "name": "Shruti Ranganathan"
     },
     "SC701": {
         "country": "International Press Reporter 1",
